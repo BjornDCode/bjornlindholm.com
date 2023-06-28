@@ -39,17 +39,17 @@
                 </div>
 
                 <nav class="space-y-2">
-                    <SmallNavLink href="https://dev.to/bjornlindholmdk">
-                        Dev.to
-                    </SmallNavLink>
                     <SmallNavLink href="https://twitter.com/bjornlindholmdk">
                         Twitter
                     </SmallNavLink>
-                    <SmallNavLink href="https://read.cv/bjornlindholm">
-                        Read.cv
-                    </SmallNavLink>
                     <SmallNavLink href="https://www.instagram.com/bjornhansendk/">
                         Instagram
+                    </SmallNavLink>
+                    <SmallNavLink href="https://dev.to/bjornlindholmdk">
+                        Dev.to
+                    </SmallNavLink>
+                    <SmallNavLink href="https://read.cv/bjornlindholm">
+                        Read.cv
                     </SmallNavLink>
                 </nav>
             </aside>

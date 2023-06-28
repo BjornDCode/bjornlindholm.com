@@ -1,6 +1,6 @@
 <Layout>
     <Title>Welcome</Title>
-
+    
     <ul class="mt-8">
         <li>
             <ContentLink href="/links/zed/" published_at="3/15/2023">
