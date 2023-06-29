@@ -22,6 +22,9 @@
                     </a>
 
                     <nav class="mt-8 space-y-2">
+                        <NavLink href="/projects">
+                            Projects
+                        </NavLink>
                         <NavLink href="/articles">
                             Articles
                         </NavLink>
@@ -72,9 +75,7 @@
                 </div>
 
                 <main class="w-full">
-                    <div class="p-4 md:p-8 lg:max-w-xl lg:mx-auto">
-                        <slot />
-                    </div>
+                    <slot />
                 </main>
             </div>
         </div>

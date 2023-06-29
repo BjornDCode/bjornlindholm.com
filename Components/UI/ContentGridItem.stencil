@@ -1,0 +1,5 @@
+<li>
+    <Headline3>{{ title }}</Headline3>
+
+    <slot />
+</li>

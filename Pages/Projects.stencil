@@ -1,0 +1,135 @@
+<Layout title="Projects">
+    <WideContainer>
+        <Title>Projects</Title>
+
+        <div class="mt-12">
+            <Headline2 class="mb-4">Active projects</Headline2>
+
+            <ContentGrid>
+                <ContentGridItemWithLink 
+                    title="Paperstack"
+                    href="#"
+                >
+                    <Paragraph class="!my-0">
+                        A simple static site generator. This website is build with Paperstack.
+                    </Paragraph>
+                </ContentGridItemWithLink>
+
+                <ContentGridItemWithLink href="#" title="Stencil">
+                    <Paragraph class="!my-0">
+                        The templating language powering Paperstack. It's based on components instead of includes, blocks or partials. 
+                    </Paragraph>
+                </ContentGridItemWithLink>
+
+                <ContentGridItem title="Wordsmith">
+                    <Paragraph class="!my-0">
+                        A writing app with built-in grammar checks.
+                    </Paragraph>
+                </ContentGridItem>
+            </ContentGrid>
+        </div>        
+
+        <div class="mt-12">
+            <Headline2>Graveyard</Headline2>
+            <span class="text-gray-500">...or projects I'm longer a part of</span>
+
+            <ContentGrid>
+                <ContentGridItemWithLink 
+                    title="Reform"
+                    href="https://www.reform.app/"
+                >
+                    <Paragraph class="!my-0">
+                        A simple, clean form builder SaaS app. I co-founded and was responsible for designing and developing the application.
+                    </Paragraph>
+                </ContentGridItemWithLink>
+
+                <ContentGridItemWithLink 
+                    title="Branch"
+                    href="https://www.branchci.com/"
+                >
+                    <Paragraph class="!my-0">
+                        A CI/CD and deployment tool for WordPress websites. I joined as 1st employee.
+                    </Paragraph>
+                </ContentGridItemWithLink>
+
+                <ContentGridItem title="Conference HQ">
+                    <Paragraph class="!my-0">
+                        A directory of tech-related conferences.
+                    </Paragraph>
+                </ContentGridItem>
+
+                <ContentGridItem title="Provisioning">
+                    <Paragraph class="!my-0">
+                        An app that could automatically generate a Laravel project and set up a CI/CD pipeline and servers. It was my thesis project from Copenhagen School of Design and Technology.
+                    </Paragraph>
+                </ContentGridItem>
+
+                <ContentGridItem title="Serve">
+                    <Paragraph class="!my-0">
+                        A GUI app that made it easy to manage your local development environment for Laravel apps.
+                    </Paragraph>
+                </ContentGridItem>
+
+                <ContentGridItem title="authenticationguide.dev">
+                    <Paragraph class="!my-0">
+                        A content site explaining web security principles for people who don't have a PhD in Computer Science.
+                    </Paragraph>
+                </ContentGridItem>
+
+                <ContentGridItem title="Titanium">
+                    <Paragraph class="!my-0">
+                        A collection of Laravel SaaS application starter kits.
+                    </Paragraph>
+                </ContentGridItem>
+
+                <ContentGridItemWithLink 
+                    title="PerceiveCSS"
+                    href="https://www.instagram.com/perceivecss/"
+                >
+                    <Paragraph class="!my-0">
+                        Simple illustrations explaining different CSS concepts.
+                    </Paragraph>
+                </ContentGridItemWithLink>
+
+                <ContentGridItem title="Iridium UI">
+                    <Paragraph class="!my-0">
+                        A collection of unstyled, accessible UI components. Very similar to current projects like Radix and HeadlessUI.
+                    </Paragraph>
+                </ContentGridItem>
+
+                <ContentGridItem title="Weblimericks">
+                    <Paragraph class="!my-0">
+                        A collection of small limericks about the web development world.
+                    </Paragraph>
+                </ContentGridItem>
+
+                <ContentGridItemWithLink 
+                    title="Flight statistics"
+                    href="https://eloquent-meitner-2ae4da.netlify.app/"
+                >
+                    <Paragraph class="!my-0">
+                        A data visualisation experient of different flight related statistics.
+                    </Paragraph>
+                </ContentGridItemWithLink>
+
+                <ContentGridItem title="ML Jobs">
+                    <Paragraph class="!my-0">
+                        A job board of AI and ML related jobs.
+                    </Paragraph>
+                </ContentGridItem>
+
+                <ContentGridItem title="Vue Storefront">
+                    <Paragraph class="!my-0">
+                        A JavaScript library to create static, self-hosted e-commerce sites with Shopify as a backend.
+                    </Paragraph>
+                </ContentGridItem>
+
+                <ContentGridItem title="BERT">
+                    <Paragraph class="!my-0">
+                        An app to conduct and collect data from BERT tests.
+                    </Paragraph>
+                </ContentGridItem>
+            </ContentGrid>
+        </div>
+    </WideContainer>
+</Layout>
