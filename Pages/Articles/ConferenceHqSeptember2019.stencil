@@ -1,0 +1,101 @@
+<Layout title="Conference HQ - September 2019">
+    <NarrowContainer>
+        <Title>Conference HQ - September 2019</Title>
+        <Subheadline class="block mt-2">08/10/2019</Subheadline>
+
+        <Prose class="mt-6">
+            <Paragraph>
+                This article is the second update on <Link href="https://conferencehq.io" target="_blank">Conference HQ</Link> since I launched it. I will briefly describe what I did in September and what I want to achieve in October. I will also share the numbers for September.
+            </Paragraph>
+
+            <Headline2>What I did</Headline2>
+
+            <Paragraph class="mt-1">
+                In September I had trouble finding the motivation to work on the site. The biggest reason for this is that it's tedious to manually add all conferences to the site. And that is the most important work I could be doing on the site right now. To combat this I've started the process of hiring another person to do data entry. I'll come back to that further down.
+            </Paragraph>
+
+            <Paragraph>
+                I did get some work done. In the last update I wrote that I wanted to finish and launch the search and filtering feature. I managed to do this. This turned out to be quite a big feature. I spent a lot of the time figuring out how I wanted the search feature to work. For now I settled on adding a search field in the sidebar and adding a dedicated search page with filtering options.
+            </Paragraph>
+
+            <Paragraph>
+                I finished an article about how I use Airtable as the backend for the site and posted in on dev.to and Medium. Posting it on dev.to showed great results. It got more than 800 views and 38 reactions. It resulted in around 350 page views on the site. Posting it on Medium didn't give any results.
+            </Paragraph>
+
+            <Paragraph>
+                A few days later I posted an update on IndieHackers. This resulted in more than 400 page views on the site.
+            </Paragraph>
+
+            <Paragraph>
+                I started writing an article about the implementation of the search feature but I haven't completed it yet.
+            </Paragraph>
+
+            <Headline2>Stats</Headline2>
+
+            <Headline3>Visitors</Headline3>
+
+            <UnorderedList class="mt-1">
+                <ListItem>Pageviews: <strong>2613</strong> (+423)</ListItem>
+                <ListItem>Unique Visitors: <strong>932</strong> (+152)</ListItem>
+            </UnorderedList>
+
+            <Headline3>SEO</Headline3>
+
+            <Paragraph class="mt-1">
+                Unfortunately I haven't tracked SEO stats this month.
+            </Paragraph>
+
+            <Paragraph>
+                I'm glad there was a small increase in the page views and visitors. A lot of the traffic came in the last few days when I posted the article and update on IndieHackers. This proves that creating content around the process of making the site is working well.
+            </Paragraph>
+
+            <Headline2>Goals for October</Headline2>
+
+            <Headline3>Features</Headline3>
+
+            <Paragraph class="mt-1">
+                I don't have any major features planned for October. But the next focus point is to improve the single conference page. Currently it feels empty. I have several ideas for this.
+            </Paragraph>
+
+            <Paragraph>
+                One idea is to add related conferences. These are conferences that are hosted by the same organiser but have a different topic or take place in another location. A good example is <Link href="https://conferencehq.io/conference/droidcon-transylvania" target="_blank">droidcon</Link> which happens in a few different locations.
+            </Paragraph>
+
+            <Paragraph>
+                Another idea is to add links to social media pages for a conference. In the future I'm planning on embedding content from Youtube or Twitter into the page. For now I'll stick to linking to the pages.
+            </Paragraph>
+
+            <Paragraph>
+                Currently I'm going through all the topics on the site and adding logos and icons where it's relevant.
+            </Paragraph>
+
+            <Paragraph>
+                Lastly I want to add data for student tickets. This will allow students to search for conferences that offer student tickets.
+            </Paragraph>
+
+            <Headline3>Marketing</Headline3>
+
+            <Paragraph class="mt-1">
+                In October I want to finish the article about the search feature. That will likely be the only article I'll publish in October.
+            </Paragraph>
+
+            <Paragraph>
+                I'm planning on implementing <Link href="https://developers.google.com/search/docs/data-types/event" target="_blank">rich snippets for events</Link> on each conference page. This will hopefully have an impact on search results and CTR's from search engines.
+            </Paragraph>
+
+            <Headline3>Conferences</Headline3>
+
+            <Paragraph class="mt-1">
+                I mentioned earlier that it's tedious to add new conferences to the site. The site currently has around 200 conferences but many are not relevant because the conference has occurred. In order to ensure I get more content and keep the database growing I've decided to hire a person to enter data into the site.
+            </Paragraph>
+
+            <Paragraph>
+                As a result of this I've created a style guide document and a list of conferences that could be added. In October I hope to find a person to do the data entry.
+            </Paragraph>
+            
+            <Paragraph>
+                This will hopefully give me more time to focus on adding features and spend more time on marketing.
+            </Paragraph>
+        </Prose>
+    </NarrowContainer>
+</Layout>

@@ -1,0 +1,140 @@
+<Layout title="Using Airtable as a backend">
+    <NarrowContainer>
+        <Title>Using Airtable as a backend</Title>
+        <Subheadline class="block mt-2">22/09/2019</Subheadline>
+
+        <Prose class="mt-6">
+            <Paragraph>
+                I recently launched the first version of <Link href="http://conferencehq.io" target="_blank">Conference HQ</Link>. An interesting part of the project is the backend which is powered by Airtable. I originally built my own API in Laravel but I had dropped the project at that point. I'll come back to that later.
+            </Paragraph>
+
+            <Headline2>What is Airtable</Headline2>
+
+            <Paragraph class="mt-1">
+                Airtable is a mix between a spreadsheet and a database. It's simpler than Firebase but has some convenient features like asset handling that makes it better for managing content than Google Sheets.
+            </Paragraph>
+
+            <Paragraph>
+                At the core of Airtable are bases. It's the equivalent of a database or a spreadsheet. Inside the base you have tables. Inside tables is where the content lives. These are called records.
+            </Paragraph>
+
+            <img src="/images/airtable.png" alt="Airtable dashboard" />
+
+            <Paragraph>
+                Where Airtable really shines are the field types you can have for each column in a table. Standard options like text, number and date fields are available. But more advanced fields are available as well.
+            </Paragraph>
+
+            <Paragraph>
+                You can have a email, phone number or url field if you are storing data about customers. Rating, duration, barcode, select and attachment fields are also available. The attachment field can be used to store images or files to display or download.
+            </Paragraph>
+
+            <Paragraph>
+                Lastly you can link to other records or read a value from another record and use it in a formula.
+            </Paragraph>
+
+            <Headline2>Why I chose Airtable for Conference HQ</Headline2>
+
+            <Paragraph class="mt-1">
+                I had originally built a Laravel API as the backend. But for various reasons I dropped the project for a while and when I revived it I wanted a simpler solution.
+            </Paragraph>
+
+            <Paragraph>
+                Airtable was the right solution for that. At it's core, Conference HQ is a list of conferences. A custom API solution was overkill and instead of spending time maintaining the API, Airtable allowed me to focus on other things. I would estimate that I've spend around 3 hours setting up the base itself.
+            </Paragraph>
+
+            <Paragraph>
+                It's easy to set up, especially if you have experience working with databases. The asset handling is convenient for Conference HQ because I store a logo for each conference. It's also nice not having to worry about setting up and maintaining the server.
+            </Paragraph>
+
+            <Paragraph>
+                The free plan is sufficient for most small sites.
+            </Paragraph>
+
+            <Headline2>When to use Airtable</Headline2>
+
+            <Paragraph class="mt-1">
+                I would recommend using Airtable for list or directory sites. This could be a job board like <Link href="https://cryptocurrencyjobs.co/" target="_blank">Cryptocurrency Jobs</Link>, a database like <Link href="https://nomadlist.com" target="_blank">Nomad List</Link> or a directory like <Link href="https://madewithvuejs.com" target="_blank">Made with Vue.js</Link>.
+            </Paragraph>
+
+            <Paragraph>
+                If you plan on adding other content like blog posts, I would still recommend using Airtable for the list part. Using a static site generator like Gridsome or Gatsby will allow you to fetch content from difference sources.
+            </Paragraph>
+
+            <Headline2>Working with Airtable's API</Headline2>
+
+            <Paragraph class="mt-1">
+                After creating a base on Airtable, they auto generate API documentation for that base. This adapt as you add or remove tables or fields from the base.
+            </Paragraph>
+
+            <Paragraph>
+                There is an official <Link href="https://github.com/Airtable/airtable.js" target="_blank">JS client</Link> that can be utilised. If you are using another language to power the site you can hit the endpoints directly.
+            </Paragraph>
+
+            <Paragraph>
+                Authentication is done with a token. Unfortunately it's not possible to make endpoints public. This means the API has to be called from a server, to avoid the token being public. This is the reason I chose to use a static site generator over a SSR framework like Nuxt.
+            </Paragraph>
+
+            <Paragraph>
+                The API has a rate limit of 5 requests per second. Unless you have a site with a lot of traffic this should be sufficient. Using a static site generator mitigates this problem as it fetches all data when the site is deployed.
+            </Paragraph>
+
+            <Paragraph>
+                Working with the Airtable API won't be the same as working with a custom API. You don't have as much freedom when it comes to validation and connecting models through relationships.
+            </Paragraph>
+
+            <Paragraph>
+                An example is that you can't have a 1 to 1 or a 1 to many relationship. Relationships are always many to many. Another example is that you can't automatically generate slugs. I have set up a formula that removes special characters from the conference names and turn it into dashes or an empty string.
+            </Paragraph>
+
+            <Paragraph>
+                But I haven't found anything that I couldn't work around yet and considering the time saved by using Airtable I think it's worth it for simple sites.
+            </Paragraph>
+
+            <Headline2>Frontend</Headline2>
+
+            <Paragraph class="mt-1">
+                Because of the API authentication problem, I chose <Link href="https://gridsome.org/" target="_blank">Gridsome</Link> as a static site generator.
+            </Paragraph>
+
+            <Paragraph>
+                Originally I wanted to use <Link href="https://nuxtjs.org/" target="_blank">Nuxt</Link> and use server side rendering. But the way data Nuxt fetches data from an API is through a method called <Link href="https://nuxtjs.org/guide/async-data" target="_blank">asyncData</Link>. This method fetches data on the server the first time it's run, but when the user navigates to other routes it will be called from the client. This would expose my Airtable API key.
+            </Paragraph>
+
+            <Paragraph>
+                Gridsome fetches all data when I run the <InlineCode>gridsome build</InlineCode> command. I do that when I deploy the site. It then generates every page into a static html file which is served.
+            </Paragraph>
+
+            <Paragraph>
+                An advantage of using Gridsome (or <Link href="https://www.gatsbyjs.org/" target="_blank">Gatsby</Link> for React), is that you can have multiple data sources. That means I can create a blog using Contentful or Netlify CMS and fetch the data through Gridsome as well.
+            </Paragraph>
+
+            <Paragraph>
+                Gridsome is still young and I ran into some caveats. The biggest one is search. This feature hasn't been launched on Conference HQ yet, but I'm currently implementing it.
+            </Paragraph>
+
+            <Paragraph>
+                There are some search capabilities available in Gridsome but they are limited. Instead I'm using <Link href="https://github.com/nextapps-de/flexsearch" target="_blank">FlexSearch</Link>. I'll write another article with more details when the search and filter features have been shipped.
+            </Paragraph>
+
+            <Headline2>Handling forms</Headline2>
+
+            <Paragraph class="mt-1">
+                A feature I want to add to the site in the future is the ability for users to add conferences. For this I've come up with two solutions.
+            </Paragraph>
+
+            <Paragraph>
+                I can either create a <Link href="https://www.typeform.com/" target="_blank">Typeform</Link> or use <Link href="https://www.netlify.com/products/forms/" target="_blank">Netlify Forms</Link>. Since the site is already hosted on Netlify I'll most likely go with that solution.
+            </Paragraph>
+
+            <Paragraph>
+                In order to store the fetched content in Airtable I'll use Zapier. Zapier has integrations with both Netlify and Typeform as well as Airtable.
+            </Paragraph>
+
+            <Headline2>Conclusion</Headline2>
+
+            <Paragraph class="mt-1">
+                For a long time I've had a habit of trying to over-engineer my projects. This has always led me down a path where I spent a lot of time writing code that never see the light of day. Using Airtable saved me weeks of work creating a backend and allowed me to spend that time on adding features and content to the site instead. Airtable is not a viable solution for any site but if you want to quickly launch a project or test out an idea it's really solid.
+            </Paragraph>
+        </Prose>
+    </NarrowContainer>
+</Layout>
