@@ -4,6 +4,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>{{ title or "Bjørn" }}</title>
+        <meta name="title" content="{{ title or 'Bjørn' }}" />
+        <meta name="description" content="Designer & developer from Denmark" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="{{ title or 'Bjørn' }}" />
+        <meta property="og:description" content="Designer & developer from Denmark" />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content="{{ title or 'Bjørn' }}" />
+        <meta property="twitter:description" content="Designer & developer from Denmark" />
 
         <link rel="icon" href="/favicon.ico" sizes="48x48" >
         <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml">
