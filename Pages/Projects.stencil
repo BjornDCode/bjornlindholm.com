@@ -1,6 +1,6 @@
 <Layout title="Projects">
     <WideContainer>
-        <Title>Projects</Title>
+        <Title class="pr-12">Projects</Title>
 
         <div class="mt-12">
             <Headline2 class="mb-4">Active projects</Headline2>
