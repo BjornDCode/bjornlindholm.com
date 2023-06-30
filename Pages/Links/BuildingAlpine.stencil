@@ -1,0 +1,25 @@
+<Layout title="Building Alpine">
+    <NarrowContainer>
+        <Title>Building Alpine</Title>
+        <Subheadline class="block mt-2">15/04/2020</Subheadline>
+
+        <Prose class="mt-6">
+            <Paragraph>
+                Caleb Porzio made a series of videos where he walks through the internals of Alpine.
+            </Paragraph>
+
+            <Paragraph>
+                It's a great look into how UI libraries like Vue, React and Alpine work.
+            </Paragraph>
+
+            <div class="mt-4">
+                <Link
+                    target="_blank" 
+                    href="https://laracasts.com/series/building-alpinejs"
+                >
+                    Check it out &#8250;
+                </Link>
+            </div>
+        </Prose>
+    </NarrowContainer>
+</Layout>

@@ -31,7 +31,7 @@
 
         <div class="mt-12">
             <Headline2>Graveyard</Headline2>
-            <span class="text-gray-500">...or projects I'm longer a part of</span>
+            <Subheadline>...or projects I'm longer a part of</Subheadline>
 
             <ContentGrid>
                 <ContentGridItemWithLink 

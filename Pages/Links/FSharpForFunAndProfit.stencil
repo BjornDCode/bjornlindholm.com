@@ -1,0 +1,29 @@
+<Layout title="F# for Fun and Profit">
+    <NarrowContainer>
+        <Title>F# for Fun and Profit</Title>
+        <Subheadline class="block mt-2">05/05/2022</Subheadline>
+
+        <Prose class="mt-6">
+            <Paragraph>
+                A blog about functional programming and specifically F#.
+            </Paragraph>
+
+            <Paragraph>
+                I don't have any particular interest in F# itself but I'm interested in other functional programming languages. And Scott Wlashin does a great job of explaining the fundamental concepts of functional programming.
+            </Paragraph>
+
+            <Paragraph>
+                He also has a number of good talks on the subject and he's written one of my favorite books: <Link href="https://fsharpforfunandprofit.com/books/" target="_blank">Domain Modeling Made Functional</Link>
+            </Paragraph>
+
+            <div class="mt-4">
+                <Link
+                    target="_blank" 
+                    href="https://fsharpforfunandprofit.com/"
+                >
+                    Check it out &#8250;
+                </Link>
+            </div>
+        </Prose>
+    </NarrowContainer>
+</Layout>

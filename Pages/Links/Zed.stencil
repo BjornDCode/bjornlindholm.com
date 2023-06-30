@@ -1,7 +1,7 @@
 <Layout title="Zed">
     <NarrowContainer>
         <Title>Zed</Title>
-        <span class="mt-6 block text-sm text-gray-700">3/15/2023</span>
+        <Subheadline class="block mt-2">15/03/2023</Subheadline>
 
         <Prose class="mt-6">
             <Paragraph>
@@ -13,13 +13,12 @@
             </Paragraph>
 
             <div class="mt-4">
-                <a 
-                    class="underline text-gray-800 font-medium" 
+                <Link
                     target="_blank" 
-                    :href="link.url"
+                    href="https://zed.dev/"
                 >
                     Check it out &#8250;
-                </a>
+                </Link>
             </div>
         </Prose>
     </NarrowContainer>
