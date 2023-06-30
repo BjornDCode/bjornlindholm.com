@@ -8,14 +8,17 @@
             <ContentGrid>
                 <ContentGridItemWithLink 
                     title="Paperstack"
-                    href="#"
+                    href="https://github.com/paperstackink/paperstack"
                 >
                     <Paragraph class="!my-0">
                         A simple static site generator. This website is build with Paperstack.
                     </Paragraph>
                 </ContentGridItemWithLink>
 
-                <ContentGridItemWithLink href="#" title="Stencil">
+                <ContentGridItemWithLink 
+                    href="https://github.com/paperstackink/stencil" 
+                    title="Stencil"
+                >
                     <Paragraph class="!my-0">
                         The templating language powering Paperstack. It's based on components instead of includes, blocks or partials. 
                     </Paragraph>
