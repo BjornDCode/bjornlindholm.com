@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@paperstack/paperstack": "^0.1.1",
+    "@paperstack/paperstack": "^0.1.2",
     "http-server": "^14.1.1"
   }
 }
