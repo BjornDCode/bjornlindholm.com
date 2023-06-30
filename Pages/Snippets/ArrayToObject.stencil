@@ -1,0 +1,23 @@
+<Layout title="Array to object">
+    <NarrowContainer>
+        <Title>Array to object</Title>
+        <Subheadline class="block mt-2">03/03/2020</Subheadline>
+
+        <Prose class="mt-6">
+            <Paragraph>
+                A small helper function to create an object from an array of objects.
+                It accepts an array and the the key it should create the object with.
+            </Paragraph>
+
+            <CodeBlock>export const arrayToObject = (array, key) => {
+    const initialValue = {}
+    return array.reduce((obj, item) => {
+        return {
+            ...obj,
+            [item[key]]: item
+        }
+    }, initialValue)
+}</CodeBlock>
+        </Prose>
+    </NarrowContainer>
+</Layout>
