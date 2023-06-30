@@ -72,7 +72,7 @@
                     ></span>
                 </button>
             </div>
-            <div x-bind:class="open ? 'w-full translate-x-[60vw]' : 'w-full'">
+            <div class="w-full" x-bind:class="open ? 'translate-x-[60vw]' : ''">
                 <main class="w-full">
                     <slot />
                 </main>
