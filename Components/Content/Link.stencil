@@ -1,5 +1,5 @@
 <a 
-    class="underline text-gray-800 font-medium" 
+    class="underline text-slate-800 font-medium" 
     target="_blank" 
     href="{{ href }}"
 >
