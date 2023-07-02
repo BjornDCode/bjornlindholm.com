@@ -4,6 +4,11 @@
         
         <ul class="mt-8">
             <li>
+                <ContentLink href="/links/system-font-deep-dive/" published_at="01/07/2023">
+                    System font deep dive
+                </ContentLink>
+            </li>
+            <li>
                 <ContentLink href="/links/zed/">
                     Zed
                 </ContentLink>

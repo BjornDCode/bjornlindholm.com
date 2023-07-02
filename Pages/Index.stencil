@@ -4,8 +4,13 @@
         
         <ul class="mt-8">
             <li>
-                <ContentLink href="/articles/introducing-paperstack/" published_at="01/06/2023">
+                <ContentLink href="/articles/introducing-paperstack/" published_at="01/07/2023">
                     Introducing Paperstack
+                </ContentLink>
+            </li>
+            <li>
+                <ContentLink href="/links/system-font-deep-dive/" published_at="01/07/2023">
+                    System font deep dive
                 </ContentLink>
             </li>
             <li>
