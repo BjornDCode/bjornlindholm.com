@@ -1,25 +1,23 @@
-<Layout title="Zed">
-    <NarrowContainer>
-        <Title>Zed</Title>
-        <Subheadline class="block mt-2">15/03/2023</Subheadline>
+<Narrow title="Zed">
+    <Title>Zed</Title>
+    <Subheadline class="block mt-2">15/03/2023</Subheadline>
 
-        <Prose class="mt-6">
-            <Paragraph>
-                A modern editor that's focused on being fast. It seems like it can be a modern version of Sublime which I think is one of the best apps ever made. Speed was the main issue I've never gotten used to VSCode.
-            </Paragraph>
+    <Prose class="mt-6">
+        <Paragraph>
+            A modern editor that's focused on being fast. It seems like it can be a modern version of Sublime which I think is one of the best apps ever made. Speed was the main issue I've never gotten used to VSCode.
+        </Paragraph>
 
-            <Paragraph>
-                The people behind Zed have some interesting ideas for collaborating, but I mostly work solo so I don't know how useful they will be to me.
-            </Paragraph>
+        <Paragraph>
+            The people behind Zed have some interesting ideas for collaborating, but I mostly work solo so I don't know how useful they will be to me.
+        </Paragraph>
 
-            <div class="mt-4">
-                <Link
-                    target="_blank" 
-                    href="https://zed.dev/"
-                >
-                    Check it out &#8250;
-                </Link>
-            </div>
-        </Prose>
-    </NarrowContainer>
-</Layout>
+        <div class="mt-4">
+            <Link
+                target="_blank" 
+                href="https://zed.dev/"
+            >
+                Check it out &#8250;
+            </Link>
+        </div>
+    </Prose>
+</Narrow>

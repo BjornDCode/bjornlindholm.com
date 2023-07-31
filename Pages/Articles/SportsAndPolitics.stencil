@@ -1,20 +1,18 @@
-<Layout title="Sports and politics">
-    <NarrowContainer>
-        <Title>Sports and politics</Title>
-        <Subheadline class="block mt-2">24/11/2022</Subheadline>
+<Narrow title="Sports and politics">
+    <Title>Sports and politics</Title>
+    <Subheadline class="block mt-2">24/11/2022</Subheadline>
 
-        <Prose class="mt-6">
-            <Paragraph>
-                “Sport and politics shouldn’t mix” is a silly statement. Sports and politics are deeply intertwined and can never be separated.
-            </Paragraph>
+    <Prose class="mt-6">
+        <Paragraph>
+            “Sport and politics shouldn’t mix” is a silly statement. Sports and politics are deeply intertwined and can never be separated.
+        </Paragraph>
 
-            <Paragraph>
-                “Sportswashing” is a popular tool to improve the image of a country. Sportswashing is a political tool and because it exists it makes sports inherently political.
-            </Paragraph>
+        <Paragraph>
+            “Sportswashing” is a popular tool to improve the image of a country. Sportswashing is a political tool and because it exists it makes sports inherently political.
+        </Paragraph>
 
-            <Paragraph>
-                And if you choose to ignore the political aspect of sport that’s also taking a political stance.
-            </Paragraph>
-        </Prose>
-    </NarrowContainer>
-</Layout>
+        <Paragraph>
+            And if you choose to ignore the political aspect of sport that’s also taking a political stance.
+        </Paragraph>
+    </Prose>
+</Narrow>

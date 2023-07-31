@@ -1,31 +1,29 @@
-<Layout title="System font deep dive">
-    <NarrowContainer>
-        <Title>System font deep dive</Title>
-        <Subheadline class="block mt-2">01/07/2023</Subheadline>
+<Narrow title="System font deep dive">
+    <Title>System font deep dive</Title>
+    <Subheadline class="block mt-2">01/07/2023</Subheadline>
 
-        <Prose class="mt-6">
-            <Paragraph>
-                An interesting article about CSS keywords like <InlineCode>system-ui</InlineCode>, <InlineCode>ui-monospace</InlineCode>, <InlineCode>ui-rounded</InlineCode>, <InlineCode>ui-sans-serif</InlineCode> and <InlineCode>ui-serif</InlineCode>. 
-            </Paragraph>
+    <Prose class="mt-6">
+        <Paragraph>
+            An interesting article about CSS keywords like <InlineCode>system-ui</InlineCode>, <InlineCode>ui-monospace</InlineCode>, <InlineCode>ui-rounded</InlineCode>, <InlineCode>ui-sans-serif</InlineCode> and <InlineCode>ui-serif</InlineCode>. 
+        </Paragraph>
 
-            <Paragraph>
-                They are variables for the default system fonts so you avoid having to write a long list of fonts:
-            </Paragraph>
+        <Paragraph>
+            They are variables for the default system fonts so you avoid having to write a long list of fonts:
+        </Paragraph>
 
-            <CodeBlock>/* Old */
+        <CodeBlock>/* Old */
 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
 /* New */
 font-family: system-ui;</CodeBlock>
 
-            <div class="mt-4">
-                <Link
-                    target="_blank" 
-                    href="https://fullystacked.net/posts/system-font-deep-dive/"
-                >
-                    Check it out &#8250;
-                </Link>
-            </div>
-        </Prose>
-    </NarrowContainer>
-</Layout>
+        <div class="mt-4">
+            <Link
+                target="_blank" 
+                href="https://fullystacked.net/posts/system-font-deep-dive/"
+            >
+                Check it out &#8250;
+            </Link>
+        </div>
+    </Prose>
+</Narrow>

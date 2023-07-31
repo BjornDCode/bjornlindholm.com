@@ -1,25 +1,23 @@
-<Layout title="Modern Font Stacks">
-    <NarrowContainer>
-        <Title>Modern Font Stacks</Title>
-        <Subheadline class="block mt-2">15/03/2023</Subheadline>
+<Narrow title="Modern Font Stacks">
+    <Title>Modern Font Stacks</Title>
+    <Subheadline class="block mt-2">15/03/2023</Subheadline>
 
-        <Prose class="mt-6">
-            <Paragraph>
-                A directory of font stacks using only system fonts. That means they will render very fast on all devices.
-            </Paragraph>
+    <Prose class="mt-6">
+        <Paragraph>
+            A directory of font stacks using only system fonts. That means they will render very fast on all devices.
+        </Paragraph>
 
-            <Paragraph>
-                I'm particularly fond of the 'Transitional' stack using 'Charter'.
-            </Paragraph>
+        <Paragraph>
+            I'm particularly fond of the 'Transitional' stack using 'Charter'.
+        </Paragraph>
 
-            <div class="mt-4">
-                <Link
-                    target="_blank" 
-                    href="https://modernfontstacks.com/"
-                >
-                    Check it out &#8250;
-                </Link>
-            </div>
-        </Prose>
-    </NarrowContainer>
-</Layout>
+        <div class="mt-4">
+            <Link
+                target="_blank" 
+                href="https://modernfontstacks.com/"
+            >
+                Check it out &#8250;
+            </Link>
+        </div>
+    </Prose>
+</Narrow>

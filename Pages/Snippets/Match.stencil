@@ -1,47 +1,45 @@
-<Layout title="Match">
-    <NarrowContainer>
-        <Title>Match</Title>
-        <Subheadline class="block mt-2">15/08/2020</Subheadline>
+<Narrow title="Match">
+    <Title>Match</Title>
+    <Subheadline class="block mt-2">15/08/2020</Subheadline>
 
-        <Prose class="mt-6">
-            <Paragraph>
-                A small helper function that aims to simulate the <Link href="https://wiki.php.net/rfc/match_expression_v2" target="_blank">match</Link> expression in PHP.
-            </Paragraph>
+    <Prose class="mt-6">
+        <Paragraph>
+            A small helper function that aims to simulate the <Link href="https://wiki.php.net/rfc/match_expression_v2" target="_blank">match</Link> expression in PHP.
+        </Paragraph>
 
-            <CodeBlock>const match = (input, patterns) => {
-    return patterns[input] || patterns['default']
+        <CodeBlock>const match = (input, patterns) => {
+return patterns[input] || patterns['default']
 }</CodeBlock>
 
-            <Paragraph>
-                Instead of doing this:
-            </Paragraph>
+        <Paragraph>
+            Instead of doing this:
+        </Paragraph>
 
-            <CodeBlock>const getStatusCode = code => {
-    const lookup = {
-        200: 'Success',
-        300: 'Redirect',
-        400: 'Client error',
-        // ...
-    }
+        <CodeBlock>const getStatusCode = code => {
+const lookup = {
+    200: 'Success',
+    300: 'Redirect',
+    400: 'Client error',
+    // ...
+}
 
-    return lookup[code]
+return lookup[code]
 }
 
 const status = getStatusCode(200) // Success</CodeBlock>
 
-            <Paragraph>
-                You can do this:
-            </Paragraph>
+        <Paragraph>
+            You can do this:
+        </Paragraph>
 
-            <CodeBlock>const getStatusCode = code =>
-    match(code, {
-        200: 'Success',
-        300: 'Redirect',
-        400: 'Client error',
-        // ...
-    })
+        <CodeBlock>const getStatusCode = code =>
+match(code, {
+    200: 'Success',
+    300: 'Redirect',
+    400: 'Client error',
+    // ...
+})
 
 const status = getStatusCode(200) // Success</CodeBlock>
-        </Prose>
-    </NarrowContainer>
-</Layout>
+    </Prose>
+</Narrow>

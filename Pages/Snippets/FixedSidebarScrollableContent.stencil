@@ -1,26 +1,24 @@
-<Layout title="Fixed sidebar - scrollable content">
-    <NarrowContainer>
-        <Title>Fixed sidebar - scrollable content</Title>
-        <Subheadline class="block mt-2">04/03/2020</Subheadline>
+<Narrow title="Fixed sidebar - scrollable content">
+    <Title>Fixed sidebar - scrollable content</Title>
+    <Subheadline class="block mt-2">04/03/2020</Subheadline>
 
-        <Prose class="mt-6">
-            <Paragraph>
-                A simple Tailwind layout to create a sticky sidebar and scrollable content next to it.
-            </Paragraph>
+    <Prose class="mt-6">
+        <Paragraph>
+            A simple Tailwind layout to create a sticky sidebar and scrollable content next to it.
+        </Paragraph>
 
-            <Paragraph>
-                The original source is this <Link href="https://twitter.com/calebporzio/status/1151876736931549185" target="_blank">tweet</Link> by Caleb Porzio.
-            </Paragraph>
+        <Paragraph>
+            The original source is this <Link href="https://twitter.com/calebporzio/status/1151876736931549185" target="_blank">tweet</Link> by Caleb Porzio.
+        </Paragraph>
 
-            <CodeBlock>&lt;div class="flex"&gt;
-    &lt;aside class="h-screen sticky top-0"&gt;
-    // Fixed Sidebar
-    &lt;/aside&gt;
+        <CodeBlock>&lt;div class="flex"&gt;
+&lt;aside class="h-screen sticky top-0"&gt;
+// Fixed Sidebar
+&lt;/aside&gt;
 
-    &lt;main&gt;
-    // Content
-    &lt;/main&gt;
+&lt;main&gt;
+// Content
+&lt;/main&gt;
 &lt;/div&gt;</CodeBlock>
-        </Prose>
-    </NarrowContainer>
-</Layout>
+    </Prose>
+</Narrow>

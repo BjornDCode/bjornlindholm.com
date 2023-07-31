@@ -1,18 +1,16 @@
-<Layout title="Vue prop validation">
-    <NarrowContainer>
-        <Title>Vue prop validation</Title>
-        <Subheadline class="block mt-2">24/03/2020</Subheadline>
+<Narrow title="Vue prop validation">
+    <Title>Vue prop validation</Title>
+    <Subheadline class="block mt-2">24/03/2020</Subheadline>
 
-        <Prose class="mt-6">
-            <Paragraph>
-                A short explanation of how prop validation in Vue can reduce the complexity of components.
-            </Paragraph>
+    <Prose class="mt-6">
+        <Paragraph>
+            A short explanation of how prop validation in Vue can reduce the complexity of components.
+        </Paragraph>
 
-            <Paragraph>
-                In this video I go over how I would refactor a Vue component.
-            </Paragraph>
+        <Paragraph>
+            In this video I go over how I would refactor a Vue component.
+        </Paragraph>
 
-            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/YmpEgdB9f7g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </Prose>
-    </NarrowContainer>
-</Layout>
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/YmpEgdB9f7g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </Prose>
+</Narrow>

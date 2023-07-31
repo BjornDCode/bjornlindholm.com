@@ -1,29 +1,27 @@
-<Layout title="UI Playbook">
-    <NarrowContainer>
-        <Title>UI Playbook</Title>
-        <Subheadline class="block mt-2">23/08/2020</Subheadline>
+<Narrow title="UI Playbook">
+    <Title>UI Playbook</Title>
+    <Subheadline class="block mt-2">23/08/2020</Subheadline>
 
-        <Prose class="mt-6">
-            <Paragraph>
-                Rauno Freiberg made a collection of documented UI components.
-            </Paragraph>
+    <Prose class="mt-6">
+        <Paragraph>
+            Rauno Freiberg made a collection of documented UI components.
+        </Paragraph>
 
-            <Paragraph>
-                Each component contains a description of the functionality that should be implemented, different states, and accessibility features.
-            </Paragraph>
+        <Paragraph>
+            Each component contains a description of the functionality that should be implemented, different states, and accessibility features.
+        </Paragraph>
 
-            <Paragraph>
-                It's a great resource if you are creating custom UI elements with frameworks such as Vue or React.
-            </Paragraph>
+        <Paragraph>
+            It's a great resource if you are creating custom UI elements with frameworks such as Vue or React.
+        </Paragraph>
 
-            <div class="mt-4">
-                <Link
-                    target="_blank" 
-                    href="https://uiplaybook.dev/"
-                >
-                    Check it out &#8250;
-                </Link>
-            </div>
-        </Prose>
-    </NarrowContainer>
-</Layout>
+        <div class="mt-4">
+            <Link
+                target="_blank" 
+                href="https://uiplaybook.dev/"
+            >
+                Check it out &#8250;
+            </Link>
+        </div>
+    </Prose>
+</Narrow>
