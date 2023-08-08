@@ -1,4 +1,9 @@
 <Narrow title="Data Visualisation with SVG's and Vue">
+    <Data>
+        title: Data Visualisation with SVG's and Vue
+        date: 2018-12-06
+    </Data>
+
     <Title>Data Visualisation with SVG's and Vue</Title>
     <Subheadline class="block mt-2">06/12/2018</Subheadline>
 

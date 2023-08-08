@@ -1,46 +1,19 @@
 <Narrow>
+    <Data>
+        date: 1970-01-01
+    </Data>
+
     <Title>Articles</Title>
-    
-    <ul class="mt-8">
-        <li>
-            <ContentLink href="/articles/introducing-paperstack/" published_at="01/06/2023">
-                Introducing Paperstack
-            </ContentLink>
-        </li>
-        <li>
-            <ContentLink href="/articles/sports-and-politics/" published_at="24/11/2022">
-                Sports and politics
-            </ContentLink>
-        </li>
-        <li>
-            <ContentLink href="/articles/new-year-new-project/" published_at="04/01/2021">
-                New year, new project
-            </ContentLink>
-        </li>
-        <li>
-            <ContentLink href="/articles/conference-hq-september-2019/" published_at="08/10/2019">
-                Conference HQ - September 2019
-            </ContentLink>
-        </li>
-        <li>
-            <ContentLink href="/articles/using-airtable-as-a-backend/" published_at="22/09/2019">
-                Using Airtable as a backend
-            </ContentLink>
-        </li>
-        <li>
-            <ContentLink href="/articles/conference-hq-august-2019/" published_at="04/09/2019">
-                Conference HQ - August 2019
-            </ContentLink>
-        </li>
-        <li>
-            <ContentLink href="/articles/launching-conference-hq/" published_at="04/08/2019">
-                Launching Conference HQ
-            </ContentLink>
-        </li>
-        <li>
-            <ContentLink href="/articles/data-visualisation-with-svgs-and-vue/" published_at="06/12/2018">
-                Data Visualisation with SVG's and Vue
-            </ContentLink>
-        </li>
+
+    <ul class="mt-8">    
+        @each(page in $pages.Articles.pages.sortBy('date', 'desc'))
+            @if(page.name not equals 'Index')
+                <li>
+                    <ContentLink href="{{ page.path }}">
+                        {{ page.title }}
+                    </ContentLink>
+                </li>
+            @endif
+        @endeach
     </ul>
 </Narrow>

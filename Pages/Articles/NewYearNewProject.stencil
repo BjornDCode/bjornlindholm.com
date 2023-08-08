@@ -1,4 +1,9 @@
 <Narrow title="New year, new project">
+    <Data>
+        title: New year, new project
+        date: 2021-01-04
+    </Data>
+
     <Title>New year, new project</Title>
     <Subheadline class="block mt-2">04/01/2021</Subheadline>
 
