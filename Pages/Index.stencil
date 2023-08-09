@@ -1,6 +1,22 @@
 <Narrow>
+    <Data>
+        date: 1970-01-01
+    </Data>
+
     <Title>Welcome</Title>
     
+    <ul class="mt-8">    
+        @each(page in $pages.allPages.sortBy('date', 'desc'))
+            @if(page.title)
+                <li>
+                    <ContentLink href="{{ page.path }}">
+                        {{ page.title }}
+                    </ContentLink>
+                </li>
+            @endif
+        @endeach
+    </ul>
+
     <ul class="mt-8">
         <li>
             <ContentLink href="/articles/introducing-paperstack/" published_at="01/07/2023">

@@ -1,4 +1,8 @@
 <Wide title="Projects">
+    <Data>
+        date: 1970-01-01
+    </Data>
+    
     <Title class="pr-12">Projects</Title>
 
     <div class="mt-12">
