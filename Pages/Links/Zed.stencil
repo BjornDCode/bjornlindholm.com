@@ -1,4 +1,9 @@
 <Narrow title="Zed">
+    <Data>
+        title: Zed
+        date: 2023-03-15
+    </Data>
+
     <Title>Zed</Title>
     <Subheadline class="block mt-2">15/03/2023</Subheadline>
 
