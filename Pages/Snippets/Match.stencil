@@ -1,4 +1,9 @@
 <Narrow title="Match">
+    <Data>
+        title: Match
+        date: 2020-08-15
+    </Data>
+
     <Title>Match</Title>
     <Subheadline class="block mt-2">15/08/2020</Subheadline>
 
