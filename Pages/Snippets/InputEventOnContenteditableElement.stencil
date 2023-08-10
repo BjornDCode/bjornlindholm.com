@@ -1,16 +1,19 @@
-<Layout title="Input event on contenteditable element">
-    <NarrowContainer>
-        <Title>Input event on contenteditable element</Title>
-        <Subheadline class="block mt-2">29/03/2020</Subheadline>
+<Narrow title="Input event on contenteditable element">
+    <Data>
+        title: Input event on contenteditable element
+        date: 2020-03-29
+    </Data>
 
-        <Prose class="mt-6">
-            <Paragraph>
-                On an input event from a input element you would use <InlineCode>event.target.value</InlineCode> to get the value.
-            </Paragraph>
+    <Title>Input event on contenteditable element</Title>
+    <Subheadline class="block mt-2">29/03/2020</Subheadline>
 
-            <Paragraph>
-                But if it's a normal HTML elemenent with the <InlineCode>contenteditable</InlineCode> attribute that doesn't work. Instead you can use <InlineCode>event.target.textContent</InlineCode>.
-            </Paragraph>
-        </Prose>
-    </NarrowContainer>
-</Layout>
+    <Prose class="mt-6">
+        <Paragraph>
+            On an input event from a input element you would use <InlineCode>event.target.value</InlineCode> to get the value.
+        </Paragraph>
+
+        <Paragraph>
+            But if it's a normal HTML elemenent with the <InlineCode>contenteditable</InlineCode> attribute that doesn't work. Instead you can use <InlineCode>event.target.textContent</InlineCode>.
+        </Paragraph>
+    </Prose>
+</Narrow>

@@ -1,21 +1,24 @@
-<Layout title="Select text on contenteditable element">
-    <NarrowContainer>
-        <Title>Select text on contenteditable element</Title>
-        <Subheadline class="block mt-2">29/03/2020</Subheadline>
+<Narrow title="Select text on contenteditable element">
+    <Data>
+        title: Select text on contenteditable element
+        date: 2020-03-29
+    </Data>
 
-        <Prose class="mt-6">
-            <Paragraph>
-                A small helper function to select all text in a contenteditable element.
-            </Paragraph>
+    <Title>Select text on contenteditable element</Title>
+    <Subheadline class="block mt-2">29/03/2020</Subheadline>
 
-            <CodeBlock>const selectElementContents = element => {
-    const range = document.createRange()
-    range.selectNodeContents(element)
+    <Prose class="mt-6">
+        <Paragraph>
+            A small helper function to select all text in a contenteditable element.
+        </Paragraph>
 
-    const selection = window.getSelection()
-    selection.removeAllRanges()
-    selection.addRange(range)
+        <CodeBlock>const selectElementContents = element => {
+const range = document.createRange()
+range.selectNodeContents(element)
+
+const selection = window.getSelection()
+selection.removeAllRanges()
+selection.addRange(range)
 }</CodeBlock>
-        </Prose>
-    </NarrowContainer>
-</Layout>
+    </Prose>
+</Narrow>

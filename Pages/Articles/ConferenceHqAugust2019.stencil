@@ -1,89 +1,92 @@
-<Layout title="Conference HQ - August 2019">
-    <NarrowContainer>
-        <Title>Conference HQ - August 2019</Title>
-        <Subheadline class="block mt-2">04/09/2019</Subheadline>
+<Narrow title="Conference HQ - August 2019">
+    <Data>
+        title: Conference HQ - August 2019
+        date: 2019-09-04
+    </Data>
 
-        <Prose class="mt-6">
-            <Paragraph>
-                This article is the first update on <Link href="https://conferencehq.io" target="_blank">Conference HQ</Link> since I launched it. I will briefly describe what I did in August and what I want to achieve in September. I will also share the numbers for August.
-            </Paragraph>
+    <Title>Conference HQ - August 2019</Title>
+    <Subheadline class="block mt-2">04/09/2019</Subheadline>
 
-            <Headline2>What I did</Headline2>
+    <Prose class="mt-6">
+        <Paragraph>
+            This article is the first update on <Link href="https://conferencehq.io" target="_blank">Conference HQ</Link> since I launched it. I will briefly describe what I did in August and what I want to achieve in September. I will also share the numbers for August.
+        </Paragraph>
 
-            <Paragraph class="mt-1">
-                Unfortunately August was a busy month at work so I didn't get as much done as I would have liked. The good news is that I've seen steady usage without much marketing work.
-            </Paragraph>
+        <Headline2>What I did</Headline2>
 
-            <Paragraph>
-                At the end of July the site had around 100 conferences. In the beginning of August I focused on adding more.
-            </Paragraph>
+        <Paragraph class="mt-1">
+            Unfortunately August was a busy month at work so I didn't get as much done as I would have liked. The good news is that I've seen steady usage without much marketing work.
+        </Paragraph>
 
-            <Paragraph>
-                In the middle of the month I switched focus to adding a new feature. The feature I've been working on is searching and filtering. I think this is an important feature that will drastically make the site more useful. Unfortunately I didn't finish it as work responsibilities picked up towards the end of the month.
-            </Paragraph>
+        <Paragraph>
+            At the end of July the site had around 100 conferences. In the beginning of August I focused on adding more.
+        </Paragraph>
 
-            <Paragraph>
-                Lastly I've been writing an article about using Airtable as a backend. But as with the search and filter feature I didn't get the chance to finish and publish the article before August was over.
-            </Paragraph>
+        <Paragraph>
+            In the middle of the month I switched focus to adding a new feature. The feature I've been working on is searching and filtering. I think this is an important feature that will drastically make the site more useful. Unfortunately I didn't finish it as work responsibilities picked up towards the end of the month.
+        </Paragraph>
 
-            <Headline2>Stats</Headline2>
+        <Paragraph>
+            Lastly I've been writing an article about using Airtable as a backend. But as with the search and filter feature I didn't get the chance to finish and publish the article before August was over.
+        </Paragraph>
 
-            <Headline3>Visitors</Headline3>
+        <Headline2>Stats</Headline2>
 
-            <UnorderedList class="mt-1">
-                <ListItem>Pageviews: <strong>2190</strong></ListItem>
-                <ListItem>Unique Visitors: <strong>780</strong></ListItem>
-            </UnorderedList>
+        <Headline3>Visitors</Headline3>
 
-            <Headline3>SEO</Headline3>
+        <UnorderedList class="mt-1">
+            <ListItem>Pageviews: <strong>2190</strong></ListItem>
+            <ListItem>Unique Visitors: <strong>780</strong></ListItem>
+        </UnorderedList>
 
-            <UnorderedList class="mt-1">
-                <ListItem>Impressions: <strong>1009</strong></ListItem>
-                <ListItem>Clicks: <strong>14</strong></ListItem>
-                <ListItem>CTR: <strong>1.3%</strong></ListItem>
-                <ListItem>Average position: <strong>33.9</strong></ListItem>
-                <ListItem>Top Ranking: <strong>5</strong></ListItem>
-            </UnorderedList>
+        <Headline3>SEO</Headline3>
 
-            <Headline3>Conferences</Headline3>
+        <UnorderedList class="mt-1">
+            <ListItem>Impressions: <strong>1009</strong></ListItem>
+            <ListItem>Clicks: <strong>14</strong></ListItem>
+            <ListItem>CTR: <strong>1.3%</strong></ListItem>
+            <ListItem>Average position: <strong>33.9</strong></ListItem>
+            <ListItem>Top Ranking: <strong>5</strong></ListItem>
+        </UnorderedList>
 
-            <UnorderedList class="mt-1">
-                <ListItem>New conferences: <strong>76</strong></ListItem>
-            </UnorderedList>
+        <Headline3>Conferences</Headline3>
 
-            <Paragraph>
-                I've started gaining rankings in Google which is exciting. I haven't gotten many backlinks to the site so I'm a little surprised to see that. I suspect it's because most of the keywords has low competition.
-            </Paragraph>
+        <UnorderedList class="mt-1">
+            <ListItem>New conferences: <strong>76</strong></ListItem>
+        </UnorderedList>
 
-            <Paragraph>
-                The page view and visitor numbers look good. I do however suspect some of it is spam bots and crawlers. I haven't gotten much traffic from Google and I can see in my analytics that most of the traffic is direct. Still encouraging to see some traffic though.
-            </Paragraph>
+        <Paragraph>
+            I've started gaining rankings in Google which is exciting. I haven't gotten many backlinks to the site so I'm a little surprised to see that. I suspect it's because most of the keywords has low competition.
+        </Paragraph>
 
-            <Headline2>Goals for September</Headline2>
+        <Paragraph>
+            The page view and visitor numbers look good. I do however suspect some of it is spam bots and crawlers. I haven't gotten much traffic from Google and I can see in my analytics that most of the traffic is direct. Still encouraging to see some traffic though.
+        </Paragraph>
 
-            <Headline3>Features</Headline3>
+        <Headline2>Goals for September</Headline2>
 
-            <Paragraph>
-                My primary focus for September is to release the search feature. I suspect it's around 40% done. The good news is that I've figured out what criteria users should be able to filter for. I've mostly figured out the design as well. That means I can focus on the implementation.
-            </Paragraph>
+        <Headline3>Features</Headline3>
 
-            <Headline3>Marketing</Headline3>
+        <Paragraph>
+            My primary focus for September is to release the search feature. I suspect it's around 40% done. The good news is that I've figured out what criteria users should be able to filter for. I've mostly figured out the design as well. That means I can focus on the implementation.
+        </Paragraph>
 
-            <Paragraph>
-                For now I want to focus on writing content about Conference HQ. In the beginning that will revolve around the technical aspects of the site.
-            </Paragraph>
+        <Headline3>Marketing</Headline3>
 
-            <Paragraph>
-                The plan is to publish it on my blog as well as <Link href="http://dev.to" target="_blank">dev.to</Link> and <Link href="https://medium.com" target="_blank">Medium</Link>.
-            </Paragraph>
+        <Paragraph>
+            For now I want to focus on writing content about Conference HQ. In the beginning that will revolve around the technical aspects of the site.
+        </Paragraph>
 
-            <Paragraph>
-                In September I plan to launch two articles. In the first post I will talk about how I used Airtable as a backend for the site. In the second article I want to talk about the implementation of the search feature.
-            </Paragraph>
-            
-            <Paragraph>
-                Lastly I want to continue adding conferences. It can be tedious work at times but it's important to make the site more useful. And there is added time pressure as most conferences I have on the site now will occur in the following months. That means the site will have less content if I don't keep adding new conferences. My hope is that I can add 70 new conference in September which will result in 250 conference in my database.
-            </Paragraph>
-        </Prose>
-    </NarrowContainer>
-</Layout>
+        <Paragraph>
+            The plan is to publish it on my blog as well as <Link href="http://dev.to" target="_blank">dev.to</Link> and <Link href="https://medium.com" target="_blank">Medium</Link>.
+        </Paragraph>
+
+        <Paragraph>
+            In September I plan to launch two articles. In the first post I will talk about how I used Airtable as a backend for the site. In the second article I want to talk about the implementation of the search feature.
+        </Paragraph>
+        
+        <Paragraph>
+            Lastly I want to continue adding conferences. It can be tedious work at times but it's important to make the site more useful. And there is added time pressure as most conferences I have on the site now will occur in the following months. That means the site will have less content if I don't keep adding new conferences. My hope is that I can add 70 new conference in September which will result in 250 conference in my database.
+        </Paragraph>
+    </Prose>
+</Narrow>

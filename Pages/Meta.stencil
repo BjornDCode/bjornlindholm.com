@@ -1,13 +1,15 @@
-<Layout title="About">
-    <NarrowContainer>
-        <Title>About</Title>
-        
-        <Paragraph>
-            My name is Bjørn Lindholm and I'm a designer and developer from Denmark. I'm currently working as a freelancer with small startups as my clients. I help build out new products and maintain existing applications.
-        </Paragraph>
+<Narrow title="About">
+    <Data>
+        date: 1970-01-01
+    </Data>
+    
+    <Title>About</Title>
+    
+    <Paragraph>
+        My name is Bjørn Lindholm and I'm a designer and developer from Denmark. I'm currently working as a freelancer with small startups as my clients. I help build out new products and maintain existing applications.
+    </Paragraph>
 
-        <Paragraph>
-            After living in Copenhagen for many years I'm currently travelling full time. 
-        </Paragraph>
-    </NarrowContainer>
-</Layout>
+    <Paragraph>
+        After living in Copenhagen for many years I'm currently travelling full time. 
+    </Paragraph>
+</Narrow>
