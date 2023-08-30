@@ -6,14 +6,12 @@
     <Title>Welcome</Title>
     
     <ul class="mt-8">    
-        @each(page in $pages.allPages.sortBy('date', 'desc'))
-            @if(page.title)
-                <li>
-                    <ContentLink href="{{ page.path }}">
-                        {{ page.title }}
-                    </ContentLink>
-                </li>
-            @endif
+        @each(page in $pages.allPages.filterBy('title', 'exists').sortBy('date', 'desc'))
+            <li>
+                <ContentLink href="{{ page.path }}">
+                    {{ page.title }}
+                </ContentLink>
+            </li>
         @endeach
     </ul>
 </Narrow>
