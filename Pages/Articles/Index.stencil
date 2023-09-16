@@ -1,12 +1,8 @@
 <Narrow>
-    <Data>
-        date: 1970-01-01
-    </Data>
-
     <Title>Articles</Title>
 
     <ul class="mt-8">    
-        @each(page in $pages.Articles.pages.sortBy('date', 'desc'))
+        @each(page in $pages.Articles.pages.filterBy('title').sortBy('date', 'desc'))
             @if(page.name not equals 'Index')
                 <li>
                     <ContentLink href="{{ page.path }}">

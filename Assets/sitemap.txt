@@ -4,7 +4,6 @@ https://bjornlindholm.com/links/react-aria/
 https://bjornlindholm.com/articles/sports-and-politics/
 https://bjornlindholm.com/links/radix-ui/
 https://bjornlindholm.com/links/f-sharp-for-fun-and-profit/
-https://bjornlindholm.com/articles/new-year-new-project/
 https://bjornlindholm.com/links/ui-playbook/
 https://bjornlindholm.com/snippets/match/
 https://bjornlindholm.com/links/building-alpine/
