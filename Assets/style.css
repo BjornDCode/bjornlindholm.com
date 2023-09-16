@@ -42,3 +42,10 @@
     padding-left: 1rem;
     list-style-type: disc;
 }
+
+.prose pre {
+    overflow-x: auto;
+    padding: 1.5rem 2rem;
+    background: #f8fafc;
+    border-radius: 0.25rem;
+}
