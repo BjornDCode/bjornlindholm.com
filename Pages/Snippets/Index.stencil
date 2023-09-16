@@ -1,56 +1,25 @@
-<Narrow>
+<Narrow title="Snippets">
+    <Data>
+        sections:
+            1: Tailwind
+            2: Vue
+            3: JavaScript
+    </Data>
+
     <Title>Snippets</Title>
-    
-    <div class="mt-8">
-        <Headline2>Tailwind</Headline2>
-        <ul>
-            <li>
-                <ContentLink href="/snippets/fixed-sidebar-scrollable-content/">
-                    Fixed sidebar - scrollable content
-                </ContentLink>
-            </li>
-        </ul>
-    </div>        
 
-    <div class="mt-8">
-        <Headline2>Vue</Headline2>
-        <ul>
-            <li>
-                <ContentLink href="/snippets/vue-prop-validation/">
-                    Simplify Vue components with prop validation
-                </ContentLink>
-            </li>
-        </ul>
-    </div>
-
-    <div class="mt-8">
-        <Headline2>JavaScript</Headline2>
-        <ul>
-            <li>
-                <ContentLink href="/snippets/select-text-on-contenteditable-element/">
-                    Select text on contenteditable element
-                </ContentLink>
-            </li>
-            <li>
-                <ContentLink href="/snippets/match/">
-                    Match
-                </ContentLink>
-            </li>
-            <li>
-                <ContentLink href="/snippets/capitalize-string/">
-                    Capitalisze string
-                </ContentLink>
-            </li>
-            <li>
-                <ContentLink href="/snippets/input-event-on-contenteditable-element/">
-                    Input event on contenteditable element
-                </ContentLink>
-            </li>
-            <li>
-                <ContentLink href="/snippets/array-to-object/">
-                    Array to object
-                </ContentLink>
-            </li>
-        </ul>
-    </div>
+    @each(section in sections)
+        <div class="mt-8">
+            <Headline2>{{ section }}</Headline2>
+            <ul>
+                @each(page in $pages.Snippets.pages.filterBy('type', section).sortBy('date', 'desc'))
+                    <li>
+                        <ContentLink href="{{ page.path }}">
+                            {{ page.title }}
+                        </ContentLink>
+                    </li>
+                @endeach
+            </ul>
+        </div>   
+    @endeach
 </Narrow>
