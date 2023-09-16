@@ -1,0 +1,11 @@
+---
+template: LinkLayout
+title: Modern Font Stacks
+date: 2023-03-15
+date_formatted: '15/03/2023'
+link: https://modernfontstacks.com/
+---
+
+A directory of font stacks using only system fonts. That means they will render very fast on all devices.
+
+I'm particularly fond of the 'Transitional' stack using 'Charter'.

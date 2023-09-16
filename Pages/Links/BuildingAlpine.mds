@@ -1,0 +1,11 @@
+---
+template: LinkLayout
+title: Building Alpine
+date: 2020-04-15
+date_formatted: '15/04/2020'
+link: https://laracasts.com/series/building-alpinejs
+---
+
+Caleb Porzio made a series of videos where he walks through the internals of Alpine.
+
+It's a great look into how UI libraries like Vue, React and Alpine work.
