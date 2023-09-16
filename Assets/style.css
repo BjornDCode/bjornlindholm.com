@@ -1,0 +1,44 @@
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+    color: #0f172a;
+    font-weight: 500;
+}
+
+.prose h2 {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75rem; /* 28px */
+}
+
+.prose p:not(:first-child) {
+    margin-top: 1.25rem;
+}
+
+.prose p {
+    margin-bottom: 1.25rem;
+}
+
+.prose h1 + p:not(:first-child),
+.prose h2 + p:not(:first-child),
+.prose h3 + p:not(:first-child),
+.prose h4 + p:not(:first-child),
+.prose h5 + p:not(:first-child),
+.prose h6 + p:not(:first-child),
+.prose h1 + ul,
+.prose h2 + ul,
+.prose h3 + ul,
+.prose h4 + ul,
+.prose h5 + ul,
+.prose h6 + ul {
+    margin-top: 0.25rem;
+}
+
+.prose ul {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    padding-left: 1rem;
+    list-style-type: disc;
+}
