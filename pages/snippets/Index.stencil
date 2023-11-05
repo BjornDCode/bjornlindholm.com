@@ -1,0 +1,25 @@
+<Narrow title="Snippets">
+    <Data>
+        sections:
+            1: Tailwind
+            2: Vue
+            3: JavaScript
+    </Data>
+
+    <Title>Snippets</Title>
+
+    @each(section in sections)
+        <div class="mt-8">
+            <Headline2>{{ section }}</Headline2>
+            <ul>
+                @each(page in $pages.Snippets.pages.filterBy('type', section).sortBy('date', 'desc'))
+                    <li>
+                        <ContentLink href="{{ page.path }}">
+                            {{ page.title }}
+                        </ContentLink>
+                    </li>
+                @endeach
+            </ul>
+        </div>   
+    @endeach
+</Narrow>

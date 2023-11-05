@@ -1,0 +1,8 @@
+<Narrow title="{{ title }}">
+    <Title>{{ title }}</Title>
+    <Subheadline class="block mt-2">{{ date_formatted }}</Subheadline>
+
+    <Prose class="mt-6">
+        <slot />
+    </Prose>
+</Narrow>

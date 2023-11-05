@@ -1,0 +1,12 @@
+<Article>
+    <slot />
+
+    <div class="mt-4">
+        <Link
+            target="_blank" 
+            href="{{ link }}"
+        >
+            Check it out &#8250;
+        </Link>
+    </div>
+</Article>
