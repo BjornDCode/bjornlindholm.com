@@ -1,5 +1,5 @@
 ---
-template: Article
+layout: Article
 title: Data Visualisation with SVG's and Vue
 date: 2018-12-06
 date_formatted: '06/12/2018'
