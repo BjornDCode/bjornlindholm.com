@@ -1,5 +1,5 @@
 ---
-template: LinkLayout
+layout: LinkLayout
 title: Javascript Framework Diet
 date: 2020-03-04
 date_formatted: '04/03/2020'

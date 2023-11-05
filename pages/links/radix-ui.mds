@@ -1,5 +1,5 @@
 ---
-template: LinkLayout
+layout: LinkLayout
 title: Radix UI
 date: 2022-09-13
 date_formatted: '13/09/2022'

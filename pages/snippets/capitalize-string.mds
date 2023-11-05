@@ -1,5 +1,5 @@
 ---
-template: Article
+layout: Article
 title: Capitalize string
 date: 2020-03-02
 date_formatted: "02/03/2020"

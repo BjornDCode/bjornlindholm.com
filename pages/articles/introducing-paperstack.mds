@@ -1,5 +1,5 @@
 ---
-template: Article
+layout: Article
 title: Introducing Paperstack
 date: 2023-07-01
 date_formatted: '01/07/2023'

@@ -1,5 +1,5 @@
 ---
-template: Article
+layout: Article
 title: Input event on contenteditable element
 date: 2020-03-29
 date_formatted: "29/03/2020"
