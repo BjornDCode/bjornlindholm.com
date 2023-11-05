@@ -1,0 +1,19 @@
+---
+layout: LinkLayout
+title: System font deep dive
+date: 2023-07-01
+date_formatted: '01/07/2023'
+link: https://fullystacked.net/posts/system-font-deep-dive/
+---
+
+An interesting article about CSS keywords like <InlineCode>system-ui</InlineCode>, <InlineCode>ui-monospace</InlineCode>, <InlineCode>ui-rounded</InlineCode>, <InlineCode>ui-sans-serif</InlineCode> and <InlineCode>ui-serif</InlineCode>. 
+
+They are variables for the default system fonts so you avoid having to write a long list of fonts:
+
+```
+/* Old */
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+/* New */
+font-family: system-ui;
+```

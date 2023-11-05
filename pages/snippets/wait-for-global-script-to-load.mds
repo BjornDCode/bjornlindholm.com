@@ -1,0 +1,30 @@
+---
+layout: Article
+title: Wait for global script to load
+date: 2023-30-10
+date_formatted: "10/30/2022"
+type: JavaScript
+---
+
+A helper function that waits for a script with a global identifier to load.
+
+```
+function waitFor(item, callback) {
+    if (window[item]) {
+        callback()
+    } else {
+        setTimeout(function () {
+            waitFor(item, callback)
+        }, 100)
+    }
+}
+```
+
+It can be used like this:
+
+```
+waitFor('identifier', () => {
+    // 'identifier' is available here
+    console.log(identifier)
+})
+```

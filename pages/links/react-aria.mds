@@ -1,0 +1,13 @@
+---
+layout: LinkLayout
+title: React Aria
+date: 2023-03-13
+date_formatted: '13/03/2023'
+link: https://react-spectrum.adobe.com/react-aria/
+---
+
+React Aria is a collection of React hooks for building accessible user interfaces.
+
+There's some overlap with <Link href="/links/radix-ui">Radix</Link> in that it can help create accessible UI elements. But React Aria supports more elements than Radix and the Date/Time helpers for building date pickers seem particularly promising.
+
+It's built by Adobe so I feel comfortable betting on it as a library that will stay maintained.

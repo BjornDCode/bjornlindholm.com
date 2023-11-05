@@ -1,0 +1,13 @@
+---
+layout: LinkLayout
+title: F# for Fun and Profit
+date: 2022-05-05
+date_formatted: '05/05/2022'
+link: https://fsharpforfunandprofit.com/
+---
+
+A blog about functional programming and specifically F#.
+
+I don't have any particular interest in F# itself but I'm interested in other functional programming languages. And Scott Wlashin does a great job of explaining the fundamental concepts of functional programming.
+
+He also has a number of good talks on the subject and he's written one of my favorite books: <Link href="https://fsharpforfunandprofit.com/books/" target="_blank">Domain Modeling Made Functional</Link>

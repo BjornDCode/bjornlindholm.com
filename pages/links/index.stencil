@@ -1,0 +1,15 @@
+<Narrow title="Links">
+    <Title>Links</Title>
+    
+    <ul class="mt-8">    
+        @each(page in $pages.links.$pages.filterBy('title').sortBy('date', 'desc'))
+            @if(page.name not equals 'Index')
+                <li>
+                    <ContentLink href="{{ page.path }}">
+                        {{ page.title }}
+                    </ContentLink>
+                </li>
+            @endif
+        @endeach
+    </ul>
+</Narrow>

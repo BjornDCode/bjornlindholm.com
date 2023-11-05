@@ -1,0 +1,13 @@
+---
+layout: Article
+title: Vue prop validation
+date: 2020-03-24
+date_formatted: "24/03/2020"
+type: Vue
+---
+
+A short explanation of how prop validation in Vue can reduce the complexity of components.
+
+In this video I go over how I would refactor a Vue component.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/YmpEgdB9f7g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
