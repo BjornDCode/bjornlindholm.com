@@ -1,0 +1,12 @@
+<li>
+    <a 
+        href="{{ href }}" 
+        target="_blank"
+        class="inline-flex items-baseline space-x-2 hover:underline"
+    >
+        <Headline3>{{ title }}</Headline3>
+        <ExternalLinkIcon class="text-slate-600 translate-y-[0.125rem]" />
+    </a>
+
+    <slot />
+</li>

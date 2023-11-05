@@ -1,0 +1,7 @@
+<a
+    class="block w-full text-xs text-slate-500 hover:underline"
+    target="_blank"
+    href="{{ href }}"
+>
+    <slot />
+</a>
