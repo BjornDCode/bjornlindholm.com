@@ -2,7 +2,7 @@
     <Title>Articles</Title>
 
     <ul class="mt-8">    
-        @each(page in $pages.Articles.pages.filterBy('title').sortBy('date', 'desc'))
+        @each(page in $pages.articles.$pages.filterBy('title').sortBy('date', 'desc'))
             @if(page.name not equals 'Index')
                 <li>
                     <ContentLink href="{{ page.path }}">
