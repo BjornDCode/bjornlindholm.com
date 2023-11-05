@@ -12,7 +12,7 @@
         <div class="mt-8">
             <Headline2>{{ section }}</Headline2>
             <ul>
-                @each(page in $pages.Snippets.pages.filterBy('type', section).sortBy('date', 'desc'))
+                @each(page in $pages.snippets.$pages.filterBy('type', section).sortBy('date', 'desc'))
                     <li>
                         <ContentLink href="{{ page.path }}">
                             {{ page.title }}
