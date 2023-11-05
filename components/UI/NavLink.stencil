@@ -1,6 +1,0 @@
-<a
-    href="{{ href }}"
-    class="block w-full text-sm text-slate-700 font-regular hover:underline"
->
-    <slot />
-</a>
