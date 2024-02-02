@@ -1,0 +1,56 @@
+---
+layout: Article
+title: The hidden complexity of autosave
+date: 2024-02-02
+date_formatted: '02/02/2024'
+---
+    
+**Scene:** You are building a SaaS app. The app has a screen where users can visually build forms. Your users make a lot of small changes and regularly save their progress. You think to yourself that it would be nice if all the changes were saved automatically. Simple, right? Sadly not.
+
+We ran into this scenario when building [Reform](https://www.reform.app/). At first, it seemed like a relatively simple problem, so we shipped it, but soon ran into lots of tricky issues.
+
+# The first solution
+
+My first intuition was to listen for every change event in the form builder and fire off an AJAX request to save the new data. I even added throttling, so a single active user couldn’t kill the backend server.
+
+This kind of worked. But there were a lot of cases where it fell apart:
+
+- What if the user made a change and closed the page before the update request was fired?
+- What if our users had the same page open in multiple tabs? As soon as they opened the oldest tab, they would overwrite newer changes with stale data.
+- What about teams? Two users might be working on the same page simultaneously, and all of a sudden, it’s a game of ping pong, sending different data back and forth to the backend.
+
+
+## The wrong solution
+
+The first time we became aware of autosave problems was when a customer has built a form that was deleted by stale data in an old tab.
+
+Our solution was to generate a hash based on all the form data and provide it to the frontend. The frontend would then return the hash when sending a PATCH request, and we would check the request hash matched the hash of the currently saved form data.
+
+This was an awkward experience because the user would receive an error message the first time they made a change after switching to an old tab. 
+
+Also, the solution didn’t work. Details like what kind of whitespace was used in the JSON and key order would result in different hashes, and the validation would randomly fail 10% of the time. 
+
+Users wouldn’t lose an hour of work anymore, but instead, they would receive random error messages while working on the form. And it also didn’t solve the team problem or the close-the-page-too-quickly problem.
+
+## The half-baked solution
+
+The next idea was to manually keep track of whether a tab was focused. When it lost focus, we would disable all elements in the form builder. When the tab became active again, we would fetch the latest data from the server and enable all interactive elements again. Not a great experience for the user.
+
+And this still didn’t solve the team problem or the close-the-page-too-quickly problem.
+
+
+## The correct solution
+
+Eventually, we ran out of steam, and Reform was acquired. That didn’t stop me from thinking about the autosave problem, though. And I believe I’ve finally found the correct solution: [local-first apps](https://localfirstweb.dev/). 
+
+Currently, there’s a lot of hype about the local-first movement in web development. A lot of this is due to research by [Ink & Switch](https://www.inkandswitch.com/local-first/) and a rise of new tools that make it easier for developers to build this type of app. Many of these tools are centred around CRDTs and local databases.  
+
+The fundamental idea is that users have a local database embedded in the browser containing only their data. The local database can be synced with a central database on a server using a [CRDT](https://crdt.tech/). 
+
+In Reform, only the form data would be synced to the local database. We could then manipulate the form data directly in the local database and let the syncing engine take care of sharing the data with the central database.
+
+This would have solved all three problems with autosave:
+
+- If the user closed the page too quickly, the changes would still exist in the local database. The changes would be synced the next time the user opened the page.
+- When the user would open an old tab, we would fetch the data from the local database, and they would see the latest data.
+- Merging diverging data into one piece of data is handled by the CRDT. Thus, we could have built team features and multiplayer into the app.
