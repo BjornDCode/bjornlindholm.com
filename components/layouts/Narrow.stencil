@@ -1,5 +1,5 @@
 <Base>
-    <div class="px-4 py-8 md:p-8 sm:max-w-xl sm:mx-auto">
+    <div class="px-4 py-8 md:px-8 md:py-20 sm:max-w-xl sm:mx-auto">
         <slot />
     </div>
 </Base>
