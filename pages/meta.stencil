@@ -1,11 +1,31 @@
 <Narrow title="About">
     <Title>About</Title>
-    
+
     <Paragraph>
-        My name is Bjørn Lindholm and I'm a designer and developer from Denmark. I'm currently working as a freelancer with small startups as my clients. I help build out new products and maintain existing applications.
+        I grew up in a small town in Denmark and have since lived in London, Copenhagen, Seoul and travelled around a lot in between.
     </Paragraph>
 
     <Paragraph>
-        After living in Copenhagen for many years I'm currently travelling full time. 
+        I love big cities, hiking, football, soju and baseball.
+    </Paragraph>
+
+    <Headline2>
+        Work
+    </Headline2>
+
+    <Paragraph>
+        I work as a freelance designer and developer. What does that mean? I work primarily with small startups helping them design and build products.
+    </Paragraph>
+
+    <Paragraph>
+        I started out working in digital agencies but discovered that wasn’t my calling. I’ve worked in small startups and was a co-founder in <Link href="https://www.reform.app/">Reform</Link>.
+    </Paragraph>
+
+    <Paragraph>
+        At the moment I’m looking for my next long-term project.
+    </Paragraph>
+
+    <Paragraph>
+        What I love more than anything is creating things. I enjoy making tools that help others be creative. For me it doesn’t really matter whether that’s building a new programming language, a new app or any other tool that removes barriers to creativity.
     </Paragraph>
 </Narrow>
