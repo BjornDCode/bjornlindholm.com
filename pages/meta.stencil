@@ -2,18 +2,34 @@
     <Title>About</Title>
 
     <Paragraph>
-        I grew up in a small town in Denmark and have since lived in London, Copenhagen, Seoul and travelled around a lot in between.
+        I grew up in a small town in Denmark and lived in Copenhagen for many years. I'm grateful for growing up in Denmark, but I've always know I wanted to be somewhere else.
+    </Paragraph>
+
+    <Headline2>
+        Travelling
+    </Headline2>
+
+    <Paragraph class="!mt-1">
+        Travelling has always been a big part of my life. As a kid we went on international trips every year and as an adult I've only been travelling more.
     </Paragraph>
 
     <Paragraph>
-        I love big cities, hiking, football, soju and baseball.
+        I used to do 1-month workcations to Thailand or Spain and later on I started travelling full time.
+    </Paragraph>
+
+    <Headline2>
+        South Korea
+    </Headline2>
+
+    <Paragraph class="!mt-1">
+        I'm currently living in Seoul, South Korea. I discovered Seoul in 2023 after travelling here for a few months. I instantly fell in love and knew I wasn't done with the place. Combined with a feeling of needing to settle down in a place I'm now here long-term(ish).
     </Paragraph>
 
     <Headline2>
         Work
     </Headline2>
 
-    <Paragraph>
+    <Paragraph class="!mt-1">
         I work as a freelance designer and developer. What does that mean? I work primarily with small startups helping them design and build products.
     </Paragraph>
 
@@ -28,4 +44,16 @@
     <Paragraph>
         What I love more than anything is creating things. I enjoy making tools that help others be creative. For me it doesn’t really matter whether that’s building a new programming language, a new app or any other tool that removes barriers to creativity.
     </Paragraph>
+
+    <Headline2>
+        Links
+    </Headline2>
+
+    <ul class="list-disc mt-1">
+        <li>
+            <Link href="https://www.remotediaries.com/post/how-i-moved-to-seoul-and-work-15-hours-a-week-to-support-my-lifestyle">
+                How I moved to Seoul and work 15 hours a week to support my lifestyle
+            </Link>
+        </li>
+    </ul>
 </Narrow>
