@@ -49,10 +49,19 @@
         Links
     </Headline2>
 
-    <ul class="list-disc mt-1">
+    <Paragraph class="mt-1">
+        A few things I've appeared in:
+    </Paragraph>
+
+    <ul class="list-disc">
         <li>
             <Link href="https://www.remotediaries.com/post/how-i-moved-to-seoul-and-work-15-hours-a-week-to-support-my-lifestyle">
                 How I moved to Seoul and work 15 hours a week to support my lifestyle
+            </Link>
+        </li>
+        <li>
+            <Link href="https://www.youtube.com/watch?v=3GNGZJLSAWA">
+                I found a cure for loneliness
             </Link>
         </li>
     </ul>
