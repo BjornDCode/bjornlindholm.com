@@ -1,0 +1,56 @@
+---
+layout: Article
+title: A database with time
+date: 2024-09-01
+date_formatted: '01/09/2024'
+---
+
+I recently discovered databases where ‘time’ is a first-class citizen, and they are blowing my mind a little bit.
+
+## Triple stores
+
+A triple store is a form of graph database where all data is stored as ‘triples’ or ‘facts’. A fact is a single atomic piece of information about an entity. Let’s say we have a `forms` table in a relational database. It has an  `id` column, a `name` column and a `status` column. In a graph database you would store this information as 3 facts: an identifier, a property and a value.
+
+```
+[<id>, 'type', 'form'],
+[<id>, 'name', 'Untitled form'],
+[<id>, 'status', 'live'],
+```
+
+Notice that the ID is the same for all the facts. The ID is what  binds the facts together into 1 entity. The `type` fact defines what kind of entity it is. The 2 other facts correspond directly to cells in our old relational table.
+
+## Time
+
+We can amend the facts above:
+
+```
+[<id>, 'type', 'form', '2024-09-01'],
+[<id>, 'name', 'Untitled form', '2024-09-01'],
+[<id>, 'status', 'live', '2024-09-01'],
+```
+
+Now we have a record of when every single fact about an entity was stored. But that’s not all. Let’s say we want to update the name. Instead of querying for the fact with a certain ID and name, we can just add a new fact:
+
+```
+[<id>, 'name', 'Early Access Form', '2024-09-02'],
+```
+
+The old fact is still in the database. When we query for an entity, we’ll simply retrieve the newest version of a fact for an entity. Now we have a historical record of all the states the database has ever been in. We can query the database as of any point in time.
+
+## Sync engine
+
+I think there is a way to make this type of database the foundation of a sync engine. There would be 1 central database and each client syncs a local version. In the browser, the local version could be stored in IndexedDB.
+
+If we amend each fact one more time like this:
+
+```
+[<id>, 'type', 'form', 'timestamp', 'synced_at'],
+[<id>, 'name', 'Untitled form', 'timestamp', 'synced_at'],
+[<id>, 'status', 'live', 'timestamp', 'synced_at'],
+```
+
+We now have a mechanism for checking whether a fact has been synced with the central database.
+
+When the user performs an action in the browser, a fact is added to the local database with `synced_at` set to `null`. In the background, the sync engine pushes any changes where `synced_at=null` to the central server.
+
+The local client also keeps track of the last ‘fact’ it has synced from the browser. It pulls any ‘facts’ that has been synced later from the central server.
