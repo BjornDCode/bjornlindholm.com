@@ -9,7 +9,7 @@ I recently discovered databases where ‘time’ is a first-class citizen, and t
 
 ## Triple stores
 
-A triple store is a form of graph database where all data is stored as ‘triples’ or ‘facts’. A fact is a single atomic piece of information about an entity. Let’s say we have a `forms` table in a relational database. It has an  `id` column, a `name` column and a `status` column. In a graph database you would store this information as 3 facts: an identifier, a property and a value.
+A triple store is a form of graph database where all data is stored as ‘triples’ or ‘facts’. A fact is a single atomic piece of information about an entity. Let’s say we have a `forms` table in a relational database. It has an  `id` column, a `name` column and a `status` column. In a graph database you would store this information as 3 facts. Each fact has an identifier, a property and a value.
 
 ```
 [<id>, 'type', 'form'],
@@ -29,7 +29,7 @@ We can amend the facts above:
 [<id>, 'status', 'live', '2024-09-01'],
 ```
 
-Now we have a record of when every single fact about an entity was stored. But that’s not all. Let’s say we want to update the name. Instead of querying for the fact with a certain ID and name, we can just add a new fact:
+Now we have a record of when every single fact about an entity was stored. But that’s not all. Let’s say we want to update the name. Instead of querying for the fact with a certain ID and property name, we can just add a new fact:
 
 ```
 [<id>, 'name', 'Early Access Form', '2024-09-02'],
@@ -44,9 +44,9 @@ I think there is a way to make this type of database the foundation of a sync en
 If we amend each fact one more time like this:
 
 ```
-[<id>, 'type', 'form', 'timestamp', 'synced_at'],
-[<id>, 'name', 'Untitled form', 'timestamp', 'synced_at'],
-[<id>, 'status', 'live', 'timestamp', 'synced_at'],
+[<id>, 'type', 'form', '2024-09-01', '2024-09-01'],
+[<id>, 'name', 'Untitled form', '2024-09-01', '2024-09-01'],
+[<id>, 'status', 'live', '2024-09-01', null],
 ```
 
 We now have a mechanism for checking whether a fact has been synced with the central database.
