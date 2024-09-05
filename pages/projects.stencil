@@ -10,15 +10,6 @@
 
         <ContentGrid>
             <ContentGridItemWithLink
-                title="Alloy"
-                href="https://x.com/bjornlindholmdk/status/1800500609524900139"
-            >
-                <Paragraph class="!my-0">
-                    A database client for product people.
-                </Paragraph>
-            </ContentGridItemWithLink>
-
-            <ContentGridItemWithLink
                 title="Schema"
                 href="https://schema.bjornlindholm.com/"
             >
@@ -30,8 +21,7 @@
     </div>
 
     <div class="mt-12">
-        <Headline2>Graveyard</Headline2>
-        <Subheadline>...or projects I'm longer a part of</Subheadline>
+        <Headline2>Completed</Headline2>
 
         <ContentGrid>
             <ContentGridItemWithLink
@@ -39,10 +29,9 @@
                 href="https://www.reform.app/"
             >
                 <Paragraph class="!my-0">
-                    A simple, clean form builder SaaS app. I co-founded and was responsible for designing and developing the application.
+                    A simple, clean form builder SaaS app. I co-founded and was responsible for designing and developing the application. Acquired by FunnelEnvy
                 </Paragraph>
             </ContentGridItemWithLink>
-
 
             <ContentGridItemWithLink
                 title="Paperstack"
@@ -59,6 +48,22 @@
             >
                 <Paragraph class="!my-0">
                     The templating language powering Paperstack. It's based on components instead of includes, blocks or partials.
+                </Paragraph>
+            </ContentGridItemWithLink>
+        </ContentGrid>
+    </div>
+
+    <div class="mt-12">
+        <Headline2>Graveyard</Headline2>
+        <Subheadline>...or projects I'm longer a part of</Subheadline>
+
+        <ContentGrid>
+            <ContentGridItemWithLink
+                title="Alloy"
+                href="https://x.com/bjornlindholmdk/status/1800500609524900139"
+            >
+                <Paragraph class="!my-0">
+                    A database client for product people.
                 </Paragraph>
             </ContentGridItemWithLink>
 
