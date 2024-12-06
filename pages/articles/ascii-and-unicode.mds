@@ -1,0 +1,76 @@
+---
+layout: Article
+title: ASCII and Unicode
+date: 2024-12-06
+date_formatted: '06/12/2024'
+---
+
+You might have heard the terms ‘ASCII’ and ‘Unicode’. But what do those terms actually mean?
+
+## Encoding text
+
+In programming languages, we work with text as strings. But at the hardware level, a computer doesn’t know what a string is. All it understands is 1s and 0s.
+
+Strings are stored as a list of characters. What is a character, then? That’s more complex than you would initially think.
+
+Character encodings are different formats to represent characters in computer systems. They define how characters are represented as bytes.
+
+## What is a character?
+
+At first glance, it might seem obvious what a character is: ‘A’,  ‘x’ or ‘!’ are characters. But what about ‘🤨’, ‘일’ or ‘π’? 
+
+It turns out that a ‘character’ isn’t a well-defined concept. Thus, different text formats have evolved. In some text formats those are characters, while in other text formats you can’t even represent them at all.
+
+## Bits and bytes
+
+At the most primitive level, computers store information as 1s and 0s, called ‘bits.’ A group of 8 bits forms a ‘byte’ which can represent 256 unique values (0–255). 
+
+Bytes are the fundamental unit for storing text characters in most encoding systems.
+
+## ASCII
+
+Computers replaced teleprinters, which replaced typewriters. In Western countries, typewriters could write 26 uppercase letters, 26 lowercase letters, digits, punctuation marks, and control characters like spaces or newlines.
+
+The easiest way to translate this into a computing system was to assign each character a number. Since typewriters only supported a limited number of characters, each character was assigned a number from 0 to 128. That could be represented with 7 bits. 
+
+ASCII (American Standard Code for Information Interchange) is a table of numbers and characters that was defined to standardise characters.
+
+An example: Uppercase ‘A’ is assigned number 65. In binary, that’s 1000001.
+
+## Unicode
+
+ASCII worked great in English-speaking countries, but other countries have different alphabets. In Denmark, we have ‘æ’, ‘ø’ and ‘å’ and their uppercase equivalents. Other countries use entirely different alphabets.
+
+For a while, this wasn’t a huge problem. Since computers worked mostly independently, each country created their own text encodings. But in the late 80s and early 90s the internet gained popularity, and suddenly computers could talk to each other.
+
+There was an urgent need to standardise how to represent characters in a way that works for everyone. In 1988 the Unicode project was created. Its goal was to develop a system that can represent all characters we can imagine typing into a computer.
+
+Unicode itself has developed multiple ways to represent a character as bytes. These formats are called ‘UTF-8’, ‘UTF-16’ and ‘UTF-32’.
+
+## UTF-8
+
+The most commonly used format, ‘UTF-8’ works the following way: 
+
+Each character can be represented by 1 to 4 bytes. A character in Unicode is called a code point. There are more than 1 million possible code points, but currently only ~150k are used.
+
+The first bit of a code point indicates how many bytes there are in the code point.
+
+The most common characters are represented with 1 byte. Conveniently, the original ASCII characters have the same numbers in Unicode. So if a computer understands Unicode, it will also understand ASCII.
+
+The character ‘λ’ (lambda) from the Greek alphabet is number 955 and is thus represented with 2 bytes. ‘€’ (Euro) is number 8364 and is represented with 3 bytes. Emojis are represented with 4 bytes. ‘🤨’ has number 129320.
+
+## Graphemes
+
+A key feature of Unicode is that multiple characters can be combined into 1 character visually on the screen. These are called graphemes.
+
+🤙🏿 is a compound character of 🤙 and 🏿. The latter character is a skin tone modifier. The bytes for the 2 characters are stored right after each other. Unicode has defined rules for how to render certain sequences of characters.
+
+Some accented characters are represented the same way, with a base letter and a modifier stored sequentially.
+
+## Summary
+
+Computers represent text as strings. A string is a list of characters, and characters are stored using bits or bytes. Which characters are represented by which bytes are defined in encodings such as ASCII or Unicode.
+
+ASCII was one of the first encodings, but it only supports 128 characters. Each character is stored in 7 bits.
+
+Unicode is a collection of several encodings. UTF-8 defines characters using 1 to 4 bytes. Additionally, sequences of characters can compound into graphemes, which are visually rendered as 1 character on the screen. The aim of Unicode is to represent all possible characters. 
