@@ -1,0 +1,76 @@
+---
+layout: Article
+title: Wordsmith Devlog 1
+date: 2025-02-10
+date_formatted: '10/02/2025'
+---
+
+This week I rewrote the text-rendering for Wordsmith multiple times. I had a basic implementation but the upcoming task was to implement cursor navigation, and I ran into issues.
+
+## Text rendering
+
+There were 2 problems with the existing text-rendering implementation, both related to headlines:
+
+- I needed to track the positions of headlines in the source text to make the font bold.
+- I needed to know which line number a headline was on to render a headline marker, i.e., a number of #’s corresponding to the headline level. These markers are rendered independently of the text, so I need to calculate the y-level manually.
+
+Initially I kept track of the headlines using spans which were offsets pointing into the text.
+
+```
+struct Span {
+    start: usize,
+    end: usize,
+}
+```
+
+Figuring out which line a headline appeared on was difficult with this approach. Because of soft-wrapping, it isn’t guaranteed that the line number in the source text is the same as the rendering line number. Instead, I needed to count from the beginning every time I needed to know what line I was currently on.
+
+In the rewrite, I switched from spans to blocks. A block is a headline or paragraph (and later lists, quotes and so on). This model is more rigid. 
+
+Each block keeps track of its own content and thus knows its own height in lines. To find the current line, I can sum up the line counts of all previous blocks.
+
+When styling text as bold, I don’t need to know exactly where the text is. Instead, I need to insert a ‘run’ of text with a specific length. Since each block knows its own content, it also knows its length. When it’s time to render a headline, I can specify that it’s time to insert bold styles until the end of the headline.
+
+## Processing text
+
+The original span problem was complicated further by the fact that I’m working with raw markdown text. The source text is markdown, but what is rendered to the screen is modified in the following ways:
+
+- #’s are removed from the source code and instead rendered next to the text.
+- The text is soft-wrapped. I’ve set a 50-character line limit, but in raw markdown, a paragraph or headline might be much longer than that. That means I’ll have to insert newlines into the source text, which will make the rendered text longer than the source text. Additionally, it’s necessary to know where soft-wrapped newline characters are inserted to correctly resolve the cursor position.
+
+I ended up with a model where I have multiple data text types: `RawContent`, `TrimmedContent` and `WrappedContent`.
+
+`RawContent` can be created from a string of raw markdown. `TrimmedContent` can be created from `RawContent` and `WrappedContent` can be created from `TrimmedContent`.
+
+I need to trim the content before soft-wrapping because it’s the line content, after it has been trimmed, that needs to be wrapped.
+
+When `TrimmedContent` is created, it removes headline markers and keeps track of where it has removed text. When `WrappedContent` is created, it keeps track of where soft-wrapping newlines have been inserted. 
+
+GPUI, the rendering library I’m using, can automatically soft-wrap text. But in the final rewrite, I opted to implement the logic myself to better keep track of where the newlines have been inserted.
+
+In one of the intermediate rewrites, I had a version where I let GPUI soft-wrap the text. But every time I needed to know the length in lines of a block, I needed to call `render()`. That meant the internal text logic and the rendering logic were very intertwined.
+
+## Cursor navigation
+
+This rewrite finally unlocked an implementation of cursor navigation.
+
+The simple cases are when the user presses the left or right arrow key. Even this has edge cases though. If the user  is at the beginning or end of a line, I can’t just move the cursor horizontally. If the user is at the beginning of a line and moves left, it should move to the end of the previous line. Similarly, if the user is at the end of a line and moves right, it should move to the beginning of the next line.
+
+Up and down is more complicated. Most editors will implement the following feature:
+
+- The user is at position 35 in a line
+- They press ‘up’ to a line with length 20
+- The cursor moves up and to position 20
+- They press ‘up’ again to a line with length 48
+- The cursor moves up and to position 35
+
+To implement this, I introduced `preferred_x`. When moving vertically, it will look at the value and determine if it’s higher than the new line length. If it is, it will move the cursor to the end of the line. This value will update every time the user moves the cursor horizontally.
+
+Finally, I implemented additional cursor navigation actions:
+
+- Move to the beginning of file (`⌘-↑`)
+- Move to end of file (`⌘-↓`)
+- Move to the beginning of line (`⌘-←`)
+- Move to end of line (`⌘-→`)
+- Move to the beginning word (`Alt-←`)
+- Move to end of word (`Alt-→`)
