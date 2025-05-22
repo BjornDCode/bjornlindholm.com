@@ -49,3 +49,14 @@
     background: #f8fafc;
     border-radius: 0.25rem;
 }
+
+.prose code:not(pre code) {
+    background: #f1f5f9;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+}
+
+.prose a {
+    text-decoration: underline;
+}
+
