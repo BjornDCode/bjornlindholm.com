@@ -35,7 +35,7 @@
 
             <ContentGridItemWithLink
                 title="Paperstack"
-                href="https://github.com/paperstackink/paperstack"
+                href="https://paperstack.ink/"
             >
                 <Paragraph class="!my-0">
                     A simple static site generator. This website is build with Paperstack.
