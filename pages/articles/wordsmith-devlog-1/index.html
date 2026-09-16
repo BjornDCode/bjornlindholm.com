@@ -146,7 +146,7 @@
                             class="prose text-base leading-7 text-slate-700 mt-6"
                         >
                             <p>
-                                This week I rewrote the text-rendering for
+                                This week I rewrote the text rendering for
                                 Wordsmith multiple times. I had a basic
                                 implementation but the upcoming task was to
                                 implement cursor navigation, and I ran into
@@ -173,8 +173,9 @@
                                 </li>
                             </ul>
                             <p>
-                                Initially I kept track of the headlines using
-                                spans which were offsets pointing into the text.
+                                Initially, I kept track of the headlines using
+                                spans, which were offsets pointing into the
+                                text.
                             </p>
                             <pre><code>struct Span {
     start: usize,
@@ -215,7 +216,7 @@
                             <p>
                                 The original span problem was complicated
                                 further by the fact that I’m working with raw
-                                markdown text. The source text is markdown, but
+                                Markdown text. The source text is Markdown, but
                                 what is rendered to the screen is modified in
                                 the following ways:
                             </p>
@@ -227,7 +228,7 @@
                                 <li>
                                     The text is soft-wrapped. I’ve set a
                                     50-character line limit, but in raw
-                                    markdown, a paragraph or headline might be
+                                    Markdown, a paragraph or headline might be
                                     much longer than that. That means I’ll have
                                     to insert newlines into the source text,
                                     which will make the rendered text longer
@@ -239,14 +240,14 @@
                             </ul>
                             <p>
                                 I ended up with a model where I have multiple
-                                data text types:
+                                text data types:
                                 <code>RawContent</code>,
                                 <code>TrimmedContent</code> and
                                 <code>WrappedContent</code>.
                             </p>
                             <p>
                                 <code>RawContent</code> can be created from a
-                                string of raw markdown.
+                                string of raw Markdown.
                                 <code>TrimmedContent</code> can be created from
                                 <code>RawContent</code> and
                                 <code>WrappedContent</code> can be created from
@@ -289,8 +290,8 @@
                             <p>
                                 The simple cases are when the user presses the
                                 left or right arrow key. Even this has edge
-                                cases though. If the user is at the beginning or
-                                end of a line, I can’t just move the cursor
+                                cases, though. If the user is at the beginning
+                                or end of a line, I can’t just move the cursor
                                 horizontally. If the user is at the beginning of
                                 a line and moves left, it should move to the end
                                 of the previous line. Similarly, if the user is
@@ -298,8 +299,8 @@
                                 move to the beginning of the next line.
                             </p>
                             <p>
-                                Up and down is more complicated. Most editors
-                                will implement the following feature:
+                                Moving up and down is more complicated. Most
+                                editors will implement the following feature:
                             </p>
                             <ul>
                                 <li>The user is at position 35 in a line</li>
@@ -328,21 +329,28 @@
                             </p>
                             <ul>
                                 <li>
-                                    Move to the beginning of file
+                                    Move to the beginning of the file
                                     (<code>⌘-↑</code>)
                                 </li>
-                                <li>Move to end of file (<code>⌘-↓</code>)</li>
                                 <li>
-                                    Move to the beginning of line
+                                    Move to the end of the file
+                                    (<code>⌘-↓</code>)
+                                </li>
+                                <li>
+                                    Move to the beginning of the line
                                     (<code>⌘-←</code>)
                                 </li>
-                                <li>Move to end of line (<code>⌘-→</code>)</li>
                                 <li>
-                                    Move to the beginning word
+                                    Move to the end of the line
+                                    (<code>⌘-→</code>)
+                                </li>
+                                <li>
+                                    Move to the beginning of the word
                                     (<code>Alt-←</code>)
                                 </li>
                                 <li>
-                                    Move to end of word (<code>Alt-→</code>)
+                                    Move to the end of the word
+                                    (<code>Alt-→</code>)
                                 </li>
                             </ul>
                         </div>

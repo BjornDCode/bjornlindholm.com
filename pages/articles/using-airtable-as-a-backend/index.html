@@ -154,9 +154,9 @@
                                     class="underline text-slate-800 font-medium"
                                     target="_blank"
                                     href="http://conferencehq.io"
-                                    >Conference HQ </a
+                                    >Conference HQ</a
                                 >. An interesting part of the project is the
-                                backend which is powered by Airtable. I
+                                backend, which is powered by Airtable. I
                                 originally built my own API in Laravel but I had
                                 dropped the project at that point. I'll come
                                 back to that later.
@@ -166,29 +166,28 @@
                                 Airtable is a mix between a spreadsheet and a
                                 database. It's simpler than Firebase but has
                                 some convenient features like asset handling
-                                that makes it better for managing content than
+                                that make it better for managing content than
                                 Google Sheets.
                             </p>
                             <p>
-                                At the core of Airtable are bases. It's the
-                                equivalent of a database or a spreadsheet.
-                                Inside the base you have tables. Inside tables
-                                is where the content lives. These are called
-                                records.
+                                At the core of Airtable are bases. Each base is
+                                the equivalent of a database or a spreadsheet.
+                                Inside the base, you have tables. Inside tables,
+                                the content lives in records.
                             </p>
                             <img
                                 src="/images/airtable.png"
                                 alt="Airtable dashboard"
                             />
                             <p>
-                                Where Airtable really shines are the field types
-                                you can have for each column in a table.
+                                Where Airtable really shines is in the field
+                                types you can have for each column in a table.
                                 Standard options like text, number and date
                                 fields are available. But more advanced fields
                                 are available as well.
                             </p>
                             <p>
-                                You can have a email, phone number or url field
+                                You can have an email, phone number or URL field
                                 if you are storing data about customers. Rating,
                                 duration, barcode, select and attachment fields
                                 are also available. The attachment field can be
@@ -196,7 +195,7 @@
                                 download.
                             </p>
                             <p>
-                                Lastly you can link to other records or read a
+                                Lastly, you can link to other records or read a
                                 value from another record and use it in a
                                 formula.
                             </p>
@@ -208,13 +207,13 @@
                                 wanted a simpler solution.
                             </p>
                             <p>
-                                Airtable was the right solution for that. At
-                                it's core, Conference HQ is a list of
-                                conferences. A custom API solution was overkill
-                                and instead of spending time maintaining the
-                                API, Airtable allowed me to focus on other
-                                things. I would estimate that I've spend around
-                                3 hours setting up the base itself.
+                                Airtable was the right solution for that. At its
+                                core, Conference HQ is a list of conferences. A
+                                custom API solution was overkill. Airtable
+                                allowed me to focus on other things instead of
+                                spending time maintaining the API. I would
+                                estimate that I've spent around 3 hours setting
+                                up the base itself.
                             </p>
                             <p>
                                 It's easy to set up, especially if you have
@@ -236,7 +235,7 @@
                                     class="underline text-slate-800 font-medium"
                                     target="_blank"
                                     href="https://cryptocurrencyjobs.co/"
-                                    >Cryptocurrency Jobs </a
+                                    >Cryptocurrency Jobs</a
                                 >, a database like
                                 <a
                                     class="underline text-slate-800 font-medium"
@@ -248,7 +247,7 @@
                                     class="underline text-slate-800 font-medium"
                                     target="_blank"
                                     href="https://madewithvuejs.com"
-                                    >Made with Vue.js </a
+                                    >Made with Vue.js</a
                                 >.
                             </p>
                             <p>
@@ -256,14 +255,14 @@
                                 posts, I would still recommend using Airtable
                                 for the list part. Using a static site generator
                                 like Gridsome or Gatsby will allow you to fetch
-                                content from difference sources.
+                                content from different sources.
                             </p>
                             <h2>Working with Airtable's API</h2>
                             <p>
-                                After creating a base on Airtable, they auto
-                                generate API documentation for that base. This
-                                adapt as you add or remove tables or fields from
-                                the base.
+                                After you create a base on Airtable, it
+                                automatically generates API documentation for
+                                that base. This adapts as you add or remove
+                                tables or fields from the base.
                             </p>
                             <p>
                                 There is an official
@@ -273,22 +272,22 @@
                                     href="https://github.com/Airtable/airtable.js"
                                     >JS client </a
                                 >that can be utilised. If you are using another
-                                language to power the site you can hit the
+                                language to power the site, you can hit the
                                 endpoints directly.
                             </p>
                             <p>
                                 Authentication is done with a token.
-                                Unfortunately it's not possible to make
+                                Unfortunately, it's not possible to make
                                 endpoints public. This means the API has to be
                                 called from a server, to avoid the token being
                                 public. This is the reason I chose to use a
-                                static site generator over a SSR framework like
+                                static site generator over an SSR framework like
                                 Nuxt.
                             </p>
                             <p>
                                 The API has a rate limit of 5 requests per
                                 second. Unless you have a site with a lot of
-                                traffic this should be sufficient. Using a
+                                traffic, this should be sufficient. Using a
                                 static site generator mitigates this problem as
                                 it fetches all data when the site is deployed.
                             </p>
@@ -299,13 +298,13 @@
                                 connecting models through relationships.
                             </p>
                             <p>
-                                An example is that you can't have a 1 to 1 or a
-                                1 to many relationship. Relationships are always
-                                many to many. Another example is that you can't
-                                automatically generate slugs. I have set up a
-                                formula that removes special characters from the
-                                conference names and turn it into dashes or an
-                                empty string.
+                                An example is that you can't have a one-to-one
+                                or a one-to-many relationship. Relationships are
+                                always many-to-many. Another example is that you
+                                can't automatically generate slugs. I have set
+                                up a formula that replaces special characters in
+                                the conference names with dashes or an empty
+                                string.
                             </p>
                             <p>
                                 But I haven't found anything that I couldn't
@@ -325,20 +324,20 @@
                                 >as a static site generator.
                             </p>
                             <p>
-                                Originally I wanted to use
+                                Originally, I wanted to use
                                 <a
                                     class="underline text-slate-800 font-medium"
                                     target="_blank"
                                     href="https://nuxtjs.org/"
                                     >Nuxt </a
-                                >and use server side rendering. But the way data
-                                Nuxt fetches data from an API is through a
-                                method called
+                                >and use server-side rendering. But the way Nuxt
+                                fetches data from an API is through a method
+                                called
                                 <a
                                     class="underline text-slate-800 font-medium"
                                     target="_blank"
                                     href="https://nuxtjs.org/guide/async-data"
-                                    >asyncData </a
+                                    >asyncData</a
                                 >. This method fetches data on the server the
                                 first time it's run, but when the user navigates
                                 to other routes it will be called from the
@@ -351,7 +350,7 @@
                                     >gridsome build</code
                                 >
                                 command. I do that when I deploy the site. It
-                                then generates every page into a static html
+                                then generates every page into a static HTML
                                 file which is served.
                             </p>
                             <p>
@@ -361,7 +360,7 @@
                                     target="_blank"
                                     href="https://www.gatsbyjs.org/"
                                     >Gatsby </a
-                                >for React), is that you can have multiple data
+                                >for React) is that you can have multiple data
                                 sources. That means I can create a blog using
                                 Contentful or Netlify CMS and fetch the data
                                 through Gridsome as well.
@@ -379,7 +378,7 @@
                                     class="underline text-slate-800 font-medium"
                                     target="_blank"
                                     href="https://github.com/nextapps-de/flexsearch"
-                                    >FlexSearch </a
+                                    >FlexSearch</a
                                 >. I'll write another article with more details
                                 when the search and filter features have been
                                 shipped.
@@ -388,7 +387,7 @@
                             <p>
                                 A feature I want to add to the site in the
                                 future is the ability for users to add
-                                conferences. For this I've come up with two
+                                conferences. For this, I've come up with two
                                 solutions.
                             </p>
                             <p>
@@ -403,28 +402,28 @@
                                     class="underline text-slate-800 font-medium"
                                     target="_blank"
                                     href="https://www.netlify.com/products/forms/"
-                                    >Netlify Forms </a
+                                    >Netlify Forms</a
                                 >. Since the site is already hosted on Netlify
                                 I'll most likely go with that solution.
                             </p>
                             <p>
                                 In order to store the fetched content in
-                                Airtable I'll use Zapier. Zapier has
+                                Airtable, I'll use Zapier. Zapier has
                                 integrations with both Netlify and Typeform as
                                 well as Airtable.
                             </p>
                             <h2>Conclusion</h2>
                             <p>
-                                For a long time I've had a habit of trying to
+                                For a long time, I've had a habit of trying to
                                 over-engineer my projects. This has always led
                                 me down a path where I spent a lot of time
-                                writing code that never see the light of day.
+                                writing code that never sees the light of day.
                                 Using Airtable saved me weeks of work creating a
                                 backend and allowed me to spend that time on
                                 adding features and content to the site instead.
-                                Airtable is not a viable solution for any site
-                                but if you want to quickly launch a project or
-                                test out an idea it's really solid.
+                                Airtable is not a viable solution for every
+                                site, but if you want to quickly launch a
+                                project or test out an idea, it's really solid.
                             </p>
                         </div>
                     </div>

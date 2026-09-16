@@ -159,7 +159,7 @@
                                 <code>forms</code> table in a relational
                                 database. It has an <code>id</code> column, a
                                 <code>name</code> column and a
-                                <code>status</code> column. In a graph database
+                                <code>status</code> column. In a graph database,
                                 you would store this information as 3 facts.
                                 Each fact has an identifier, a property and a
                                 value.
@@ -203,9 +203,9 @@
                             <p>
                                 I think there is a way to make this type of
                                 database the foundation of a sync engine. There
-                                would be 1 central database and each client
-                                syncs a local version. In the browser, the local
-                                version could be stored in IndexedDB.
+                                would be 1 central database, and each client
+                                would sync a local version. In the browser, the
+                                local version could be stored in IndexedDB.
                             </p>
                             <p>
                                 If we amend each fact one more time like this:
@@ -229,7 +229,7 @@
                             <p>
                                 The local client also keeps track of the last
                                 ‘fact’ it has synced from the browser. It pulls
-                                any ‘facts’ that has been synced later from the
+                                any ‘facts’ that have been synced later from the
                                 central server.
                             </p>
                         </div>
