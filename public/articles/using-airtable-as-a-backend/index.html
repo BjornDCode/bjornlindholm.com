@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Using Airtable as a backend</title>
+        <meta name="title" content="Using Airtable as a backend" />
+        <meta
+            name="description"
+            content="Designer &#x26; developer from Denmark"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Using Airtable as a backend" />
+        <meta
+            property="og:description"
+            content="Designer &#x26; developer from Denmark"
+        />
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content="Using Airtable as a backend" />
+        <meta
+            property="twitter:description"
+            content="Designer &#x26; developer from Denmark"
+        />
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
+        <link rel="stylesheet" type="text/css" href="/style.css" />
+        <script
+            src="https://cdn.usefathom.com/script.js"
+            data-site="BIHBRBPS"
+            defer
+        ></script>
+        <script src="//unpkg.com/alpinejs" defer></script>
+    </head>
+    <body
+        x-data="{ open: false }"
+        x-bind:class="open ? &#x27;fixed w-[100vw] h-[100vh] overflow-hidden&#x27; : &#x27;&#x27;"
+    >
+        <div class="flex">
+            <aside
+                class="hidden absolute top-0 z-[100] bg-white w-3/5 h-screen border-r border-slate-200 flex flex-col justify-between p-8 md:sticky md:flex md:w-48 lg:w-64"
+                :class="{ hidden: !open }"
+                id="site-navigation"
+            >
+                <div>
+                    <a
+                        href="/"
+                        class="text-4xl tracking-tight leading-10 font-extrabold text-slate-900"
+                        >Bjørn</a
+                    >
+                    <nav class="mt-8 space-y-2">
+                        <a
+                            href="/projects"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Projects </a
+                        ><a
+                            href="/articles"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Articles </a
+                        ><a
+                            href="/links"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Links </a
+                        ><a
+                            href="/snippets"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Snippets </a
+                        ><a
+                            href="/meta"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Meta</a
+                        >
+                    </nav>
+                </div>
+                <nav class="space-y-2">
+                    <a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://twitter.com/bjornlindholmdk"
+                        >Twitter </a
+                    ><a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://www.instagram.com/bjornhansendk/"
+                        >Instagram </a
+                    ><a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://dev.to/bjornlindholmdk"
+                        >Dev.to </a
+                    ><a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://read.cv/bjornlindholm"
+                        >Read.cv</a
+                    >
+                </nav>
+            </aside>
+            <div
+                class="absolute w-full z-[90] top-0 px-4 py-10 flex justify-end md:hidden"
+            >
+                <button
+                    type="button"
+                    @click="open = !open"
+                    aria-label="Toggle navigation"
+                    :aria-expanded="open"
+                    aria-controls="site-navigation"
+                >
+                    <span
+                        class="block w-7 bg-slate-900 rounded"
+                        style="height: 0.1875rem; margin-bottom: 0.375rem"
+                    ></span
+                    ><span
+                        class="block w-7 bg-slate-900 rounded"
+                        style="height: 0.1875rem; margin-bottom: 0.375rem"
+                    ></span
+                    ><span
+                        class="ml-auto block w-5 bg-slate-900 rounded"
+                        style="height: 0.1875rem"
+                    ></span>
+                </button>
+            </div>
+            <div
+                class="w-full"
+                x-bind:class="open ? &#x27;translate-x-[60vw]&#x27; : &#x27;&#x27;"
+            >
+                <main class="w-full">
+                    <div
+                        class="px-4 py-8 md:px-8 md:py-20 sm:max-w-xl sm:mx-auto"
+                    >
+                        <h1
+                            class="text-2xl leading-none md:text-3xl leading-10 font-extrabold text-slate-900"
+                        >
+                            Using Airtable as a backend
+                        </h1>
+                        <span class="text-slate-500 text-xs block mt-2"
+                            >22/09/2019</span
+                        >
+                        <div
+                            class="prose text-base leading-7 text-slate-700 mt-6"
+                        >
+                            <p>
+                                I recently launched the first version of
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="http://conferencehq.io"
+                                    >Conference HQ </a
+                                >. An interesting part of the project is the
+                                backend which is powered by Airtable. I
+                                originally built my own API in Laravel but I had
+                                dropped the project at that point. I'll come
+                                back to that later.
+                            </p>
+                            <h2>What is Airtable</h2>
+                            <p>
+                                Airtable is a mix between a spreadsheet and a
+                                database. It's simpler than Firebase but has
+                                some convenient features like asset handling
+                                that makes it better for managing content than
+                                Google Sheets.
+                            </p>
+                            <p>
+                                At the core of Airtable are bases. It's the
+                                equivalent of a database or a spreadsheet.
+                                Inside the base you have tables. Inside tables
+                                is where the content lives. These are called
+                                records.
+                            </p>
+                            <img
+                                src="/images/airtable.png"
+                                alt="Airtable dashboard"
+                            />
+                            <p>
+                                Where Airtable really shines are the field types
+                                you can have for each column in a table.
+                                Standard options like text, number and date
+                                fields are available. But more advanced fields
+                                are available as well.
+                            </p>
+                            <p>
+                                You can have a email, phone number or url field
+                                if you are storing data about customers. Rating,
+                                duration, barcode, select and attachment fields
+                                are also available. The attachment field can be
+                                used to store images or files to display or
+                                download.
+                            </p>
+                            <p>
+                                Lastly you can link to other records or read a
+                                value from another record and use it in a
+                                formula.
+                            </p>
+                            <h2>Why I chose Airtable for Conference HQ</h2>
+                            <p>
+                                I had originally built a Laravel API as the
+                                backend. But for various reasons I dropped the
+                                project for a while and when I revived it I
+                                wanted a simpler solution.
+                            </p>
+                            <p>
+                                Airtable was the right solution for that. At
+                                it's core, Conference HQ is a list of
+                                conferences. A custom API solution was overkill
+                                and instead of spending time maintaining the
+                                API, Airtable allowed me to focus on other
+                                things. I would estimate that I've spend around
+                                3 hours setting up the base itself.
+                            </p>
+                            <p>
+                                It's easy to set up, especially if you have
+                                experience working with databases. The asset
+                                handling is convenient for Conference HQ because
+                                I store a logo for each conference. It's also
+                                nice not having to worry about setting up and
+                                maintaining the server.
+                            </p>
+                            <p>
+                                The free plan is sufficient for most small
+                                sites.
+                            </p>
+                            <h2>When to use Airtable</h2>
+                            <p>
+                                I would recommend using Airtable for list or
+                                directory sites. This could be a job board like
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="https://cryptocurrencyjobs.co/"
+                                    >Cryptocurrency Jobs </a
+                                >, a database like
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="https://nomadlist.com"
+                                    >Nomad List </a
+                                >or a directory like
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="https://madewithvuejs.com"
+                                    >Made with Vue.js </a
+                                >.
+                            </p>
+                            <p>
+                                If you plan on adding other content like blog
+                                posts, I would still recommend using Airtable
+                                for the list part. Using a static site generator
+                                like Gridsome or Gatsby will allow you to fetch
+                                content from difference sources.
+                            </p>
+                            <h2>Working with Airtable's API</h2>
+                            <p>
+                                After creating a base on Airtable, they auto
+                                generate API documentation for that base. This
+                                adapt as you add or remove tables or fields from
+                                the base.
+                            </p>
+                            <p>
+                                There is an official
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="https://github.com/Airtable/airtable.js"
+                                    >JS client </a
+                                >that can be utilised. If you are using another
+                                language to power the site you can hit the
+                                endpoints directly.
+                            </p>
+                            <p>
+                                Authentication is done with a token.
+                                Unfortunately it's not possible to make
+                                endpoints public. This means the API has to be
+                                called from a server, to avoid the token being
+                                public. This is the reason I chose to use a
+                                static site generator over a SSR framework like
+                                Nuxt.
+                            </p>
+                            <p>
+                                The API has a rate limit of 5 requests per
+                                second. Unless you have a site with a lot of
+                                traffic this should be sufficient. Using a
+                                static site generator mitigates this problem as
+                                it fetches all data when the site is deployed.
+                            </p>
+                            <p>
+                                Working with the Airtable API won't be the same
+                                as working with a custom API. You don't have as
+                                much freedom when it comes to validation and
+                                connecting models through relationships.
+                            </p>
+                            <p>
+                                An example is that you can't have a 1 to 1 or a
+                                1 to many relationship. Relationships are always
+                                many to many. Another example is that you can't
+                                automatically generate slugs. I have set up a
+                                formula that removes special characters from the
+                                conference names and turn it into dashes or an
+                                empty string.
+                            </p>
+                            <p>
+                                But I haven't found anything that I couldn't
+                                work around yet and considering the time saved
+                                by using Airtable I think it's worth it for
+                                simple sites.
+                            </p>
+                            <h2>Frontend</h2>
+                            <p>
+                                Because of the API authentication problem, I
+                                chose
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="https://gridsome.org/"
+                                    >Gridsome </a
+                                >as a static site generator.
+                            </p>
+                            <p>
+                                Originally I wanted to use
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="https://nuxtjs.org/"
+                                    >Nuxt </a
+                                >and use server side rendering. But the way data
+                                Nuxt fetches data from an API is through a
+                                method called
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="https://nuxtjs.org/guide/async-data"
+                                    >asyncData </a
+                                >. This method fetches data on the server the
+                                first time it's run, but when the user navigates
+                                to other routes it will be called from the
+                                client. This would expose my Airtable API key.
+                            </p>
+                            <p>
+                                Gridsome fetches all data when I run the
+                                <code
+                                    class="bg-slate-100 px-1.5 py-0.5 rounded text-sm text-slate-800"
+                                    >gridsome build</code
+                                >
+                                command. I do that when I deploy the site. It
+                                then generates every page into a static html
+                                file which is served.
+                            </p>
+                            <p>
+                                An advantage of using Gridsome (or
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="https://www.gatsbyjs.org/"
+                                    >Gatsby </a
+                                >for React), is that you can have multiple data
+                                sources. That means I can create a blog using
+                                Contentful or Netlify CMS and fetch the data
+                                through Gridsome as well.
+                            </p>
+                            <p>
+                                Gridsome is still young and I ran into some
+                                caveats. The biggest one is search. This feature
+                                hasn't been launched on Conference HQ yet, but
+                                I'm currently implementing it.
+                            </p>
+                            <p>
+                                There are some search capabilities available in
+                                Gridsome but they are limited. Instead I'm using
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="https://github.com/nextapps-de/flexsearch"
+                                    >FlexSearch </a
+                                >. I'll write another article with more details
+                                when the search and filter features have been
+                                shipped.
+                            </p>
+                            <h2>Handling forms</h2>
+                            <p>
+                                A feature I want to add to the site in the
+                                future is the ability for users to add
+                                conferences. For this I've come up with two
+                                solutions.
+                            </p>
+                            <p>
+                                I can either create a
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="https://www.typeform.com/"
+                                    >Typeform </a
+                                >or use
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="https://www.netlify.com/products/forms/"
+                                    >Netlify Forms </a
+                                >. Since the site is already hosted on Netlify
+                                I'll most likely go with that solution.
+                            </p>
+                            <p>
+                                In order to store the fetched content in
+                                Airtable I'll use Zapier. Zapier has
+                                integrations with both Netlify and Typeform as
+                                well as Airtable.
+                            </p>
+                            <h2>Conclusion</h2>
+                            <p>
+                                For a long time I've had a habit of trying to
+                                over-engineer my projects. This has always led
+                                me down a path where I spent a lot of time
+                                writing code that never see the light of day.
+                                Using Airtable saved me weeks of work creating a
+                                backend and allowed me to spend that time on
+                                adding features and content to the site instead.
+                                Airtable is not a viable solution for any site
+                                but if you want to quickly launch a project or
+                                test out an idea it's really solid.
+                            </p>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

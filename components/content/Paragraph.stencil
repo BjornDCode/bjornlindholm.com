@@ -1,3 +1,0 @@
-<p class="first:mt-0 my-5 text-slate-700 {{ class }}">
-    <slot />
-</p>

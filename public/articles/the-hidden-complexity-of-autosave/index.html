@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>The hidden complexity of autosave</title>
+        <meta name="title" content="The hidden complexity of autosave" />
+        <meta
+            name="description"
+            content="Designer &#x26; developer from Denmark"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="The hidden complexity of autosave" />
+        <meta
+            property="og:description"
+            content="Designer &#x26; developer from Denmark"
+        />
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+            property="twitter:title"
+            content="The hidden complexity of autosave"
+        />
+        <meta
+            property="twitter:description"
+            content="Designer &#x26; developer from Denmark"
+        />
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
+        <link rel="stylesheet" type="text/css" href="/style.css" />
+        <script
+            src="https://cdn.usefathom.com/script.js"
+            data-site="BIHBRBPS"
+            defer
+        ></script>
+        <script src="//unpkg.com/alpinejs" defer></script>
+    </head>
+    <body
+        x-data="{ open: false }"
+        x-bind:class="open ? &#x27;fixed w-[100vw] h-[100vh] overflow-hidden&#x27; : &#x27;&#x27;"
+    >
+        <div class="flex">
+            <aside
+                class="hidden absolute top-0 z-[100] bg-white w-3/5 h-screen border-r border-slate-200 flex flex-col justify-between p-8 md:sticky md:flex md:w-48 lg:w-64"
+                :class="{ hidden: !open }"
+                id="site-navigation"
+            >
+                <div>
+                    <a
+                        href="/"
+                        class="text-4xl tracking-tight leading-10 font-extrabold text-slate-900"
+                        >Bjørn</a
+                    >
+                    <nav class="mt-8 space-y-2">
+                        <a
+                            href="/projects"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Projects </a
+                        ><a
+                            href="/articles"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Articles </a
+                        ><a
+                            href="/links"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Links </a
+                        ><a
+                            href="/snippets"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Snippets </a
+                        ><a
+                            href="/meta"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Meta</a
+                        >
+                    </nav>
+                </div>
+                <nav class="space-y-2">
+                    <a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://twitter.com/bjornlindholmdk"
+                        >Twitter </a
+                    ><a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://www.instagram.com/bjornhansendk/"
+                        >Instagram </a
+                    ><a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://dev.to/bjornlindholmdk"
+                        >Dev.to </a
+                    ><a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://read.cv/bjornlindholm"
+                        >Read.cv</a
+                    >
+                </nav>
+            </aside>
+            <div
+                class="absolute w-full z-[90] top-0 px-4 py-10 flex justify-end md:hidden"
+            >
+                <button
+                    type="button"
+                    @click="open = !open"
+                    aria-label="Toggle navigation"
+                    :aria-expanded="open"
+                    aria-controls="site-navigation"
+                >
+                    <span
+                        class="block w-7 bg-slate-900 rounded"
+                        style="height: 0.1875rem; margin-bottom: 0.375rem"
+                    ></span
+                    ><span
+                        class="block w-7 bg-slate-900 rounded"
+                        style="height: 0.1875rem; margin-bottom: 0.375rem"
+                    ></span
+                    ><span
+                        class="ml-auto block w-5 bg-slate-900 rounded"
+                        style="height: 0.1875rem"
+                    ></span>
+                </button>
+            </div>
+            <div
+                class="w-full"
+                x-bind:class="open ? &#x27;translate-x-[60vw]&#x27; : &#x27;&#x27;"
+            >
+                <main class="w-full">
+                    <div
+                        class="px-4 py-8 md:px-8 md:py-20 sm:max-w-xl sm:mx-auto"
+                    >
+                        <h1
+                            class="text-2xl leading-none md:text-3xl leading-10 font-extrabold text-slate-900"
+                        >
+                            The hidden complexity of autosave
+                        </h1>
+                        <span class="text-slate-500 text-xs block mt-2"
+                            >02/02/2024</span
+                        >
+                        <div
+                            class="prose text-base leading-7 text-slate-700 mt-6"
+                        >
+                            <p>
+                                <strong>Scene:</strong> You are building a SaaS
+                                app. The app has a screen where users can
+                                visually build forms. Your users make a lot of
+                                small changes and regularly save their progress.
+                                You think to yourself that it would be nice if
+                                all the changes were saved automatically.
+                                Simple, right? Sadly not.
+                            </p>
+                            <p>
+                                We ran into this scenario when building
+                                <a
+                                    href="https://www.reform.app/"
+                                    target="_blank"
+                                    rel="nofollow noopener noreferrer"
+                                    >Reform</a
+                                >. At first, it seemed like a relatively simple
+                                problem, so we shipped it, but soon ran into
+                                lots of tricky issues.
+                            </p>
+                            <h1>The first solution</h1>
+                            <p>
+                                My first intuition was to listen for every
+                                change event in the form builder and fire off an
+                                AJAX request to save the new data. I even added
+                                throttling, so a single active user couldn’t
+                                kill the backend server.
+                            </p>
+                            <p>
+                                This kind of worked. But there were a lot of
+                                cases where it fell apart:
+                            </p>
+                            <ul>
+                                <li>
+                                    What if the user made a change and closed
+                                    the page before the update request was
+                                    fired?
+                                </li>
+                                <li>
+                                    What if our users had the same page open in
+                                    multiple tabs? As soon as they opened the
+                                    oldest tab, they would overwrite newer
+                                    changes with stale data.
+                                </li>
+                                <li>
+                                    What about teams? Two users might be working
+                                    on the same page simultaneously, and all of
+                                    a sudden, it’s a game of ping pong, sending
+                                    different data back and forth to the
+                                    backend.
+                                </li>
+                            </ul>
+                            <h2>The wrong solution</h2>
+                            <p>
+                                The first time we became aware of autosave
+                                problems was when a customer has built a form
+                                that was deleted by stale data in an old tab.
+                            </p>
+                            <p>
+                                Our solution was to generate a hash based on all
+                                the form data and provide it to the frontend.
+                                The frontend would then return the hash when
+                                sending a PATCH request, and we would check the
+                                request hash matched the hash of the currently
+                                saved form data.
+                            </p>
+                            <p>
+                                This was an awkward experience because the user
+                                would receive an error message the first time
+                                they made a change after switching to an old
+                                tab.
+                            </p>
+                            <p>
+                                Also, the solution didn’t work. Details like
+                                what kind of whitespace was used in the JSON and
+                                key order would result in different hashes, and
+                                the validation would randomly fail 10% of the
+                                time.
+                            </p>
+                            <p>
+                                Users wouldn’t lose an hour of work anymore, but
+                                instead, they would receive random error
+                                messages while working on the form. And it also
+                                didn’t solve the team problem or the
+                                close-the-page-too-quickly problem.
+                            </p>
+                            <h2>The half-baked solution</h2>
+                            <p>
+                                The next idea was to manually keep track of
+                                whether a tab was focused. When it lost focus,
+                                we would disable all elements in the form
+                                builder. When the tab became active again, we
+                                would fetch the latest data from the server and
+                                enable all interactive elements again. Not a
+                                great experience for the user.
+                            </p>
+                            <p>
+                                And this still didn’t solve the team problem or
+                                the close-the-page-too-quickly problem.
+                            </p>
+                            <h2>The correct solution</h2>
+                            <p>
+                                Eventually, we ran out of steam, and Reform was
+                                acquired. That didn’t stop me from thinking
+                                about the autosave problem, though. And I
+                                believe I’ve finally found the correct solution:
+                                <a
+                                    href="https://localfirstweb.dev/"
+                                    target="_blank"
+                                    rel="nofollow noopener noreferrer"
+                                    >local-first apps</a
+                                >.
+                            </p>
+                            <p>
+                                Currently, there’s a lot of hype about the
+                                local-first movement in web development. A lot
+                                of this is due to research by
+                                <a
+                                    href="https://www.inkandswitch.com/local-first/"
+                                    target="_blank"
+                                    rel="nofollow noopener noreferrer"
+                                    >Ink &#x26; Switch</a
+                                >
+                                and a rise of new tools that make it easier for
+                                developers to build this type of app. Many of
+                                these tools are centred around CRDTs and local
+                                databases.
+                            </p>
+                            <p>
+                                The fundamental idea is that users have a local
+                                database embedded in the browser containing only
+                                their data. The local database can be synced
+                                with a central database on a server using a
+                                <a
+                                    href="https://crdt.tech/"
+                                    target="_blank"
+                                    rel="nofollow noopener noreferrer"
+                                    >CRDT</a
+                                >.
+                            </p>
+                            <p>
+                                In Reform, only the form data would be synced to
+                                the local database. We could then manipulate the
+                                form data directly in the local database and let
+                                the syncing engine take care of sharing the data
+                                with the central database.
+                            </p>
+                            <p>
+                                This would have solved all three problems with
+                                autosave:
+                            </p>
+                            <ul>
+                                <li>
+                                    If the user closed the page too quickly, the
+                                    changes would still exist in the local
+                                    database. The changes would be synced the
+                                    next time the user opened the page.
+                                </li>
+                                <li>
+                                    When the user would open an old tab, we
+                                    would fetch the data from the local
+                                    database, and they would see the latest
+                                    data.
+                                </li>
+                                <li>
+                                    Merging diverging data into one piece of
+                                    data is handled by the CRDT. Thus, we could
+                                    have built team features and multiplayer
+                                    into the app.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

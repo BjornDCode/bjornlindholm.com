@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Conference HQ - September 2019</title>
+        <meta name="title" content="Conference HQ - September 2019" />
+        <meta
+            name="description"
+            content="Designer &#x26; developer from Denmark"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Conference HQ - September 2019" />
+        <meta
+            property="og:description"
+            content="Designer &#x26; developer from Denmark"
+        />
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+            property="twitter:title"
+            content="Conference HQ - September 2019"
+        />
+        <meta
+            property="twitter:description"
+            content="Designer &#x26; developer from Denmark"
+        />
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
+        <link rel="stylesheet" type="text/css" href="/style.css" />
+        <script
+            src="https://cdn.usefathom.com/script.js"
+            data-site="BIHBRBPS"
+            defer
+        ></script>
+        <script src="//unpkg.com/alpinejs" defer></script>
+    </head>
+    <body
+        x-data="{ open: false }"
+        x-bind:class="open ? &#x27;fixed w-[100vw] h-[100vh] overflow-hidden&#x27; : &#x27;&#x27;"
+    >
+        <div class="flex">
+            <aside
+                class="hidden absolute top-0 z-[100] bg-white w-3/5 h-screen border-r border-slate-200 flex flex-col justify-between p-8 md:sticky md:flex md:w-48 lg:w-64"
+                :class="{ hidden: !open }"
+                id="site-navigation"
+            >
+                <div>
+                    <a
+                        href="/"
+                        class="text-4xl tracking-tight leading-10 font-extrabold text-slate-900"
+                        >Bjørn</a
+                    >
+                    <nav class="mt-8 space-y-2">
+                        <a
+                            href="/projects"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Projects </a
+                        ><a
+                            href="/articles"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Articles </a
+                        ><a
+                            href="/links"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Links </a
+                        ><a
+                            href="/snippets"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Snippets </a
+                        ><a
+                            href="/meta"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Meta</a
+                        >
+                    </nav>
+                </div>
+                <nav class="space-y-2">
+                    <a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://twitter.com/bjornlindholmdk"
+                        >Twitter </a
+                    ><a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://www.instagram.com/bjornhansendk/"
+                        >Instagram </a
+                    ><a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://dev.to/bjornlindholmdk"
+                        >Dev.to </a
+                    ><a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://read.cv/bjornlindholm"
+                        >Read.cv</a
+                    >
+                </nav>
+            </aside>
+            <div
+                class="absolute w-full z-[90] top-0 px-4 py-10 flex justify-end md:hidden"
+            >
+                <button
+                    type="button"
+                    @click="open = !open"
+                    aria-label="Toggle navigation"
+                    :aria-expanded="open"
+                    aria-controls="site-navigation"
+                >
+                    <span
+                        class="block w-7 bg-slate-900 rounded"
+                        style="height: 0.1875rem; margin-bottom: 0.375rem"
+                    ></span
+                    ><span
+                        class="block w-7 bg-slate-900 rounded"
+                        style="height: 0.1875rem; margin-bottom: 0.375rem"
+                    ></span
+                    ><span
+                        class="ml-auto block w-5 bg-slate-900 rounded"
+                        style="height: 0.1875rem"
+                    ></span>
+                </button>
+            </div>
+            <div
+                class="w-full"
+                x-bind:class="open ? &#x27;translate-x-[60vw]&#x27; : &#x27;&#x27;"
+            >
+                <main class="w-full">
+                    <div
+                        class="px-4 py-8 md:px-8 md:py-20 sm:max-w-xl sm:mx-auto"
+                    >
+                        <h1
+                            class="text-2xl leading-none md:text-3xl leading-10 font-extrabold text-slate-900"
+                        >
+                            Conference HQ - September 2019
+                        </h1>
+                        <span class="text-slate-500 text-xs block mt-2"
+                            >08/10/2019</span
+                        >
+                        <div
+                            class="prose text-base leading-7 text-slate-700 mt-6"
+                        >
+                            <p>
+                                This article is the second update on
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="https://conferencehq.io"
+                                    >Conference HQ </a
+                                >since I launched it. I will briefly describe
+                                what I did in September and what I want to
+                                achieve in October. I will also share the
+                                numbers for September.
+                            </p>
+                            <h2>What I did</h2>
+                            <p>
+                                In September I had trouble finding the
+                                motivation to work on the site. The biggest
+                                reason for this is that it's tedious to manually
+                                add all conferences to the site. And that is the
+                                most important work I could be doing on the site
+                                right now. To combat this I've started the
+                                process of hiring another person to do data
+                                entry. I'll come back to that further down.
+                            </p>
+                            <p>
+                                I did get some work done. In the last update I
+                                wrote that I wanted to finish and launch the
+                                search and filtering feature. I managed to do
+                                this. This turned out to be quite a big feature.
+                                I spent a lot of the time figuring out how I
+                                wanted the search feature to work. For now I
+                                settled on adding a search field in the sidebar
+                                and adding a dedicated search page with
+                                filtering options.
+                            </p>
+                            <p>
+                                I finished an article about how I use Airtable
+                                as the backend for the site and posted in on
+                                dev.to and Medium. Posting it on dev.to showed
+                                great results. It got more than 800 views and 38
+                                reactions. It resulted in around 350 page views
+                                on the site. Posting it on Medium didn't give
+                                any results.
+                            </p>
+                            <p>
+                                A few days later I posted an update on
+                                IndieHackers. This resulted in more than 400
+                                page views on the site.
+                            </p>
+                            <p>
+                                I started writing an article about the
+                                implementation of the search feature but I
+                                haven't completed it yet.
+                            </p>
+                            <h2>Stats</h2>
+                            <h3>Visitors</h3>
+                            <ul>
+                                <li>Pageviews: <strong>2613</strong> (+423)</li>
+                                <li>
+                                    Unique Visitors: <strong>932</strong> (+152)
+                                </li>
+                            </ul>
+                            <h3>SEO</h3>
+                            <p>
+                                Unfortunately I haven't tracked SEO stats this
+                                month.
+                            </p>
+                            <p>
+                                I'm glad there was a small increase in the page
+                                views and visitors. A lot of the traffic came in
+                                the last few days when I posted the article and
+                                update on IndieHackers. This proves that
+                                creating content around the process of making
+                                the site is working well.
+                            </p>
+                            <h2>Goals for October</h2>
+                            <h3>Features</h3>
+                            <p>
+                                I don't have any major features planned for
+                                October. But the next focus point is to improve
+                                the single conference page. Currently it feels
+                                empty. I have several ideas for this.
+                            </p>
+                            <p>
+                                One idea is to add related conferences. These
+                                are conferences that are hosted by the same
+                                organiser but have a different topic or take
+                                place in another location. A good example is
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="https://conferencehq.io/conference/droidcon-transylvania"
+                                    >droidcon </a
+                                >which happens in a few different locations.
+                            </p>
+                            <p>
+                                Another idea is to add links to social media
+                                pages for a conference. In the future I'm
+                                planning on embedding content from Youtube or
+                                Twitter into the page. For now I'll stick to
+                                linking to the pages.
+                            </p>
+                            <p>
+                                Currently I'm going through all the topics on
+                                the site and adding logos and icons where it's
+                                relevant.
+                            </p>
+                            <p>
+                                Lastly I want to add data for student tickets.
+                                This will allow students to search for
+                                conferences that offer student tickets.
+                            </p>
+                            <h3>Marketing</h3>
+                            <p>
+                                In October I want to finish the article about
+                                the search feature. That will likely be the only
+                                article I'll publish in October.
+                            </p>
+                            <p>
+                                I'm planning on implementing
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="https://developers.google.com/search/docs/data-types/event"
+                                    >rich snippets for events </a
+                                >on each conference page. This will hopefully
+                                have an impact on search results and CTR's from
+                                search engines.
+                            </p>
+                            <h3>Conferences</h3>
+                            <p>
+                                I mentioned earlier that it's tedious to add new
+                                conferences to the site. The site currently has
+                                around 200 conferences but many are not relevant
+                                because the conference has occurred. In order to
+                                ensure I get more content and keep the database
+                                growing I've decided to hire a person to enter
+                                data into the site.
+                            </p>
+                            <p>
+                                As a result of this I've created a style guide
+                                document and a list of conferences that could be
+                                added. In October I hope to find a person to do
+                                the data entry.
+                            </p>
+                            <p>
+                                This will hopefully give me more time to focus
+                                on adding features and spend more time on
+                                marketing.
+                            </p>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

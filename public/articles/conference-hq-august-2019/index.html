@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Conference HQ - August 2019</title>
+        <meta name="title" content="Conference HQ - August 2019" />
+        <meta
+            name="description"
+            content="Designer &#x26; developer from Denmark"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Conference HQ - August 2019" />
+        <meta
+            property="og:description"
+            content="Designer &#x26; developer from Denmark"
+        />
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content="Conference HQ - August 2019" />
+        <meta
+            property="twitter:description"
+            content="Designer &#x26; developer from Denmark"
+        />
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
+        <link rel="stylesheet" type="text/css" href="/style.css" />
+        <script
+            src="https://cdn.usefathom.com/script.js"
+            data-site="BIHBRBPS"
+            defer
+        ></script>
+        <script src="//unpkg.com/alpinejs" defer></script>
+    </head>
+    <body
+        x-data="{ open: false }"
+        x-bind:class="open ? &#x27;fixed w-[100vw] h-[100vh] overflow-hidden&#x27; : &#x27;&#x27;"
+    >
+        <div class="flex">
+            <aside
+                class="hidden absolute top-0 z-[100] bg-white w-3/5 h-screen border-r border-slate-200 flex flex-col justify-between p-8 md:sticky md:flex md:w-48 lg:w-64"
+                :class="{ hidden: !open }"
+                id="site-navigation"
+            >
+                <div>
+                    <a
+                        href="/"
+                        class="text-4xl tracking-tight leading-10 font-extrabold text-slate-900"
+                        >Bjørn</a
+                    >
+                    <nav class="mt-8 space-y-2">
+                        <a
+                            href="/projects"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Projects </a
+                        ><a
+                            href="/articles"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Articles </a
+                        ><a
+                            href="/links"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Links </a
+                        ><a
+                            href="/snippets"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Snippets </a
+                        ><a
+                            href="/meta"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Meta</a
+                        >
+                    </nav>
+                </div>
+                <nav class="space-y-2">
+                    <a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://twitter.com/bjornlindholmdk"
+                        >Twitter </a
+                    ><a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://www.instagram.com/bjornhansendk/"
+                        >Instagram </a
+                    ><a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://dev.to/bjornlindholmdk"
+                        >Dev.to </a
+                    ><a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://read.cv/bjornlindholm"
+                        >Read.cv</a
+                    >
+                </nav>
+            </aside>
+            <div
+                class="absolute w-full z-[90] top-0 px-4 py-10 flex justify-end md:hidden"
+            >
+                <button
+                    type="button"
+                    @click="open = !open"
+                    aria-label="Toggle navigation"
+                    :aria-expanded="open"
+                    aria-controls="site-navigation"
+                >
+                    <span
+                        class="block w-7 bg-slate-900 rounded"
+                        style="height: 0.1875rem; margin-bottom: 0.375rem"
+                    ></span
+                    ><span
+                        class="block w-7 bg-slate-900 rounded"
+                        style="height: 0.1875rem; margin-bottom: 0.375rem"
+                    ></span
+                    ><span
+                        class="ml-auto block w-5 bg-slate-900 rounded"
+                        style="height: 0.1875rem"
+                    ></span>
+                </button>
+            </div>
+            <div
+                class="w-full"
+                x-bind:class="open ? &#x27;translate-x-[60vw]&#x27; : &#x27;&#x27;"
+            >
+                <main class="w-full">
+                    <div
+                        class="px-4 py-8 md:px-8 md:py-20 sm:max-w-xl sm:mx-auto"
+                    >
+                        <h1
+                            class="text-2xl leading-none md:text-3xl leading-10 font-extrabold text-slate-900"
+                        >
+                            Conference HQ - August 2019
+                        </h1>
+                        <span class="text-slate-500 text-xs block mt-2"
+                            >04/09/2019</span
+                        >
+                        <div
+                            class="prose text-base leading-7 text-slate-700 mt-6"
+                        >
+                            <p>
+                                This article is the first update on
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="https://conferencehq.io"
+                                    >Conference HQ </a
+                                >since I launched it. I will briefly describe
+                                what I did in August and what I want to achieve
+                                in September. I will also share the numbers for
+                                August.
+                            </p>
+                            <h2>What I did</h2>
+                            <p>
+                                Unfortunately August was a busy month at work so
+                                I didn't get as much done as I would have liked.
+                                The good news is that I've seen steady usage
+                                without much marketing work.
+                            </p>
+                            <p>
+                                At the end of July the site had around 100
+                                conferences. In the beginning of August I
+                                focused on adding more.
+                            </p>
+                            <p>
+                                In the middle of the month I switched focus to
+                                adding a new feature. The feature I've been
+                                working on is searching and filtering. I think
+                                this is an important feature that will
+                                drastically make the site more useful.
+                                Unfortunately I didn't finish it as work
+                                responsibilities picked up towards the end of
+                                the month.
+                            </p>
+                            <p>
+                                Lastly I've been writing an article about using
+                                Airtable as a backend. But as with the search
+                                and filter feature I didn't get the chance to
+                                finish and publish the article before August was
+                                over.
+                            </p>
+                            <h2>Stats</h2>
+                            <h3>Visitors</h3>
+                            <ul>
+                                <li>Pageviews: <strong>2190</strong></li>
+                                <li>Unique Visitors: <strong>780</strong></li>
+                            </ul>
+                            <h3>SEO</h3>
+                            <ul>
+                                <li>Impressions: <strong>1009</strong></li>
+                                <li>Clicks: <strong>14</strong></li>
+                                <li>CTR: <strong>1.3%</strong></li>
+                                <li>Average position: <strong>33.9</strong></li>
+                                <li>Top Ranking: <strong>5</strong></li>
+                            </ul>
+                            <h3>Conferences</h3>
+                            <p>New conferences: <strong>76</strong></p>
+                            <p>
+                                I've started gaining rankings in Google which is
+                                exciting. I haven't gotten many backlinks to the
+                                site so I'm a little surprised to see that. I
+                                suspect it's because most of the keywords has
+                                low competition.
+                            </p>
+                            <p>
+                                The page view and visitor numbers look good. I
+                                do however suspect some of it is spam bots and
+                                crawlers. I haven't gotten much traffic from
+                                Google and I can see in my analytics that most
+                                of the traffic is direct. Still encouraging to
+                                see some traffic though.
+                            </p>
+                            <h2>Goals for September</h2>
+                            <h3>Features</h3>
+                            <p>
+                                My primary focus for September is to release the
+                                search feature. I suspect it's around 40% done.
+                                The good news is that I've figured out what
+                                criteria users should be able to filter for.
+                                I've mostly figured out the design as well. That
+                                means I can focus on the implementation.
+                            </p>
+                            <h3>Marketing</h3>
+                            <p>
+                                For now I want to focus on writing content about
+                                Conference HQ. In the beginning that will
+                                revolve around the technical aspects of the
+                                site.
+                            </p>
+                            <p>
+                                The plan is to publish it on my blog as well as
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="http://dev.to"
+                                    >dev.to </a
+                                >and
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="https://medium.com"
+                                    >Medium </a
+                                >.
+                            </p>
+                            <p>
+                                In September I plan to launch two articles. In
+                                the first post I will talk about how I used
+                                Airtable as a backend for the site. In the
+                                second article I want to talk about the
+                                implementation of the search feature.
+                            </p>
+                            <p>
+                                Lastly I want to continue adding conferences. It
+                                can be tedious work at times but it's important
+                                to make the site more useful. And there is added
+                                time pressure as most conferences I have on the
+                                site now will occur in the following months.
+                                That means the site will have less content if I
+                                don't keep adding new conferences. My hope is
+                                that I can add 70 new conference in September
+                                which will result in 250 conference in my
+                                database.
+                            </p>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

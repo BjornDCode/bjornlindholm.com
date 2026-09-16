@@ -1,7 +1,0 @@
-<a 
-    class="underline text-slate-800 font-medium" 
-    target="_blank" 
-    href="{{ href }}"
->
-    <slot />
-</a>

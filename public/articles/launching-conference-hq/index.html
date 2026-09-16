@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Launching Conference HQ</title>
+        <meta name="title" content="Launching Conference HQ" />
+        <meta
+            name="description"
+            content="Designer &#x26; developer from Denmark"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Launching Conference HQ" />
+        <meta
+            property="og:description"
+            content="Designer &#x26; developer from Denmark"
+        />
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content="Launching Conference HQ" />
+        <meta
+            property="twitter:description"
+            content="Designer &#x26; developer from Denmark"
+        />
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
+        <link rel="stylesheet" type="text/css" href="/style.css" />
+        <script
+            src="https://cdn.usefathom.com/script.js"
+            data-site="BIHBRBPS"
+            defer
+        ></script>
+        <script src="//unpkg.com/alpinejs" defer></script>
+    </head>
+    <body
+        x-data="{ open: false }"
+        x-bind:class="open ? &#x27;fixed w-[100vw] h-[100vh] overflow-hidden&#x27; : &#x27;&#x27;"
+    >
+        <div class="flex">
+            <aside
+                class="hidden absolute top-0 z-[100] bg-white w-3/5 h-screen border-r border-slate-200 flex flex-col justify-between p-8 md:sticky md:flex md:w-48 lg:w-64"
+                :class="{ hidden: !open }"
+                id="site-navigation"
+            >
+                <div>
+                    <a
+                        href="/"
+                        class="text-4xl tracking-tight leading-10 font-extrabold text-slate-900"
+                        >Bjørn</a
+                    >
+                    <nav class="mt-8 space-y-2">
+                        <a
+                            href="/projects"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Projects </a
+                        ><a
+                            href="/articles"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Articles </a
+                        ><a
+                            href="/links"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Links </a
+                        ><a
+                            href="/snippets"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Snippets </a
+                        ><a
+                            href="/meta"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Meta</a
+                        >
+                    </nav>
+                </div>
+                <nav class="space-y-2">
+                    <a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://twitter.com/bjornlindholmdk"
+                        >Twitter </a
+                    ><a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://www.instagram.com/bjornhansendk/"
+                        >Instagram </a
+                    ><a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://dev.to/bjornlindholmdk"
+                        >Dev.to </a
+                    ><a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://read.cv/bjornlindholm"
+                        >Read.cv</a
+                    >
+                </nav>
+            </aside>
+            <div
+                class="absolute w-full z-[90] top-0 px-4 py-10 flex justify-end md:hidden"
+            >
+                <button
+                    type="button"
+                    @click="open = !open"
+                    aria-label="Toggle navigation"
+                    :aria-expanded="open"
+                    aria-controls="site-navigation"
+                >
+                    <span
+                        class="block w-7 bg-slate-900 rounded"
+                        style="height: 0.1875rem; margin-bottom: 0.375rem"
+                    ></span
+                    ><span
+                        class="block w-7 bg-slate-900 rounded"
+                        style="height: 0.1875rem; margin-bottom: 0.375rem"
+                    ></span
+                    ><span
+                        class="ml-auto block w-5 bg-slate-900 rounded"
+                        style="height: 0.1875rem"
+                    ></span>
+                </button>
+            </div>
+            <div
+                class="w-full"
+                x-bind:class="open ? &#x27;translate-x-[60vw]&#x27; : &#x27;&#x27;"
+            >
+                <main class="w-full">
+                    <div
+                        class="px-4 py-8 md:px-8 md:py-20 sm:max-w-xl sm:mx-auto"
+                    >
+                        <h1
+                            class="text-2xl leading-none md:text-3xl leading-10 font-extrabold text-slate-900"
+                        >
+                            Launching Conference HQ
+                        </h1>
+                        <span class="text-slate-500 text-xs block mt-2"
+                            >04/08/2019</span
+                        >
+                        <div
+                            class="prose text-base leading-7 text-slate-700 mt-6"
+                        >
+                            <p>
+                                During my summer holiday I finished up a side
+                                project. The project is called
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="https://conferencehq.io"
+                                    >Conference HQ </a
+                                >. It's a directory of conferences in the tech
+                                and design world.
+                            </p>
+                            <p>
+                                I've seen sites like these before but they are
+                                usually targeted towards a specific niche (e.g
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="https://testingconferences.org/"
+                                    >Testing Conferences </a
+                                >). Conference HQ is focused on a broader
+                                market. This makes it possible to get an
+                                overview of all the conferences you might be
+                                interested in and filter based on specific
+                                criteria.
+                            </p>
+                            <h2>Why did I make it?</h2>
+                            <p>
+                                I enjoy going to conferences but I don't do it
+                                as much as I would like to. I've attended some
+                                frontend conferences but I'm also interested in
+                                other subjects. I've never found a solid way to
+                                get an overview of what events are happening.
+                            </p>
+                            <p>
+                                The way I've learned about conferences in the
+                                past has usually been on Twitter. The problem
+                                with this is that I hear about them when they
+                                are currently happening. When it's hosted again
+                                a year later I've usually forgotten about it.
+                            </p>
+                            <h2>Third time's the charm</h2>
+                            <p>
+                                I've tried building this project twice in the
+                                past.
+                            </p>
+                            <p>
+                                The first time was one year ago. I was
+                                interested in streaming while creating a project
+                                from start to finish. I chose Conference HQ
+                                because it seemed manageable. I never built up
+                                the courage to start streaming though and I
+                                quickly lost interest in the project.
+                            </p>
+                            <p>
+                                The second time was in March. This time I didn't
+                                think about streaming. I wanted to built and
+                                launch it within 1 month. The goal was to keep
+                                the spec minimal. But the scope of the project
+                                grew and 1 month turned into 2 which turned into
+                                3. At this point I still wasn't happy with it.
+                            </p>
+                            <p>
+                                I had spent 3 months building a custom backend
+                                in Laravel. On the front end I used Nuxt. But I
+                                regretted spending that much time building a
+                                platform when I could have used that time on
+                                marketing and research of conferences. I lost
+                                interest again.
+                            </p>
+                            <p>
+                                About a month later I picked it up again. I
+                                scrapped the platform entirely and started from
+                                fresh. This time I cut all but the most basic
+                                features. I wanted a list of conferences that
+                                could be filtered by location and topic. It took
+                                about 2 weeks from start to finish.
+                            </p>
+                            <h2>Learnings</h2>
+                            <p>
+                                I learned a great deal from failing to finish
+                                the project twice. Both times I set myself up
+                                for failure in the beginning.
+                            </p>
+                            <p>
+                                The second time around I spent a lot of time on
+                                building the platform because that's what I find
+                                comfortable doing. But I do enjoy things like
+                                design, marketing and improving a project over
+                                time as well. I usually never get to that part
+                                before I lose interest though.
+                            </p>
+                            <p>
+                                Keeping the scope of a project simple is a very
+                                hard thing to do. Over time there are always
+                                small features that creep in. This happened to
+                                me on the third iteration as well. But this time
+                                I was strict about choosing features. If I came
+                                up with an improvement I could implement in 1
+                                hour or if it was integral to the core idea then
+                                I would build it. If it didn't match those
+                                criteria it could wait.
+                            </p>
+                            <p>
+                                I think losing interest in a side project before
+                                it's finished is a common problem for many
+                                people. But I've found that staying focused on
+                                finishing a good, but very simple product,
+                                mitigates this problem.
+                            </p>
+                            <p>
+                                Launching something is fun. Iterating and
+                                improving it over time is satisfying. And doing
+                                it this way I've managed to keep my interest and
+                                not get overwhelmed by missing features.
+                            </p>
+                            <h2>The tech stack</h2>
+                            <p>
+                                I mentioned that I simplified the third version
+                                of Conference HQ. A part of this process was
+                                simplifying the tech stack.
+                            </p>
+                            <p>
+                                Originally it consisted of a Laravel API and a
+                                Nuxt frontend. I'm primarily a front end
+                                developer so I switched the Laravel API out with
+                                Airtable. For the frontend I switched from Nuxt
+                                to Gridsome.
+                            </p>
+                            <h3>Airtable</h3>
+                            <p>
+                                Airtable is best described as Google Sheets on
+                                steroids. In many ways it's simpler than Google
+                                Sheets but it does things like asset handling
+                                very well.
+                            </p>
+                            <p>
+                                In my base I currently have the following
+                                tables:
+                            </p>
+                            <ul>
+                                <li>Conferences</li>
+                                <li>Topics</li>
+                                <li>Themes</li>
+                                <li>Currencies</li>
+                                <li>Cities</li>
+                                <li>Countries</li>
+                                <li>Regions</li>
+                            </ul>
+                            <p>
+                                Topics are specific tags like Vue, PHP or
+                                Testing. Themes are groups of topics like
+                                Frontend for Vue, React, JS etc.
+                            </p>
+                            <p>
+                                Each conference is connected to a city. I add
+                                cities as I go along. So if I'm adding a
+                                conference that takes place in a city I haven't
+                                added yet, I add it then.
+                            </p>
+                            <p>
+                                Cities are connected to countries and countries
+                                to regions. This allows me to filter conferences
+                                by city, country or region.
+                            </p>
+                            <p>
+                                Currencies consist of a currency code (USD,
+                                CAD), a symbol ($, €) and an exchange rate to
+                                USD. The reason I have this table is to show
+                                prices in the original currency but add
+                                filtering by price in the future.
+                            </p>
+                            <p>
+                                At some point I will write a more detailed
+                                article about the pros and cons of using
+                                Airtable as a backend.
+                            </p>
+                            <h3>Gridsome</h3>
+                            <p>
+                                Gridsome is a static site generator for Vue. I
+                                love Vue so the choice was between a Vue SPA,
+                                Nuxt or Gridsome.
+                            </p>
+                            <p>
+                                A marketing strategy for me is SEO so a single
+                                page application wasn't the optimal choice. I've
+                                used Nuxt before, even on the second version of
+                                Conference HQ, so that was my first choice.
+                            </p>
+                            <p>
+                                Unfortunately I didn't find a good way to
+                                integrate it with Airtable. This is because of a
+                                limitation with the Airtable API. To
+                                authenticate with Airtable I have a private API
+                                key. This means I have to call the API from a
+                                server and never from the frontend.
+                            </p>
+                            <p>
+                                Instead I was left with Gridsome. It turns out
+                                that it's easy to pick up and it was overall a
+                                good experience. The way it integrates with
+                                Airtable is by fetching all data when I deploy
+                                the site. It then generates all the static pages
+                                from that data.
+                            </p>
+                            <p>
+                                An added benefit of Gridsome is that it's easy
+                                to have multiple data sources. In the future it
+                                would be simple to add a blog using something
+                                like Contentful or Netlify CMS.
+                            </p>
+                            <h3>Netlify</h3>
+                            <p>
+                                Netlify is a great tool for hosting static
+                                sites. It integrates with Github. When I finish
+                                a feature I create a pull request. Netlify
+                                checks it and automatically deploys when it's
+                                been merged.
+                            </p>
+                            <p>
+                                I can deploy the site from my machine by running
+                                <code
+                                    class="bg-slate-100 px-1.5 py-0.5 rounded text-sm text-slate-800"
+                                    >gridsome build</code
+                                >
+                                and
+                                <code
+                                    class="bg-slate-100 px-1.5 py-0.5 rounded text-sm text-slate-800"
+                                    >netlify deploy</code
+                                >.
+                            </p>
+                            <p>
+                                A little while ago Netlify launched
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="https://www.netlify.com/products/analytics/"
+                                    >Netlify Analytics </a
+                                >, so I don't have to deal with Google Analytics
+                                anymore.
+                            </p>
+                            <h2>Goals</h2>
+                            <p>
+                                I didn't set any explicit goals for the project
+                                before starting, but I'll try to come up with
+                                some numbers.
+                            </p>
+                            <h3>Conferences</h3>
+                            <p>
+                                The first goal is
+                                <strong>300 conferences</strong>. This is the
+                                minimum number I think the site needs to hit
+                                before it can really start being useful. I've
+                                compiled a list of about 350 conferences that
+                                are currently stored in a spreadsheet. At the
+                                time of writing this, I have close to 100
+                                conferences on the site.
+                            </p>
+                            <p>
+                                Up until now I've been adding new conferences as
+                                I stumbled upon them. I want this to be more
+                                structured. The plan is to pick 1 topic at a
+                                time and then try to find as many conferences as
+                                possible related to that topic.
+                            </p>
+                            <h3>Visitors</h3>
+                            <p>
+                                The first goal is
+                                <strong>5000 visitors</strong> per month. I'm
+                                aware that I need to add more conferences for
+                                this to be feasible but it's a good number to
+                                aim towards.
+                            </p>
+                            <p>
+                                I'll explain how I plan to attract visitors in
+                                the marketing section of this article.
+                            </p>
+                            <h3>Revenue</h3>
+                            <p>
+                                Revenue isn't the main priority in the
+                                beginning. But I would like to generate some
+                                revenue in the future. For now I'm focusing on
+                                making the site better.
+                            </p>
+                            <p>
+                                The first goal is <strong>$500</strong> per
+                                month. This isn't a number that can sustain me,
+                                but it would allow me to spent more time on
+                                building the site.
+                            </p>
+                            <p>
+                                I'll talk more about ideas for revenue streams
+                                later in the article.
+                            </p>
+                            <h2>Marketing strategy</h2>
+                            <p>
+                                I've got several ideas for marketing strategies.
+                            </p>
+                            <h3>Building in public</h3>
+                            <p>
+                                The first idea, is being open and transparent
+                                about what I'm working on. I want to regularly
+                                give updates on my blog, on
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="https://www.indiehackers.com/product/conference-hq"
+                                    >Indie Hackers </a
+                                >and on
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="https://getmakerlog.com/products/conference-hq"
+                                    >Makerlog </a
+                                >. This has already resulted in some traffic,
+                                some feature suggestions as well as suggestions
+                                for conferences to add to the site.
+                            </p>
+                            <h3>SEO</h3>
+                            <p>
+                                The primary marketing strategy for the long term
+                                is search engine optimisation.
+                            </p>
+                            <p>
+                                I want to target keywords like 'best design
+                                conferences in 2020'. But I think a more
+                                feasible strategy will be to target long tail
+                                phrases like 'react conferences in toronto'.
+                            </p>
+                            <p>
+                                The site structure is built with this goal in
+                                mind. Right now I have the following url
+                                structures:
+                            </p>
+                            <ul>
+                                <li>/topic/name</li>
+                                <li>/theme/name</li>
+                                <li>/city/name</li>
+                                <li>/country/name</li>
+                                <li>/region/name</li>
+                            </ul>
+                            <p>
+                                Each of these pages have a unique meta
+                                description. At some point I'll add more
+                                detailed descriptions for each page, so there is
+                                text content on them. For a city page this could
+                                be a description of the tech or design scene in
+                                that city.
+                            </p>
+                            <p>
+                                Another plan is to add more specific sub pages.
+                                This could be combining a topic and a city into
+                                a single page. A URL for that page could be
+                                <code
+                                    class="bg-slate-100 px-1.5 py-0.5 rounded text-sm text-slate-800"
+                                    >/city/name/topic/name</code
+                                >. I do see this as more useful when I have more
+                                conferences on the site.
+                            </p>
+                            <p>
+                                This is inspired by
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="https://nomadlist.com/"
+                                    >NomadList </a
+                                >. You can read more about how successful that
+                                strategy was on
+                                <a
+                                    class="underline text-slate-800 font-medium"
+                                    target="_blank"
+                                    href="https://marketingexamples.com/seo/dominate-long-tail-keywords"
+                                    >Marketing Examples </a
+                                >.
+                            </p>
+                            <h3>Link building</h3>
+                            <p>
+                                I haven't come up with a specific plan for
+                                building links yet. But I think it's an
+                                advantage that I've split the page up into small
+                                sub pages. That way I can find a blog related to
+                                Vue and try to get a link on to that site.
+                                Similar I can find a blog about tech news for a
+                                city and try to get a link on to that site.
+                            </p>
+                            <h3>Twitter</h3>
+                            <p>
+                                Although not the primary marketing tool for
+                                Conference HQ I think it can be an important
+                                tool. I can share news about conferences being
+                                announced, opening up Calls for proposals or
+                                selling tickets. I can also interact with
+                                organisers and speakers who might have
+                                suggestions for the site.
+                            </p>
+                            <h2>Potential revenue streams</h2>
+                            <p>
+                                I have given a lot of though to potential
+                                revenue ideas, I don't think it makes sense to
+                                implement any of these ideas before the site has
+                                a steady traffic. I'm cautious about
+                                implementing to many of these ideas because I
+                                want to stay focused on making a good and useful
+                                site for the users.
+                            </p>
+                            <h3>Featured conferences</h3>
+                            <p>
+                                Many popular job board sites make money by
+                                displaying featured jobs at a premium price.
+                                Similarly I could sell the premium space at the
+                                top of each page. I like this idea a lot because
+                                visitors would be people who are interested in
+                                going to a conference, therefore making it a
+                                good way to advertise for the conferences
+                                themselves.
+                            </p>
+                            <p>
+                                Additionally each topic and city has it's own
+                                page so if you are running an Angular conference
+                                in Paris you could choose to advertise on only
+                                those pages.
+                            </p>
+                            <p>
+                                I would most likely offer additional incentives
+                                like another card design in the grid so it
+                                stands out. Another possibility is to allow
+                                organisers to write about the conference or add
+                                testimonials.
+                            </p>
+                            <h3>Advertisements in the conference grid</h3>
+                            <p>
+                                An idea is to add text advertisements in the
+                                grid. The trick here is to make them subtle so
+                                they don't stand out too much.
+                            </p>
+                            <p>
+                                This could be useful for companies who can
+                                target users interested in a specific topic or
+                                theme.
+                            </p>
+                            <h3>Conference affiliates</h3>
+                            <p>
+                                I've seen some conferences offer an affiliate
+                                program for ticket sales. Some offer up to 30%
+                                of the ticket price. For a $1000 dollar
+                                conference that would be $300.
+                            </p>
+                            <p>
+                                As with any other affiliate website I would want
+                                to make it clear that some links may be
+                                affiliate links.
+                            </p>
+                            <h3>Travel affiliates</h3>
+                            <p>
+                                The last idea I've come up with for now is to
+                                add affiliate links to plane tickets, hotels or
+                                transportation around the city. I'm not sure how
+                                useful this would be for the visitors as I doubt
+                                they would buy it right away, without first
+                                talking to their boss or consider it for some
+                                time.
+                            </p>
+                            <p>
+                                If I want to go through with this idea it might
+                                be useful to spend time making deals with
+                                specific hotels or carriers in each city.
+                            </p>
+                            <h2>What's next</h2>
+                            <p>
+                                I try to avoid planning far into the future, but
+                                I've got one big feature that will be
+                                implemented soon. That is search and filtering.
+                            </p>
+                            <p>
+                                Right now you can filter conferences by going to
+                                one of the subpages. But I want a dedicated
+                                search page with the possibility to add filters.
+                                A filter could be a location or a topic. What
+                                this allows is to search for multiple topics in
+                                the same location as an example.
+                            </p>
+                            <p>
+                                I also want to add filters for things like dates
+                                and pricing.
+                            </p>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

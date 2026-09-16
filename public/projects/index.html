@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+        <meta name="title" content="" />
+        <meta
+            name="description"
+            content="Designer &#x26; developer from Denmark"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="" />
+        <meta
+            property="og:description"
+            content="Designer &#x26; developer from Denmark"
+        />
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content="" />
+        <meta
+            property="twitter:description"
+            content="Designer &#x26; developer from Denmark"
+        />
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
+        <link rel="stylesheet" type="text/css" href="/style.css" />
+        <script
+            src="https://cdn.usefathom.com/script.js"
+            data-site="BIHBRBPS"
+            defer
+        ></script>
+        <script src="//unpkg.com/alpinejs" defer></script>
+    </head>
+    <body
+        x-data="{ open: false }"
+        x-bind:class="open ? &#x27;fixed w-[100vw] h-[100vh] overflow-hidden&#x27; : &#x27;&#x27;"
+    >
+        <div class="flex">
+            <aside
+                class="hidden absolute top-0 z-[100] bg-white w-3/5 h-screen border-r border-slate-200 flex flex-col justify-between p-8 md:sticky md:flex md:w-48 lg:w-64"
+                :class="{ hidden: !open }"
+                id="site-navigation"
+            >
+                <div>
+                    <a
+                        href="/"
+                        class="text-4xl tracking-tight leading-10 font-extrabold text-slate-900"
+                        >Bjørn</a
+                    >
+                    <nav class="mt-8 space-y-2">
+                        <a
+                            href="/projects"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Projects </a
+                        ><a
+                            href="/articles"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Articles </a
+                        ><a
+                            href="/links"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Links </a
+                        ><a
+                            href="/snippets"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Snippets </a
+                        ><a
+                            href="/meta"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Meta</a
+                        >
+                    </nav>
+                </div>
+                <nav class="space-y-2">
+                    <a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://twitter.com/bjornlindholmdk"
+                        >Twitter </a
+                    ><a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://www.instagram.com/bjornhansendk/"
+                        >Instagram </a
+                    ><a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://dev.to/bjornlindholmdk"
+                        >Dev.to </a
+                    ><a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://read.cv/bjornlindholm"
+                        >Read.cv</a
+                    >
+                </nav>
+            </aside>
+            <div
+                class="absolute w-full z-[90] top-0 px-4 py-10 flex justify-end md:hidden"
+            >
+                <button
+                    type="button"
+                    @click="open = !open"
+                    aria-label="Toggle navigation"
+                    :aria-expanded="open"
+                    aria-controls="site-navigation"
+                >
+                    <span
+                        class="block w-7 bg-slate-900 rounded"
+                        style="height: 0.1875rem; margin-bottom: 0.375rem"
+                    ></span
+                    ><span
+                        class="block w-7 bg-slate-900 rounded"
+                        style="height: 0.1875rem; margin-bottom: 0.375rem"
+                    ></span
+                    ><span
+                        class="ml-auto block w-5 bg-slate-900 rounded"
+                        style="height: 0.1875rem"
+                    ></span>
+                </button>
+            </div>
+            <div
+                class="w-full"
+                x-bind:class="open ? &#x27;translate-x-[60vw]&#x27; : &#x27;&#x27;"
+            >
+                <main class="w-full">
+                    <div class="px-4 py-8 md:px-16 md:py-8">
+                        <h1
+                            class="text-2xl leading-none md:text-3xl leading-10 font-extrabold text-slate-900 pr-12"
+                        >
+                            Projects
+                        </h1>
+                        <div class="mt-12">
+                            <h3 class="text-lg text-slate-900 font-medium mb-4">
+                                Active projects
+                            </h3>
+                            <ul
+                                class="mt-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
+                            >
+                                <li title="Schema">
+                                    <a
+                                        href="https://schema.bjornlindholm.com/"
+                                        target="_blank"
+                                        class="inline-flex items-baseline space-x-2 hover:underline"
+                                        ><h3 class="text-slate-900 font-medium">
+                                            Schema
+                                        </h3>
+                                        <svg
+                                            class="w-4 h-4 text-slate-600 translate-y-[0.125rem]"
+                                            viewBox="0 0 15 15"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M3 2C2.44772 2 2 2.44772 2 3V12C2 12.5523 2.44772 13 3 13H12C12.5523 13 13 12.5523 13 12V8.5C13 8.22386 12.7761 8 12.5 8C12.2239 8 12 8.22386 12 8.5V12H3V3L6.5 3C6.77614 3 7 2.77614 7 2.5C7 2.22386 6.77614 2 6.5 2H3ZM12.8536 2.14645C12.9015 2.19439 12.9377 2.24964 12.9621 2.30861C12.9861 2.36669 12.9996 2.4303 13 2.497L13 2.5V2.50049V5.5C13 5.77614 12.7761 6 12.5 6C12.2239 6 12 5.77614 12 5.5V3.70711L6.85355 8.85355C6.65829 9.04882 6.34171 9.04882 6.14645 8.85355C5.95118 8.65829 5.95118 8.34171 6.14645 8.14645L11.2929 3H9.5C9.22386 3 9 2.77614 9 2.5C9 2.22386 9.22386 2 9.5 2H12.4999H12.5C12.5678 2 12.6324 2.01349 12.6914 2.03794C12.7504 2.06234 12.8056 2.09851 12.8536 2.14645Z"
+                                                fill="currentColor"
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                            ></path></svg
+                                    ></a>
+                                    <p
+                                        class="first:mt-0 my-5 text-slate-700 !my-0"
+                                    >
+                                        A data modelling tool.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-12">
+                            <h3 class="text-lg text-slate-900 font-medium">
+                                Completed
+                            </h3>
+                            <ul
+                                class="mt-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
+                            >
+                                <li title="Reform">
+                                    <a
+                                        href="https://www.reform.app/"
+                                        target="_blank"
+                                        class="inline-flex items-baseline space-x-2 hover:underline"
+                                        ><h3 class="text-slate-900 font-medium">
+                                            Reform
+                                        </h3>
+                                        <svg
+                                            class="w-4 h-4 text-slate-600 translate-y-[0.125rem]"
+                                            viewBox="0 0 15 15"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M3 2C2.44772 2 2 2.44772 2 3V12C2 12.5523 2.44772 13 3 13H12C12.5523 13 13 12.5523 13 12V8.5C13 8.22386 12.7761 8 12.5 8C12.2239 8 12 8.22386 12 8.5V12H3V3L6.5 3C6.77614 3 7 2.77614 7 2.5C7 2.22386 6.77614 2 6.5 2H3ZM12.8536 2.14645C12.9015 2.19439 12.9377 2.24964 12.9621 2.30861C12.9861 2.36669 12.9996 2.4303 13 2.497L13 2.5V2.50049V5.5C13 5.77614 12.7761 6 12.5 6C12.2239 6 12 5.77614 12 5.5V3.70711L6.85355 8.85355C6.65829 9.04882 6.34171 9.04882 6.14645 8.85355C5.95118 8.65829 5.95118 8.34171 6.14645 8.14645L11.2929 3H9.5C9.22386 3 9 2.77614 9 2.5C9 2.22386 9.22386 2 9.5 2H12.4999H12.5C12.5678 2 12.6324 2.01349 12.6914 2.03794C12.7504 2.06234 12.8056 2.09851 12.8536 2.14645Z"
+                                                fill="currentColor"
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                            ></path></svg
+                                    ></a>
+                                    <p
+                                        class="first:mt-0 my-5 text-slate-700 !my-0"
+                                    >
+                                        A simple, clean form builder SaaS app. I
+                                        co-founded and was responsible for
+                                        designing and developing the
+                                        application. Acquired by FunnelEnvy
+                                    </p>
+                                </li>
+                                <li title="Paperstack">
+                                    <a
+                                        href="https://paperstack.ink/"
+                                        target="_blank"
+                                        class="inline-flex items-baseline space-x-2 hover:underline"
+                                        ><h3 class="text-slate-900 font-medium">
+                                            Paperstack
+                                        </h3>
+                                        <svg
+                                            class="w-4 h-4 text-slate-600 translate-y-[0.125rem]"
+                                            viewBox="0 0 15 15"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M3 2C2.44772 2 2 2.44772 2 3V12C2 12.5523 2.44772 13 3 13H12C12.5523 13 13 12.5523 13 12V8.5C13 8.22386 12.7761 8 12.5 8C12.2239 8 12 8.22386 12 8.5V12H3V3L6.5 3C6.77614 3 7 2.77614 7 2.5C7 2.22386 6.77614 2 6.5 2H3ZM12.8536 2.14645C12.9015 2.19439 12.9377 2.24964 12.9621 2.30861C12.9861 2.36669 12.9996 2.4303 13 2.497L13 2.5V2.50049V5.5C13 5.77614 12.7761 6 12.5 6C12.2239 6 12 5.77614 12 5.5V3.70711L6.85355 8.85355C6.65829 9.04882 6.34171 9.04882 6.14645 8.85355C5.95118 8.65829 5.95118 8.34171 6.14645 8.14645L11.2929 3H9.5C9.22386 3 9 2.77614 9 2.5C9 2.22386 9.22386 2 9.5 2H12.4999H12.5C12.5678 2 12.6324 2.01349 12.6914 2.03794C12.7504 2.06234 12.8056 2.09851 12.8536 2.14645Z"
+                                                fill="currentColor"
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                            ></path></svg
+                                    ></a>
+                                    <p
+                                        class="first:mt-0 my-5 text-slate-700 !my-0"
+                                    >
+                                        A simple static site generator. This
+                                        website is build with Paperstack.
+                                    </p>
+                                </li>
+                                <li title="Stencil">
+                                    <a
+                                        href="https://github.com/paperstackink/stencil"
+                                        target="_blank"
+                                        class="inline-flex items-baseline space-x-2 hover:underline"
+                                        ><h3 class="text-slate-900 font-medium">
+                                            Stencil
+                                        </h3>
+                                        <svg
+                                            class="w-4 h-4 text-slate-600 translate-y-[0.125rem]"
+                                            viewBox="0 0 15 15"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M3 2C2.44772 2 2 2.44772 2 3V12C2 12.5523 2.44772 13 3 13H12C12.5523 13 13 12.5523 13 12V8.5C13 8.22386 12.7761 8 12.5 8C12.2239 8 12 8.22386 12 8.5V12H3V3L6.5 3C6.77614 3 7 2.77614 7 2.5C7 2.22386 6.77614 2 6.5 2H3ZM12.8536 2.14645C12.9015 2.19439 12.9377 2.24964 12.9621 2.30861C12.9861 2.36669 12.9996 2.4303 13 2.497L13 2.5V2.50049V5.5C13 5.77614 12.7761 6 12.5 6C12.2239 6 12 5.77614 12 5.5V3.70711L6.85355 8.85355C6.65829 9.04882 6.34171 9.04882 6.14645 8.85355C5.95118 8.65829 5.95118 8.34171 6.14645 8.14645L11.2929 3H9.5C9.22386 3 9 2.77614 9 2.5C9 2.22386 9.22386 2 9.5 2H12.4999H12.5C12.5678 2 12.6324 2.01349 12.6914 2.03794C12.7504 2.06234 12.8056 2.09851 12.8536 2.14645Z"
+                                                fill="currentColor"
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                            ></path></svg
+                                    ></a>
+                                    <p
+                                        class="first:mt-0 my-5 text-slate-700 !my-0"
+                                    >
+                                        The templating language powering
+                                        Paperstack. It's based on components
+                                        instead of includes, blocks or partials.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-12">
+                            <h3 class="text-lg text-slate-900 font-medium">
+                                Graveyard
+                            </h3>
+                            <span class="text-slate-500 text-xs"
+                                >...or projects I'm longer a part of</span
+                            >
+                            <ul
+                                class="mt-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
+                            >
+                                <li title="Alloy">
+                                    <a
+                                        href="https://x.com/bjornlindholmdk/status/1800500609524900139"
+                                        target="_blank"
+                                        class="inline-flex items-baseline space-x-2 hover:underline"
+                                        ><h3 class="text-slate-900 font-medium">
+                                            Alloy
+                                        </h3>
+                                        <svg
+                                            class="w-4 h-4 text-slate-600 translate-y-[0.125rem]"
+                                            viewBox="0 0 15 15"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M3 2C2.44772 2 2 2.44772 2 3V12C2 12.5523 2.44772 13 3 13H12C12.5523 13 13 12.5523 13 12V8.5C13 8.22386 12.7761 8 12.5 8C12.2239 8 12 8.22386 12 8.5V12H3V3L6.5 3C6.77614 3 7 2.77614 7 2.5C7 2.22386 6.77614 2 6.5 2H3ZM12.8536 2.14645C12.9015 2.19439 12.9377 2.24964 12.9621 2.30861C12.9861 2.36669 12.9996 2.4303 13 2.497L13 2.5V2.50049V5.5C13 5.77614 12.7761 6 12.5 6C12.2239 6 12 5.77614 12 5.5V3.70711L6.85355 8.85355C6.65829 9.04882 6.34171 9.04882 6.14645 8.85355C5.95118 8.65829 5.95118 8.34171 6.14645 8.14645L11.2929 3H9.5C9.22386 3 9 2.77614 9 2.5C9 2.22386 9.22386 2 9.5 2H12.4999H12.5C12.5678 2 12.6324 2.01349 12.6914 2.03794C12.7504 2.06234 12.8056 2.09851 12.8536 2.14645Z"
+                                                fill="currentColor"
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                            ></path></svg
+                                    ></a>
+                                    <p
+                                        class="first:mt-0 my-5 text-slate-700 !my-0"
+                                    >
+                                        A database client for product people.
+                                    </p>
+                                </li>
+                                <li title="Branch">
+                                    <a
+                                        href="https://www.branchci.com/"
+                                        target="_blank"
+                                        class="inline-flex items-baseline space-x-2 hover:underline"
+                                        ><h3 class="text-slate-900 font-medium">
+                                            Branch
+                                        </h3>
+                                        <svg
+                                            class="w-4 h-4 text-slate-600 translate-y-[0.125rem]"
+                                            viewBox="0 0 15 15"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M3 2C2.44772 2 2 2.44772 2 3V12C2 12.5523 2.44772 13 3 13H12C12.5523 13 13 12.5523 13 12V8.5C13 8.22386 12.7761 8 12.5 8C12.2239 8 12 8.22386 12 8.5V12H3V3L6.5 3C6.77614 3 7 2.77614 7 2.5C7 2.22386 6.77614 2 6.5 2H3ZM12.8536 2.14645C12.9015 2.19439 12.9377 2.24964 12.9621 2.30861C12.9861 2.36669 12.9996 2.4303 13 2.497L13 2.5V2.50049V5.5C13 5.77614 12.7761 6 12.5 6C12.2239 6 12 5.77614 12 5.5V3.70711L6.85355 8.85355C6.65829 9.04882 6.34171 9.04882 6.14645 8.85355C5.95118 8.65829 5.95118 8.34171 6.14645 8.14645L11.2929 3H9.5C9.22386 3 9 2.77614 9 2.5C9 2.22386 9.22386 2 9.5 2H12.4999H12.5C12.5678 2 12.6324 2.01349 12.6914 2.03794C12.7504 2.06234 12.8056 2.09851 12.8536 2.14645Z"
+                                                fill="currentColor"
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                            ></path></svg
+                                    ></a>
+                                    <p
+                                        class="first:mt-0 my-5 text-slate-700 !my-0"
+                                    >
+                                        A CI/CD and deployment tool for
+                                        WordPress websites. I joined as 1st
+                                        employee.
+                                    </p>
+                                </li>
+                                <li title="Conference HQ">
+                                    <h3 class="text-slate-900 font-medium">
+                                        Conference HQ
+                                    </h3>
+                                    <p
+                                        class="first:mt-0 my-5 text-slate-700 !my-0"
+                                    >
+                                        A directory of tech-related conferences.
+                                    </p>
+                                </li>
+                                <li title="Provisioning">
+                                    <h3 class="text-slate-900 font-medium">
+                                        Provisioning
+                                    </h3>
+                                    <p
+                                        class="first:mt-0 my-5 text-slate-700 !my-0"
+                                    >
+                                        An app that could automatically generate
+                                        a Laravel project and set up a CI/CD
+                                        pipeline and servers. It was my thesis
+                                        project from Copenhagen School of Design
+                                        and Technology.
+                                    </p>
+                                </li>
+                                <li title="Serve">
+                                    <h3 class="text-slate-900 font-medium">
+                                        Serve
+                                    </h3>
+                                    <p
+                                        class="first:mt-0 my-5 text-slate-700 !my-0"
+                                    >
+                                        A GUI app that made it easy to manage
+                                        your local development environment for
+                                        Laravel apps.
+                                    </p>
+                                </li>
+                                <li title="authenticationguide.dev">
+                                    <h3 class="text-slate-900 font-medium">
+                                        authenticationguide.dev
+                                    </h3>
+                                    <p
+                                        class="first:mt-0 my-5 text-slate-700 !my-0"
+                                    >
+                                        A content site explaining web security
+                                        principles for people who don't have a
+                                        PhD in Computer Science.
+                                    </p>
+                                </li>
+                                <li title="Titanium">
+                                    <h3 class="text-slate-900 font-medium">
+                                        Titanium
+                                    </h3>
+                                    <p
+                                        class="first:mt-0 my-5 text-slate-700 !my-0"
+                                    >
+                                        A collection of Laravel SaaS application
+                                        starter kits.
+                                    </p>
+                                </li>
+                                <li title="PerceiveCSS">
+                                    <a
+                                        href="https://www.instagram.com/perceivecss/"
+                                        target="_blank"
+                                        class="inline-flex items-baseline space-x-2 hover:underline"
+                                        ><h3 class="text-slate-900 font-medium">
+                                            PerceiveCSS
+                                        </h3>
+                                        <svg
+                                            class="w-4 h-4 text-slate-600 translate-y-[0.125rem]"
+                                            viewBox="0 0 15 15"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M3 2C2.44772 2 2 2.44772 2 3V12C2 12.5523 2.44772 13 3 13H12C12.5523 13 13 12.5523 13 12V8.5C13 8.22386 12.7761 8 12.5 8C12.2239 8 12 8.22386 12 8.5V12H3V3L6.5 3C6.77614 3 7 2.77614 7 2.5C7 2.22386 6.77614 2 6.5 2H3ZM12.8536 2.14645C12.9015 2.19439 12.9377 2.24964 12.9621 2.30861C12.9861 2.36669 12.9996 2.4303 13 2.497L13 2.5V2.50049V5.5C13 5.77614 12.7761 6 12.5 6C12.2239 6 12 5.77614 12 5.5V3.70711L6.85355 8.85355C6.65829 9.04882 6.34171 9.04882 6.14645 8.85355C5.95118 8.65829 5.95118 8.34171 6.14645 8.14645L11.2929 3H9.5C9.22386 3 9 2.77614 9 2.5C9 2.22386 9.22386 2 9.5 2H12.4999H12.5C12.5678 2 12.6324 2.01349 12.6914 2.03794C12.7504 2.06234 12.8056 2.09851 12.8536 2.14645Z"
+                                                fill="currentColor"
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                            ></path></svg
+                                    ></a>
+                                    <p
+                                        class="first:mt-0 my-5 text-slate-700 !my-0"
+                                    >
+                                        Simple illustrations explaining
+                                        different CSS concepts.
+                                    </p>
+                                </li>
+                                <li title="Iridium UI">
+                                    <h3 class="text-slate-900 font-medium">
+                                        Iridium UI
+                                    </h3>
+                                    <p
+                                        class="first:mt-0 my-5 text-slate-700 !my-0"
+                                    >
+                                        A collection of unstyled, accessible UI
+                                        components. Very similar to current
+                                        projects like Radix and HeadlessUI.
+                                    </p>
+                                </li>
+                                <li title="Weblimericks">
+                                    <h3 class="text-slate-900 font-medium">
+                                        Weblimericks
+                                    </h3>
+                                    <p
+                                        class="first:mt-0 my-5 text-slate-700 !my-0"
+                                    >
+                                        A collection of small limericks about
+                                        the web development world.
+                                    </p>
+                                </li>
+                                <li title="Flight statistics">
+                                    <a
+                                        href="https://eloquent-meitner-2ae4da.netlify.app/"
+                                        target="_blank"
+                                        class="inline-flex items-baseline space-x-2 hover:underline"
+                                        ><h3 class="text-slate-900 font-medium">
+                                            Flight statistics
+                                        </h3>
+                                        <svg
+                                            class="w-4 h-4 text-slate-600 translate-y-[0.125rem]"
+                                            viewBox="0 0 15 15"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M3 2C2.44772 2 2 2.44772 2 3V12C2 12.5523 2.44772 13 3 13H12C12.5523 13 13 12.5523 13 12V8.5C13 8.22386 12.7761 8 12.5 8C12.2239 8 12 8.22386 12 8.5V12H3V3L6.5 3C6.77614 3 7 2.77614 7 2.5C7 2.22386 6.77614 2 6.5 2H3ZM12.8536 2.14645C12.9015 2.19439 12.9377 2.24964 12.9621 2.30861C12.9861 2.36669 12.9996 2.4303 13 2.497L13 2.5V2.50049V5.5C13 5.77614 12.7761 6 12.5 6C12.2239 6 12 5.77614 12 5.5V3.70711L6.85355 8.85355C6.65829 9.04882 6.34171 9.04882 6.14645 8.85355C5.95118 8.65829 5.95118 8.34171 6.14645 8.14645L11.2929 3H9.5C9.22386 3 9 2.77614 9 2.5C9 2.22386 9.22386 2 9.5 2H12.4999H12.5C12.5678 2 12.6324 2.01349 12.6914 2.03794C12.7504 2.06234 12.8056 2.09851 12.8536 2.14645Z"
+                                                fill="currentColor"
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                            ></path></svg
+                                    ></a>
+                                    <p
+                                        class="first:mt-0 my-5 text-slate-700 !my-0"
+                                    >
+                                        A data visualisation experient of
+                                        different flight related statistics.
+                                    </p>
+                                </li>
+                                <li title="ML Jobs">
+                                    <h3 class="text-slate-900 font-medium">
+                                        ML Jobs
+                                    </h3>
+                                    <p
+                                        class="first:mt-0 my-5 text-slate-700 !my-0"
+                                    >
+                                        A job board of AI and ML related jobs.
+                                    </p>
+                                </li>
+                                <li title="Vue Storefront">
+                                    <h3 class="text-slate-900 font-medium">
+                                        Vue Storefront
+                                    </h3>
+                                    <p
+                                        class="first:mt-0 my-5 text-slate-700 !my-0"
+                                    >
+                                        A JavaScript library to create static,
+                                        self-hosted e-commerce sites with
+                                        Shopify as a backend.
+                                    </p>
+                                </li>
+                                <li title="BERT">
+                                    <h3 class="text-slate-900 font-medium">
+                                        BERT
+                                    </h3>
+                                    <p
+                                        class="first:mt-0 my-5 text-slate-700 !my-0"
+                                    >
+                                        An app to conduct and collect data from
+                                        BERT tests.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

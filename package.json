@@ -1,17 +1,16 @@
 {
-  "name": "bjornlindholm.com",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "./node_modules/.bin/paper build",
-    "dev": "./node_modules/.bin/paper dev"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@paperstack/paperstack": "^0.7.0",
-    "http-server": "^14.1.1"
-  }
+    "name": "bjornlindholm.com",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "build:css": "tailwindcss -i ./styles/input.css -o ./public/style.css --minify",
+        "build": "npm run build:css",
+        "dev": "tailwindcss -i ./styles/input.css -o ./public/style.css --watch",
+        "start": "npm run build:css && http-server public -c-1"
+    },
+    "license": "ISC",
+    "devDependencies": {
+        "http-server": "^14.1.1",
+        "tailwindcss": "^3.4.17"
+    }
 }

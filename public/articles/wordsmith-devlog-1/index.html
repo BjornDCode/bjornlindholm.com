@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Wordsmith Devlog 1</title>
+        <meta name="title" content="Wordsmith Devlog 1" />
+        <meta
+            name="description"
+            content="Designer &#x26; developer from Denmark"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Wordsmith Devlog 1" />
+        <meta
+            property="og:description"
+            content="Designer &#x26; developer from Denmark"
+        />
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content="Wordsmith Devlog 1" />
+        <meta
+            property="twitter:description"
+            content="Designer &#x26; developer from Denmark"
+        />
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
+        <link rel="stylesheet" type="text/css" href="/style.css" />
+        <script
+            src="https://cdn.usefathom.com/script.js"
+            data-site="BIHBRBPS"
+            defer
+        ></script>
+        <script src="//unpkg.com/alpinejs" defer></script>
+    </head>
+    <body
+        x-data="{ open: false }"
+        x-bind:class="open ? &#x27;fixed w-[100vw] h-[100vh] overflow-hidden&#x27; : &#x27;&#x27;"
+    >
+        <div class="flex">
+            <aside
+                class="hidden absolute top-0 z-[100] bg-white w-3/5 h-screen border-r border-slate-200 flex flex-col justify-between p-8 md:sticky md:flex md:w-48 lg:w-64"
+                :class="{ hidden: !open }"
+                id="site-navigation"
+            >
+                <div>
+                    <a
+                        href="/"
+                        class="text-4xl tracking-tight leading-10 font-extrabold text-slate-900"
+                        >Bjørn</a
+                    >
+                    <nav class="mt-8 space-y-2">
+                        <a
+                            href="/projects"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Projects </a
+                        ><a
+                            href="/articles"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Articles </a
+                        ><a
+                            href="/links"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Links </a
+                        ><a
+                            href="/snippets"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Snippets </a
+                        ><a
+                            href="/meta"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Meta</a
+                        >
+                    </nav>
+                </div>
+                <nav class="space-y-2">
+                    <a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://twitter.com/bjornlindholmdk"
+                        >Twitter </a
+                    ><a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://www.instagram.com/bjornhansendk/"
+                        >Instagram </a
+                    ><a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://dev.to/bjornlindholmdk"
+                        >Dev.to </a
+                    ><a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://read.cv/bjornlindholm"
+                        >Read.cv</a
+                    >
+                </nav>
+            </aside>
+            <div
+                class="absolute w-full z-[90] top-0 px-4 py-10 flex justify-end md:hidden"
+            >
+                <button
+                    type="button"
+                    @click="open = !open"
+                    aria-label="Toggle navigation"
+                    :aria-expanded="open"
+                    aria-controls="site-navigation"
+                >
+                    <span
+                        class="block w-7 bg-slate-900 rounded"
+                        style="height: 0.1875rem; margin-bottom: 0.375rem"
+                    ></span
+                    ><span
+                        class="block w-7 bg-slate-900 rounded"
+                        style="height: 0.1875rem; margin-bottom: 0.375rem"
+                    ></span
+                    ><span
+                        class="ml-auto block w-5 bg-slate-900 rounded"
+                        style="height: 0.1875rem"
+                    ></span>
+                </button>
+            </div>
+            <div
+                class="w-full"
+                x-bind:class="open ? &#x27;translate-x-[60vw]&#x27; : &#x27;&#x27;"
+            >
+                <main class="w-full">
+                    <div
+                        class="px-4 py-8 md:px-8 md:py-20 sm:max-w-xl sm:mx-auto"
+                    >
+                        <h1
+                            class="text-2xl leading-none md:text-3xl leading-10 font-extrabold text-slate-900"
+                        >
+                            Wordsmith Devlog 1
+                        </h1>
+                        <span class="text-slate-500 text-xs block mt-2"
+                            >10/02/2025</span
+                        >
+                        <div
+                            class="prose text-base leading-7 text-slate-700 mt-6"
+                        >
+                            <p>
+                                This week I rewrote the text-rendering for
+                                Wordsmith multiple times. I had a basic
+                                implementation but the upcoming task was to
+                                implement cursor navigation, and I ran into
+                                issues.
+                            </p>
+                            <h2>Text rendering</h2>
+                            <p>
+                                There were 2 problems with the existing
+                                text-rendering implementation, both related to
+                                headlines:
+                            </p>
+                            <ul>
+                                <li>
+                                    I needed to track the positions of headlines
+                                    in the source text to make the font bold.
+                                </li>
+                                <li>
+                                    I needed to know which line number a
+                                    headline was on to render a headline marker,
+                                    i.e., a number of #’s corresponding to the
+                                    headline level. These markers are rendered
+                                    independently of the text, so I need to
+                                    calculate the y-level manually.
+                                </li>
+                            </ul>
+                            <p>
+                                Initially I kept track of the headlines using
+                                spans which were offsets pointing into the text.
+                            </p>
+                            <pre><code>struct Span {
+    start: usize,
+    end: usize,
+}
+</code></pre>
+                            <p>
+                                Figuring out which line a headline appeared on
+                                was difficult with this approach. Because of
+                                soft-wrapping, it isn’t guaranteed that the line
+                                number in the source text is the same as the
+                                rendering line number. Instead, I needed to
+                                count from the beginning every time I needed to
+                                know what line I was currently on.
+                            </p>
+                            <p>
+                                In the rewrite, I switched from spans to blocks.
+                                A block is a headline or paragraph (and later
+                                lists, quotes and so on). This model is more
+                                rigid.
+                            </p>
+                            <p>
+                                Each block keeps track of its own content and
+                                thus knows its own height in lines. To find the
+                                current line, I can sum up the line counts of
+                                all previous blocks.
+                            </p>
+                            <p>
+                                When styling text as bold, I don’t need to know
+                                exactly where the text is. Instead, I need to
+                                insert a ‘run’ of text with a specific length.
+                                Since each block knows its own content, it also
+                                knows its length. When it’s time to render a
+                                headline, I can specify that it’s time to insert
+                                bold styles until the end of the headline.
+                            </p>
+                            <h2>Processing text</h2>
+                            <p>
+                                The original span problem was complicated
+                                further by the fact that I’m working with raw
+                                markdown text. The source text is markdown, but
+                                what is rendered to the screen is modified in
+                                the following ways:
+                            </p>
+                            <ul>
+                                <li>
+                                    #’s are removed from the source code and
+                                    instead rendered next to the text.
+                                </li>
+                                <li>
+                                    The text is soft-wrapped. I’ve set a
+                                    50-character line limit, but in raw
+                                    markdown, a paragraph or headline might be
+                                    much longer than that. That means I’ll have
+                                    to insert newlines into the source text,
+                                    which will make the rendered text longer
+                                    than the source text. Additionally, it’s
+                                    necessary to know where soft-wrapped newline
+                                    characters are inserted to correctly resolve
+                                    the cursor position.
+                                </li>
+                            </ul>
+                            <p>
+                                I ended up with a model where I have multiple
+                                data text types:
+                                <code>RawContent</code>,
+                                <code>TrimmedContent</code> and
+                                <code>WrappedContent</code>.
+                            </p>
+                            <p>
+                                <code>RawContent</code> can be created from a
+                                string of raw markdown.
+                                <code>TrimmedContent</code> can be created from
+                                <code>RawContent</code> and
+                                <code>WrappedContent</code> can be created from
+                                <code>TrimmedContent</code>.
+                            </p>
+                            <p>
+                                I need to trim the content before soft-wrapping
+                                because it’s the line content, after it has been
+                                trimmed, that needs to be wrapped.
+                            </p>
+                            <p>
+                                When <code>TrimmedContent</code> is created, it
+                                removes headline markers and keeps track of
+                                where it has removed text. When
+                                <code>WrappedContent</code> is created, it keeps
+                                track of where soft-wrapping newlines have been
+                                inserted.
+                            </p>
+                            <p>
+                                GPUI, the rendering library I’m using, can
+                                automatically soft-wrap text. But in the final
+                                rewrite, I opted to implement the logic myself
+                                to better keep track of where the newlines have
+                                been inserted.
+                            </p>
+                            <p>
+                                In one of the intermediate rewrites, I had a
+                                version where I let GPUI soft-wrap the text. But
+                                every time I needed to know the length in lines
+                                of a block, I needed to call
+                                <code>render()</code>. That meant the internal
+                                text logic and the rendering logic were very
+                                intertwined.
+                            </p>
+                            <h2>Cursor navigation</h2>
+                            <p>
+                                This rewrite finally unlocked an implementation
+                                of cursor navigation.
+                            </p>
+                            <p>
+                                The simple cases are when the user presses the
+                                left or right arrow key. Even this has edge
+                                cases though. If the user is at the beginning or
+                                end of a line, I can’t just move the cursor
+                                horizontally. If the user is at the beginning of
+                                a line and moves left, it should move to the end
+                                of the previous line. Similarly, if the user is
+                                at the end of a line and moves right, it should
+                                move to the beginning of the next line.
+                            </p>
+                            <p>
+                                Up and down is more complicated. Most editors
+                                will implement the following feature:
+                            </p>
+                            <ul>
+                                <li>The user is at position 35 in a line</li>
+                                <li>
+                                    They press ‘up’ to a line with length 20
+                                </li>
+                                <li>The cursor moves up and to position 20</li>
+                                <li>
+                                    They press ‘up’ again to a line with length
+                                    48
+                                </li>
+                                <li>The cursor moves up and to position 35</li>
+                            </ul>
+                            <p>
+                                To implement this, I introduced
+                                <code>preferred_x</code>. When moving
+                                vertically, it will look at the value and
+                                determine if it’s higher than the new line
+                                length. If it is, it will move the cursor to the
+                                end of the line. This value will update every
+                                time the user moves the cursor horizontally.
+                            </p>
+                            <p>
+                                Finally, I implemented additional cursor
+                                navigation actions:
+                            </p>
+                            <ul>
+                                <li>
+                                    Move to the beginning of file
+                                    (<code>⌘-↑</code>)
+                                </li>
+                                <li>Move to end of file (<code>⌘-↓</code>)</li>
+                                <li>
+                                    Move to the beginning of line
+                                    (<code>⌘-←</code>)
+                                </li>
+                                <li>Move to end of line (<code>⌘-→</code>)</li>
+                                <li>
+                                    Move to the beginning word
+                                    (<code>Alt-←</code>)
+                                </li>
+                                <li>
+                                    Move to end of word (<code>Alt-→</code>)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,3 +1,0 @@
-<span class="text-slate-500 text-xs {{ class }}">
-    <slot />
-</span>

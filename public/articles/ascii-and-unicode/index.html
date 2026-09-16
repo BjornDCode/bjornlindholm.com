@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ASCII and Unicode</title>
+        <meta name="title" content="ASCII and Unicode" />
+        <meta
+            name="description"
+            content="Designer &#x26; developer from Denmark"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="ASCII and Unicode" />
+        <meta
+            property="og:description"
+            content="Designer &#x26; developer from Denmark"
+        />
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content="ASCII and Unicode" />
+        <meta
+            property="twitter:description"
+            content="Designer &#x26; developer from Denmark"
+        />
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
+        <link rel="stylesheet" type="text/css" href="/style.css" />
+        <script
+            src="https://cdn.usefathom.com/script.js"
+            data-site="BIHBRBPS"
+            defer
+        ></script>
+        <script src="//unpkg.com/alpinejs" defer></script>
+    </head>
+    <body
+        x-data="{ open: false }"
+        x-bind:class="open ? &#x27;fixed w-[100vw] h-[100vh] overflow-hidden&#x27; : &#x27;&#x27;"
+    >
+        <div class="flex">
+            <aside
+                class="hidden absolute top-0 z-[100] bg-white w-3/5 h-screen border-r border-slate-200 flex flex-col justify-between p-8 md:sticky md:flex md:w-48 lg:w-64"
+                :class="{ hidden: !open }"
+                id="site-navigation"
+            >
+                <div>
+                    <a
+                        href="/"
+                        class="text-4xl tracking-tight leading-10 font-extrabold text-slate-900"
+                        >Bjørn</a
+                    >
+                    <nav class="mt-8 space-y-2">
+                        <a
+                            href="/projects"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Projects </a
+                        ><a
+                            href="/articles"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Articles </a
+                        ><a
+                            href="/links"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Links </a
+                        ><a
+                            href="/snippets"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Snippets </a
+                        ><a
+                            href="/meta"
+                            class="block w-full text-sm text-slate-700 font-regular hover:underline"
+                            >Meta</a
+                        >
+                    </nav>
+                </div>
+                <nav class="space-y-2">
+                    <a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://twitter.com/bjornlindholmdk"
+                        >Twitter </a
+                    ><a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://www.instagram.com/bjornhansendk/"
+                        >Instagram </a
+                    ><a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://dev.to/bjornlindholmdk"
+                        >Dev.to </a
+                    ><a
+                        class="block w-full text-xs text-slate-500 hover:underline"
+                        target="_blank"
+                        href="https://read.cv/bjornlindholm"
+                        >Read.cv</a
+                    >
+                </nav>
+            </aside>
+            <div
+                class="absolute w-full z-[90] top-0 px-4 py-10 flex justify-end md:hidden"
+            >
+                <button
+                    type="button"
+                    @click="open = !open"
+                    aria-label="Toggle navigation"
+                    :aria-expanded="open"
+                    aria-controls="site-navigation"
+                >
+                    <span
+                        class="block w-7 bg-slate-900 rounded"
+                        style="height: 0.1875rem; margin-bottom: 0.375rem"
+                    ></span
+                    ><span
+                        class="block w-7 bg-slate-900 rounded"
+                        style="height: 0.1875rem; margin-bottom: 0.375rem"
+                    ></span
+                    ><span
+                        class="ml-auto block w-5 bg-slate-900 rounded"
+                        style="height: 0.1875rem"
+                    ></span>
+                </button>
+            </div>
+            <div
+                class="w-full"
+                x-bind:class="open ? &#x27;translate-x-[60vw]&#x27; : &#x27;&#x27;"
+            >
+                <main class="w-full">
+                    <div
+                        class="px-4 py-8 md:px-8 md:py-20 sm:max-w-xl sm:mx-auto"
+                    >
+                        <h1
+                            class="text-2xl leading-none md:text-3xl leading-10 font-extrabold text-slate-900"
+                        >
+                            ASCII and Unicode
+                        </h1>
+                        <span class="text-slate-500 text-xs block mt-2"
+                            >06/12/2024</span
+                        >
+                        <div
+                            class="prose text-base leading-7 text-slate-700 mt-6"
+                        >
+                            <p>
+                                You might have heard the terms ‘ASCII’ and
+                                ‘Unicode’. But what do those terms actually
+                                mean?
+                            </p>
+                            <h2>Encoding text</h2>
+                            <p>
+                                In programming languages, we work with text as
+                                strings. But at the hardware level, a computer
+                                doesn’t know what a string is. All it
+                                understands is 1s and 0s.
+                            </p>
+                            <p>
+                                Strings are stored as a list of characters. What
+                                is a character, then? That’s more complex than
+                                you would initially think.
+                            </p>
+                            <p>
+                                Character encodings are different formats to
+                                represent characters in computer systems. They
+                                define how characters are represented as bytes.
+                            </p>
+                            <h2>What is a character?</h2>
+                            <p>
+                                At first glance, it might seem obvious what a
+                                character is: ‘A’, ‘x’ or ‘!’ are characters.
+                                But what about ‘🤨’, ‘일’ or ‘π’?
+                            </p>
+                            <p>
+                                It turns out that a ‘character’ isn’t a
+                                well-defined concept. Thus, different text
+                                formats have evolved. In some text formats those
+                                are characters, while in other text formats you
+                                can’t even represent them at all.
+                            </p>
+                            <h2>Bits and bytes</h2>
+                            <p>
+                                At the most primitive level, computers store
+                                information as 1s and 0s, called ‘bits.’ A group
+                                of 8 bits forms a ‘byte’ which can represent 256
+                                unique values (0–255).
+                            </p>
+                            <p>
+                                Bytes are the fundamental unit for storing text
+                                characters in most encoding systems.
+                            </p>
+                            <h2>ASCII</h2>
+                            <p>
+                                Computers replaced teleprinters, which replaced
+                                typewriters. In Western countries, typewriters
+                                could write 26 uppercase letters, 26 lowercase
+                                letters, digits, punctuation marks, and control
+                                characters like spaces or newlines.
+                            </p>
+                            <p>
+                                The easiest way to translate this into a
+                                computing system was to assign each character a
+                                number. Since typewriters only supported a
+                                limited number of characters, each character was
+                                assigned a number from 0 to 128. That could be
+                                represented with 7 bits.
+                            </p>
+                            <p>
+                                ASCII (American Standard Code for Information
+                                Interchange) is a table of numbers and
+                                characters that was defined to standardise
+                                characters.
+                            </p>
+                            <p>
+                                An example: Uppercase ‘A’ is assigned number 65.
+                                In binary, that’s 1000001.
+                            </p>
+                            <h2>Unicode</h2>
+                            <p>
+                                ASCII worked great in English-speaking
+                                countries, but other countries have different
+                                alphabets. In Denmark, we have ‘æ’, ‘ø’ and ‘å’
+                                and their uppercase equivalents. Other countries
+                                use entirely different alphabets.
+                            </p>
+                            <p>
+                                For a while, this wasn’t a huge problem. Since
+                                computers worked mostly independently, each
+                                country created their own text encodings. But in
+                                the late 80s and early 90s the internet gained
+                                popularity, and suddenly computers could talk to
+                                each other.
+                            </p>
+                            <p>
+                                There was an urgent need to standardise how to
+                                represent characters in a way that works for
+                                everyone. In 1988 the Unicode project was
+                                created. Its goal was to develop a system that
+                                can represent all characters we can imagine
+                                typing into a computer.
+                            </p>
+                            <p>
+                                Unicode itself has developed multiple ways to
+                                represent a character as bytes. These formats
+                                are called ‘UTF-8’, ‘UTF-16’ and ‘UTF-32’.
+                            </p>
+                            <h2>UTF-8</h2>
+                            <p>
+                                The most commonly used format, ‘UTF-8’ works the
+                                following way:
+                            </p>
+                            <p>
+                                Each character can be represented by 1 to 4
+                                bytes. A character in Unicode is called a code
+                                point. There are more than 1 million possible
+                                code points, but currently only ~150k are used.
+                            </p>
+                            <p>
+                                The first bit of a code point indicates how many
+                                bytes there are in the code point.
+                            </p>
+                            <p>
+                                The most common characters are represented with
+                                1 byte. Conveniently, the original ASCII
+                                characters have the same numbers in Unicode. So
+                                if a computer understands Unicode, it will also
+                                understand ASCII.
+                            </p>
+                            <p>
+                                The character ‘λ’ (lambda) from the Greek
+                                alphabet is number 955 and is thus represented
+                                with 2 bytes. ‘€’ (Euro) is number 8364 and is
+                                represented with 3 bytes. Emojis are represented
+                                with 4 bytes. ‘🤨’ has number 129320.
+                            </p>
+                            <h2>Graphemes</h2>
+                            <p>
+                                A key feature of Unicode is that multiple
+                                characters can be combined into 1 character
+                                visually on the screen. These are called
+                                graphemes.
+                            </p>
+                            <p>
+                                🤙🏿 is a compound character of 🤙 and 🏿. The
+                                latter character is a skin tone modifier. The
+                                bytes for the 2 characters are stored right
+                                after each other. Unicode has defined rules for
+                                how to render certain sequences of characters.
+                            </p>
+                            <p>
+                                Some accented characters are represented the
+                                same way, with a base letter and a modifier
+                                stored sequentially.
+                            </p>
+                            <h2>Summary</h2>
+                            <p>
+                                Computers represent text as strings. A string is
+                                a list of characters, and characters are stored
+                                using bits or bytes. Which characters are
+                                represented by which bytes are defined in
+                                encodings such as ASCII or Unicode.
+                            </p>
+                            <p>
+                                ASCII was one of the first encodings, but it
+                                only supports 128 characters. Each character is
+                                stored in 7 bits.
+                            </p>
+                            <p>
+                                Unicode is a collection of several encodings.
+                                UTF-8 defines characters using 1 to 4 bytes.
+                                Additionally, sequences of characters can
+                                compound into graphemes, which are visually
+                                rendered as 1 character on the screen. The aim
+                                of Unicode is to represent all possible
+                                characters.
+                            </p>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>
