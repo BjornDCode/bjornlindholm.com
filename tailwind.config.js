@@ -1,3 +1,3 @@
 module.exports = {
-    content: ["./public/**/*.html"],
+    content: ["./pages/**/*.html"],
 };

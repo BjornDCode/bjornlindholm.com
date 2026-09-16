@@ -3,10 +3,10 @@
     "version": "1.0.0",
     "private": true,
     "scripts": {
-        "build:css": "tailwindcss -i ./styles/input.css -o ./public/style.css --minify",
+        "build:css": "tailwindcss -i ./styles/input.css -o ./pages/style.css --minify",
         "build": "npm run build:css",
-        "dev": "tailwindcss -i ./styles/input.css -o ./public/style.css --watch",
-        "start": "npm run build:css && http-server public -c-1"
+        "dev": "tailwindcss -i ./styles/input.css -o ./pages/style.css --watch",
+        "start": "npm run build:css && http-server pages -c-1"
     },
     "license": "ISC",
     "devDependencies": {
