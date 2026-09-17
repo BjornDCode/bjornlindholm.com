@@ -1,0 +1,34 @@
+account_id = "YOUR_CLOUDFLARE_ACCOUNT_ID"
+
+# From the Netlify DNS export. MX priority 10 confirmed against live DNS.
+# Apex/www NETLIFY records are intentionally replaced by pages_domains below.
+# Do not change nameservers until those Pages records have also been applied.
+dns_records = {
+  hover_mx = {
+    name     = "bjornlindholm.com"
+    type     = "MX"
+    content  = "mx.hover.com.cust.hostedemail.com"
+    priority = 10
+    ttl      = 3600
+    proxied  = false
+  }
+  hover_mail = {
+    name    = "mail.bjornlindholm.com"
+    type    = "CNAME"
+    content = "mail.hover.com.cust.hostedemail.com"
+    ttl     = 3600
+    proxied = false
+  }
+  schema = {
+    name    = "schema.bjornlindholm.com"
+    type    = "CNAME"
+    content = "musical-pavlova-8c4cfb.netlify.app"
+    ttl     = 3600
+    proxied = false
+  }
+}
+
+# Enable only after verifying the production pages.dev deployment.
+# Remove conflicting apex/www A, AAAA and CNAME records from dns_records first.
+# pages_domains = ["bjornlindholm.com", "www.bjornlindholm.com"]
+pages_domains = []

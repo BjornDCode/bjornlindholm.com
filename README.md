@@ -26,6 +26,10 @@ Shared navigation is ordinary HTML repeated in each page. When adding a page, up
 npm run build
 ```
 
-Deploy `pages/` to any static host. The build only compiles CSS; it does not generate HTML. Directory indexes preserve existing page URLs. Redirects remain in `_redirects` for hosts that support it.
+Cloudflare Pages builds this repository and deploys `pages/`. The build only compiles CSS; it does not generate HTML. Directory indexes preserve existing page URLs. Cloudflare Pages supports the redirects in `_redirects`.
+
+## Hosting and DNS
+
+[OpenTofu configuration and migration instructions](infrastructure/README.md) manage Cloudflare Pages, GitHub builds, custom domains, and DNS. The initial configuration does not switch production traffic; migrate the full DNS inventory before changing nameservers.
 
 The former Paperstack templates and Markdown were converted once into the checked-in HTML. Their originals remain available in Git history.

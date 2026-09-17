@@ -1,3 +1,11 @@
 pages/style.css
 node_modules/
 .DS_Store
+
+# OpenTofu: keep the provider lockfile, not credentials, state or plans.
+infrastructure/.terraform/
+infrastructure/*.tfstate*
+infrastructure/*.tfvars
+infrastructure/*.tfvars.json
+infrastructure/*.tfplan
+infrastructure/crash*.log
