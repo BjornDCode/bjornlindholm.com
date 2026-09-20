@@ -3,21 +3,27 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Articles | Bjørn Lindholm</title>
-        <meta name="title" content="Articles | Bjørn Lindholm" />
+        <title>Infrastructure as Code | Bjørn Lindholm</title>
+        <meta name="title" content="Infrastructure as Code | Bjørn Lindholm" />
         <meta
             name="description"
             content="Designer &#x26; developer from Denmark"
         />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Articles | Bjørn Lindholm" />
+        <meta
+            property="og:title"
+            content="Infrastructure as Code | Bjørn Lindholm"
+        />
         <meta
             property="og:description"
             content="Designer &#x26; developer from Denmark"
         />
         <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:title" content="Articles | Bjørn Lindholm" />
+        <meta
+            property="twitter:title"
+            content="Infrastructure as Code | Bjørn Lindholm"
+        />
         <meta
             property="twitter:description"
             content="Designer &#x26; developer from Denmark"
@@ -135,108 +141,56 @@
                         <h1
                             class="text-2xl leading-none md:text-3xl leading-10 font-extrabold text-slate-900"
                         >
-                            Articles
+                            Infrastructure as Code
                         </h1>
-                        <ul class="mt-8">
-                            <li>
-                                <a
-                                    href="/articles/infrastructure-as-code/"
-                                    class="text-slate-700 underline"
-                                    >Infrastructure as Code</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="/articles/the-ai-bubble/"
-                                    class="text-slate-700 underline"
-                                    >The AI Bubble</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="/articles/wordsmith-devlog-1/"
-                                    class="text-slate-700 underline"
-                                    >Wordsmith Devlog 1</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="/articles/ascii-and-unicode/"
-                                    class="text-slate-700 underline"
-                                    >ASCII and Unicode</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="/articles/a-database-with-time/"
-                                    class="text-slate-700 underline"
-                                    >A database with time</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="/articles/how-i-stay-sane-on-social-media/"
-                                    class="text-slate-700 underline"
-                                    >How I stay sane on social media</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="/articles/the-hidden-complexity-of-autosave/"
-                                    class="text-slate-700 underline"
-                                    >The hidden complexity of autosave</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="/articles/introducing-paperstack/"
-                                    class="text-slate-700 underline"
-                                    >Introducing Paperstack</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="/articles/sports-and-politics/"
-                                    class="text-slate-700 underline"
-                                    >Sports and politics</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="/articles/conference-hq-september-2019/"
-                                    class="text-slate-700 underline"
-                                    >Conference HQ - September 2019</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="/articles/using-airtable-as-a-backend/"
-                                    class="text-slate-700 underline"
-                                    >Using Airtable as a backend</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="/articles/conference-hq-august-2019/"
-                                    class="text-slate-700 underline"
-                                    >Conference HQ - August 2019</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="/articles/launching-conference-hq/"
-                                    class="text-slate-700 underline"
-                                    >Launching Conference HQ</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="/articles/data-visualisation-with-svgs-and-vue/"
-                                    class="text-slate-700 underline"
-                                    >Data Visualisation with SVGs and Vue</a
-                                >
-                            </li>
-                        </ul>
+                        <span class="text-slate-500 text-xs block mt-2"
+                            >20/09/2026</span
+                        >
+                        <div
+                            class="prose text-base leading-7 text-slate-700 mt-6"
+                        >
+                            <p>
+                                I want to keep everything in files my agents can
+                                access. Lately I've been moving all my
+                                infrastructure configuration to
+                                <a href="https://opentofu.org/">OpenTofu</a>.
+                                It's great!
+                            </p>
+                            <p>Most of my projects are simple:</p>
+                            <ul>
+                                <li>A server</li>
+                                <li>A database</li>
+                                <li>A Redis instance</li>
+                                <li>A queue worker</li>
+                                <li>A bucket</li>
+                            </ul>
+                            <p>
+                                But there is always something else: Cloudflare
+                                rules, DNS or an extra service.
+                            </p>
+                            <p>
+                                A year ago I spent several days building a staging
+                                environment that matched our production
+                                environment. With the infrastructure defined in
+                                code, this would have taken one hour.
+                            </p>
+                            <p>
+                                Keeping the configuration in code has multiple
+                                other benefits:
+                            </p>
+                            <ul>
+                                <li>Agents can edit the setup</li>
+                                <li>I can ask agents questions about the setup</li>
+                                <li>
+                                    My agents know the production setup when
+                                    debugging issues
+                                </li>
+                                <li>
+                                    I don't have to use DigitalOcean's or
+                                    Cloudflare's UI
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </main>
             </div>
